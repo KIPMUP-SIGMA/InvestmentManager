@@ -1,0 +1,39 @@
+KIPM-UP SIGMA - PETUNJUK PEMASANGAN APLIKASI DESKTOP
+====================================================
+
+ISI FOLDER
+  index.html            halaman utama (login, riset, kalkulator)
+  manifest.webmanifest  data aplikasi (nama, ikon, warna)
+  sw.js                 membuat aplikasi bisa dipasang dan dibuka cepat
+  icon-*.png            ikon aplikasi
+  update_anggota.py     memperbarui daftar anggota dari Excel
+
+1. PASANG DI GITHUB PAGES (wajib https supaya bisa dipasang)
+  a. Buat repository di GitHub, upload SEMUA file di folder ini.
+  b. Settings > Pages > Source: "Deploy from a branch", pilih branch main, folder / (root).
+  c. Alamat portal: https://USERNAME.github.io/NAMA-REPO/
+  Catatan: membuka index.html langsung dari komputer (file://) tetap jalan,
+  tetapi tombol pasang aplikasi hanya muncul lewat alamat https.
+
+2. PASANG SEBAGAI APLIKASI DESKTOP (Chrome atau Edge)
+  a. Buka alamat portal.
+  b. Klik tombol "Pasang sebagai aplikasi desktop" di kartu login,
+     atau ikon pasang di ujung kanan address bar.
+  c. Aplikasi muncul di Start Menu / Desktop dan terbuka di jendela sendiri.
+  Login "Ingat perangkat ini" tetap berlaku di aplikasi.
+
+3. LATAR HALAMAN LOGIN
+  Upload gambar ke repository (misal latar-login.jpg), lalu di index.html isi:
+    const BACKGROUND_URL = "latar-login.jpg";
+
+4. DOKUMEN RISET
+  Upload PDF ke folder riset/ lalu isi daftar REPORTS di index.html.
+  PENTING: jika repository/Pages bersifat publik, siapa pun yang tahu alamat
+  PDF bisa mengunduhnya tanpa login. Untuk riset yang benar-benar tertutup
+  diperlukan server dengan pengecekan akses.
+
+5. MEMPERBARUI ISI
+  - Setiap mengganti index.html, ubah angka versi di sw.js
+    ("kipm-sigma-v1" menjadi "kipm-sigma-v2", dst) agar perangkat memuat versi baru.
+  - Daftar anggota: pip install openpyxl cryptography
+    python update_anggota.py DAFTAR_ANGGOTA.xlsx index.html
