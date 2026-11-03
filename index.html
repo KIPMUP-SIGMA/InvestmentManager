@@ -54,7 +54,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;
 .landing{position:relative;isolation:isolate;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;gap:36px;padding:clamp(28px,6vh,64px) clamp(20px,6vw,110px) clamp(24px,5vh,56px);background:
   radial-gradient(900px 600px at 70% 40%,rgba(30,90,255,.28),transparent 65%),
   radial-gradient(700px 500px at 0 0,rgba(20,40,110,.55),transparent 70%),#030713}
-.landing::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg-img,none) var(--bg-pos,right center)/cover no-repeat}
+.landing::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg-d,none) var(--pos-d,right center)/cover no-repeat}
+@media (max-width:768px){.landing::before{background-image:var(--bg-m,var(--bg-d,none));background-position:var(--pos-m,center top)}}
 .landing::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(2,5,14,.82) 0%,rgba(2,5,14,.45) 45%,rgba(2,5,14,.1) 100%),linear-gradient(0deg,rgba(2,5,14,.7) 0%,transparent 40%)}
 .brand-hero{display:flex;flex-direction:column;gap:0}
 .bh-top{display:flex;align-items:center;gap:clamp(14px,2.4vw,26px)}
@@ -422,18 +423,24 @@ const REPORTS = [
 // Kosongkan jika belum ada. Data dikirim sebagai JSON: {nomor, nama, riset, waktu, foto}
 const LOG_ENDPOINT = "";
 
-// Gambar latar halaman login. Isi dengan alamat gambar di GitHub (raw / GitHub Pages) atau path relatif,
-// misalnya "assets/latar-login.jpg". Kosongkan untuk memakai latar bawaan.
-const BACKGROUND_URL = "";
-const BACKGROUND_POSITION = "right center";
+// Gambar latar halaman login. Isi dengan nama file gambar yang Anda unggah ke GitHub
+// (samakan persis huruf besar-kecil dan ekstensinya), atau alamat lengkap https://...
+// Kosongkan ("") untuk memakai latar bawaan. Layar lebar 768 px ke bawah memakai gambar HP.
+const BACKGROUND_DESKTOP = "KIPM-UP Web.png";
+const BACKGROUND_MOBILE  = "KIPM-UP Mobile.png";
+const BG_POSITION_DESKTOP = "right center";
+const BG_POSITION_MOBILE  = "center top";
+(function(){
+  const g = document.getElementById("gate");
+  const css = u => 'url("' + String(u).replace(/"/g, "%22") + '")';
+  if(BACKGROUND_DESKTOP) g.style.setProperty("--bg-d", css(BACKGROUND_DESKTOP));
+  if(BACKGROUND_MOBILE)  g.style.setProperty("--bg-m", css(BACKGROUND_MOBILE));
+  g.style.setProperty("--pos-d", BG_POSITION_DESKTOP);
+  g.style.setProperty("--pos-m", BG_POSITION_MOBILE);
+})();
 
 // Lama perangkat diingat setelah login (hari). Isi 0 agar diingat tanpa batas waktu.
 const SESSION_DAYS = 90;
-if(BACKGROUND_URL){
-  const g = document.getElementById("gate");
-  g.style.setProperty("--bg-img", 'url("' + BACKGROUND_URL.replace(/"/g, "%22") + '")');
-  g.style.setProperty("--bg-pos", BACKGROUND_POSITION);
-}
 
 /* ===================================================== */
 
