@@ -190,13 +190,90 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
 .report .sub2{display:block;color:var(--muted);font-size:.82rem;margin-top:2px}
 .rstate{padding:20px;border:1px dashed var(--line2);border-radius:14px;color:var(--muted);text-align:center}
 .rstate button{margin-top:12px}
+
+/* Menu baru */
+.nav{overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.tab{white-space:nowrap}
+.sel{width:auto;height:44px;padding:0 12px;font:inherit;border:1px solid var(--line2);border-radius:11px;background:#070D1C;color:var(--ink)}
+.rtools.wrap{flex-wrap:wrap}
+.btn.ghost{background:transparent;color:var(--silver);border:1px solid var(--line2);box-shadow:none}
+.btn.sm,button.sm{padding:7px 12px;font-size:.82rem;margin-top:10px}
+.muted{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:0 0 16px}
+.stat{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.stat b{display:block;font-size:1.5rem;color:#fff;line-height:1.2}
+.stat span{color:var(--muted);font-size:.82rem}
+.tape{margin:0 0 16px;min-height:78px}
+.tvwrap{width:100%}
+.tvframe{width:100%;border:0;display:block}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;border-radius:6px;padding:1px 7px;border:1px solid var(--line2);color:var(--silver)}
+.tg-new{color:var(--gold-l);border-color:rgba(227,183,63,.5)}
+.tg-warn{color:#FFB4AE;border-color:rgba(255,123,114,.5)}
+.tg-muted{color:var(--dim)}
+.ann{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 10px;background:rgba(255,255,255,.02)}
+.ann.penting{border-color:rgba(227,183,63,.45)}
+.anntop{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ann small{color:var(--dim)}
+.ann p{margin:8px 0 0;color:var(--silver)}
+.kal{display:flex;gap:14px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px;margin:0 0 8px;background:rgba(255,255,255,.02)}
+.kdate{min-width:58px;text-align:center}
+.kdate b{display:block;font-size:1.4rem;line-height:1.1;color:#fff}
+.kdate span{font-size:.72rem;color:var(--muted)}
+.kinfo{flex:1;min-width:0}
+.ktop{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.kinfo small{display:block;color:var(--muted)}
+.jn-ipo{color:var(--gold-l);border-color:rgba(227,183,63,.5)}
+.jn-rightissue{color:#8AB4FF;border-color:rgba(138,180,255,.5)}
+.jn-dividen{color:var(--ok);border-color:rgba(91,217,154,.5)}
+.jn-rups{color:#C9B6FF;border-color:rgba(201,182,255,.5)}
+.jn-lainnya{color:var(--muted)}
+.eduMe{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 16px;padding:14px 16px;border:1px solid rgba(227,183,63,.35);border-radius:14px;background:rgba(227,183,63,.06)}
+.kelasgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:0 0 16px}
+.kelas{display:flex;gap:12px;padding:14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
+.kelas.done{border-color:rgba(91,217,154,.5)}
+.kno{flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(227,183,63,.12);border:1px solid rgba(227,183,63,.3);color:var(--gold-l);font-weight:800}
+.kbody{min-width:0}
+.kbody b{color:#fff}
+.kbody p{margin:4px 0 8px;color:var(--muted);font-size:.85rem}
+.kfoot{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.kfoot small{color:var(--dim)}
+.kfoot .btn{margin-top:0}
+.peserta{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;margin:0 0 8px;background:rgba(255,255,255,.02)}
+.peserta.me{border-color:rgba(227,183,63,.5);background:rgba(227,183,63,.06)}
+.avatar{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--s3);color:var(--gold-l);font-weight:700;font-size:.85rem}
+.pinfo{flex:1;min-width:0}
+.ptop{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pinfo b{color:#fff}
+.pinfo small{color:var(--dim)}
+.pips{display:flex;gap:5px}
+.pip{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.68rem;font-weight:700;border:1px solid var(--line2);color:var(--dim)}
+.pip.on{background:var(--goldgrad);color:#0B1220;border-color:transparent}
+.pips.big .pip{width:30px;height:30px;font-size:.8rem}
+.pcount{width:38px;text-align:right;font-weight:700;color:var(--muted)}
+.pcount.full{color:var(--ok)}
+#eduLagi{width:100%;margin-top:6px}
+.bars{display:grid;gap:6px;margin:0 0 16px}
+.brow{display:grid;grid-template-columns:90px 1fr 150px;gap:10px;align-items:center;font-size:.82rem}
+.brow small{color:var(--muted)}
+.bwrap{height:10px;background:rgba(255,255,255,.06);border-radius:6px;display:flex;overflow:hidden}
+.bwrap i{display:block;height:100%}
+.b1{background:var(--gold)} .b2{background:#8AB4FF} .b3{background:#5BD99A} .b4{background:#C9B6FF}
+.alo{display:grid;grid-template-columns:150px 1fr 44px;gap:10px;align-items:center;padding:6px 0;font-size:.88rem}
+.alo b{text-align:right;color:#fff}
+.kgrp{margin:0 0 12px}
+.kg{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin:0 0 6px}
+.krow{display:flex;flex-wrap:wrap;gap:8px}
+.kchip{background:transparent;color:var(--muted);border:1px solid var(--line2);padding:8px 14px;border-radius:999px;font-size:.85rem;font-weight:600;box-shadow:none}
+.kchip:hover{color:#fff;background:rgba(255,255,255,.06);filter:none}
+.kchip[aria-selected=true]{background:rgba(227,183,63,.14);color:#fff;border-color:var(--gold)}
 @media (max-width:900px){
   .cols{grid-template-columns:1fr}
   .out{position:static}
 }
 @media (max-width:720px){
   .nav{order:3;width:100%;margin:0}
-  .tab{flex:1;text-align:center}
+  .tab{flex:0 0 auto}
   .chip .cn{display:none}
 }
 @media (max-width:600px){
@@ -207,6 +284,10 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
   .card{padding:20px}
 }
 @media (max-width:440px){
+  .brow{grid-template-columns:70px 1fr}
+  .brow small{grid-column:1/-1}
+  .alo{grid-template-columns:110px 1fr 40px}
+  .pips .pip{width:19px;height:19px}
   .report{flex-wrap:wrap}
   .report .btn{width:100%;text-align:center}
   .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -224,8 +305,12 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
       <span class="bn">KIPM-UP <b>SIGMA</b></span>
     </a>
     <nav class="nav hidden" id="nav" role="tablist" aria-label="Menu utama">
-      <button type="button" class="tab" id="tabR" role="tab" aria-selected="true">Riset Saham</button>
-      <button type="button" class="tab" id="tabC" role="tab" aria-selected="false">Kalkulator</button>
+      <button type="button" class="tab" data-v="b" role="tab" aria-selected="true">Beranda</button>
+      <button type="button" class="tab" data-v="r" role="tab" aria-selected="false">Riset</button>
+      <button type="button" class="tab" data-v="c" role="tab" aria-selected="false">Kalkulator</button>
+      <button type="button" class="tab" data-v="p" role="tab" aria-selected="false">Pasar</button>
+      <button type="button" class="tab" data-v="e" role="tab" aria-selected="false">Education</button>
+      <button type="button" class="tab hidden" id="tabAdmin" data-v="a" role="tab" aria-selected="false">Admin</button>
     </nav>
     <div class="chip hidden" id="chip">
       <button type="button" id="bInstall2" class="ghost hidden">Pasang aplikasi</button>
@@ -285,12 +370,34 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
 <main class="shell">
   <!-- AREA ANGGOTA (terbuka setelah verifikasi) -->
   <div id="app" class="hidden">
-    <div class="welcome">
-      <h2>Halo, <span id="wHi"></span></h2>
-      <p id="wRole">Selamat datang di portal anggota KIPM-UP SIGMA.</p>
+    <div id="viewBeranda">
+      <div class="welcome">
+        <h2>Halo, <span id="wHi"></span></h2>
+        <p id="wRole">Selamat datang di portal anggota KIPM-UP SIGMA.</p>
+      </div>
+      <div id="tapeBeranda" class="tape"></div>
+      <div class="stats">
+        <div class="stat"><b id="statEdu">-</b><span>Progres Education Anda</span></div>
+        <div class="stat"><b id="statRiset">-</b><span>Riset tersedia</span></div>
+        <div class="stat"><b id="statAcara">-</b><span>Acara mendatang</span></div>
+        <div class="stat"><b id="statBaru">-</b><span>Pengumuman baru</span></div>
+      </div>
+      <div class="card">
+        <h2>Pengumuman</h2>
+        <div id="annList"></div>
+      </div>
+      <div class="card">
+        <h2>Kalender pasar</h2>
+        <p class="hint">Jadwal IPO, right issue, dividen, RUPS, dan agenda lain.</p>
+        <div class="rtools wrap">
+          <select id="kalJenis" class="sel"><option value="semua">Semua jenis</option><option>IPO</option><option>Right Issue</option><option>Dividen</option><option>RUPS</option><option>Lainnya</option></select>
+          <select id="kalWaktu" class="sel"><option value="mendatang">Mendatang</option><option value="lewat">Sudah lewat</option><option value="semua">Semua</option></select>
+        </div>
+        <div id="kalList"></div>
+      </div>
     </div>
 
-    <div class="card" id="viewRiset">
+    <div class="card hidden" id="viewRiset">
       <h2>Hasil riset tersedia</h2>
       <p class="hint">Dokumen riset (PDF) dikelompokkan per bulan. Hanya untuk anggota KIPM-UP SIGMA, dilarang menyebarkan ke pihak luar.</p>
       <div class="rtools"><input id="cariRiset" class="rsearch" type="text" placeholder="Cari kode saham atau nama perusahaan" autocomplete="off"></div>
@@ -312,14 +419,11 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
       <p class="note">Fee total sudah termasuk levy BEI/KPEI/KSEI, PPN, dan pajak penjualan. Angka preset hanya perkiraan dan bisa berubah. Pilih "Custom" atau ubah angkanya sesuai sekuritas Anda.</p>
     </div>
 
-    <div class="subs" role="tablist" aria-label="Jenis kalkulator">
-      <button type="button" class="sub" data-t="c1" role="tab" aria-selected="true">Average down</button>
-      <button type="button" class="sub" data-t="c2" role="tab" aria-selected="false">Right issue</button>
-      <button type="button" class="sub" data-t="c3" role="tab" aria-selected="false">Money management</button>
-    </div>
+    <div id="chips"></div>
+    <div id="kbaru"></div>
 
     <!-- Average down -->
-    <div class="box" id="c1">
+    <div class="box kpanel" id="c1">
       <h3 class="t">Average down</h3>
       <p class="hint">Isi posisi awal, lalu tambah baris sebanyak pembelian lanjutan yang direncanakan.</p>
       <div class="cols"><div class="in">
@@ -346,7 +450,7 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
     </div>
 
     <!-- Right issue -->
-    <div class="box hidden" id="c2">
+    <div class="box kpanel hidden" id="c2">
       <h3 class="t">Right issue (HMETD)</h3>
       <p class="hint">Rasio ditulis lama : baru. Contoh 5 : 2 berarti setiap 5 saham lama mendapat 2 hak untuk membeli saham baru.</p>
       <div class="cols"><div class="in">
@@ -378,7 +482,7 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
     </div>
 
     <!-- Money management -->
-    <div class="box hidden" id="c3">
+    <div class="box kpanel hidden" id="c3">
       <h3 class="t">Money management</h3>
       <p class="hint">Hitung jumlah lot yang aman berdasarkan batas risiko per transaksi.</p>
       <div class="cols"><div class="in">
@@ -411,6 +515,36 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
       </div></div>
     </div>
   </div>
+    <div class="card hidden" id="viewPasar">
+      <h2>Pasar</h2>
+      <p class="hint">Harga pasar dari TradingView: DXY, VIX, imbal hasil US dan Indonesia, USD/IDR, minyak, emas, dan kripto. Sebagian data tertunda sesuai kebijakan penyedia data. Hanya informasi, bukan saran investasi.</p>
+      <div id="pasarOverview"></div>
+      <h4 class="rt" style="margin-top:22px">Kalender ekonomi</h4>
+      <div id="pasarEvents"></div>
+    </div>
+
+    <div class="card hidden" id="viewEdu">
+      <h2>Education</h2>
+      <p class="hint">Lima kelas Education KIPM-UP. Progres peserta ditampilkan agar kita bisa saling menyemangati.</p>
+      <div id="eduMe" class="eduMe"></div>
+      <div id="eduKelas" class="kelasgrid"></div>
+      <div id="eduStat" class="stats"></div>
+      <h4 class="rt">Progres peserta</h4>
+      <div class="rtools wrap">
+        <input id="eduCari" class="rsearch" type="text" placeholder="Cari nama peserta" autocomplete="off">
+        <select id="eduGen" class="sel"></select>
+        <select id="eduUrut" class="sel"><option value="progres">Urut progres</option><option value="nama">Urut nama</option></select>
+      </div>
+      <div id="eduList"></div>
+      <button type="button" id="eduLagi" class="ghost hidden">Tampilkan lebih banyak</button>
+    </div>
+
+    <div class="card hidden" id="viewAdmin">
+      <h2>Admin</h2>
+      <p class="hint">Ringkasan penggunaan portal. Hanya terlihat oleh admin.</p>
+      <div id="adminBody"></div>
+    </div>
+
   </div>
 </main>
 
@@ -429,10 +563,11 @@ const MEMBER_ITER = 150000;
 const MEMBERS_ENC = {"221200f283617186":"HWMm13SBE6/p2sFW4gWrrE8bV8hyGR3yO6mwB0DeSGYWSJGGvJrfZMM0wpnXaP2oGBsePhBxFzrKebKfjhrtuMQcC+GJ3DGcqFokpGQWZirwrdV0","a6bae2988cb48809":"KkPlBlAMivhO0hAZXgo0AHrTdI1up5N+NvR2DuOz1U6b6A9lnLdYzy8CrU4ShEc3pJYuhRK/PJppNlnfRQmc8nuxIbGhVLLIEruWpVA6Xc5G","44b4fcd4dc51ef71":"RJaKl5CZ812fwFnYRbIRSUOJgU9mAqZWZIFgva6hVwgUZ/dXZQStxPVkUz6aEovcIjLxZzkhXEoNd7Zd6YhPDKQYy7L+S9IO8MHNyN80dko2NppTFXkt4oNwAA==","cb1613e3f867d764":"JCSlhMeBU30yxGU7MElSNA4JAkambPHs4Eaub7XJy1QnfjtEelyueoNdOWIEx9aEJe5AuQtkKsZP/cD0C6ticqMfFW3/sppDydYf+Q==","17c83995b39abbe9":"E7FB26lxF16A5HNgPUSSzTclzFBYJBcGmWMqcNeRFKjma4NlxJEezOsu9DDmAcc1frrCH9pEQOEPXDz3Sgqnzb6/rSPwWZ98p941VIMwiy8TAcT59j9NPg==","978848568a109e64":"1WfTHQnhnFUE5IopXVzNKxOxnjrsdQXUEze1J4nmhSixp9B8ycFua+72QTrpoXCBMHvG8y1p94IrVPriaCOx48E3Ojx2naYFf/9RB64VTQc=","2cebb345e1eebb1e":"egGv+bEttTKswGyV+j1vODNR3uBZYlLj0pDLo+/DML8lpqqVw/DsXhctq4e4fLIuzRfMCmKXQGcgcCZ2Oc5lef5OVJDTV+3bkRHq9rBbl1rk","5d6872846c767086":"zMruSUxYZwYnqFk0LhvrZs6diZ5Bp2AyH7DN6+w8/M3xX1+Nd3/HsjryEVXz2UkPKlwRxzXzGyy2PGBq/cIULhCqktLLGC4JqIGGY4g=","325494cf26679791":"8SXB8Db6EAPweZZaMFf5HIK8Drk7xJCOaOeb1dDkGCLmcu6KKkpT7cUjoyzfSk4NrYJ9X1Jm6+U0K3bYpOeY70IECi+P08dK/4MwQTLo","bd2172f3cfebcb65":"SS6a7IYBML905lHhT4R3ME9ZMbC+/nMD14DfQAn42bZehNKXUf/05LWLLpeufMWojF3UCZnTARnV2ty60qsZsAS1AKr9VU4khghidkMRfuEr","733297bb40805bed":"QiuFgZFRnlE0+WTO3E93IxXiE9a0M0y54JZQWf1yvV/dVIciEEsYC7mcws5Wg28oq1D3lewGRSX3tYEMMwQW4Ka+tT2y26EMMOZqWY29","19c5252e81a31333":"Aw/qb43oDywk4Ts4uONQmezGgFej68MR2TCfcPmRxstfewEb15Y1NYm4kP/h1WatJsKybHNSUhM2vhlpS2C92elcaUZVp7cTau6XOkgxBQ==","b9db89d56dbe3b21":"ff4roIyD6qTC1g3xVzhE9cymzkiz9ofk8u4t6r9b1M62UBUyC/YXi5ATQFkuQ36GONZr+blNtu136uO+vVTWbQkoOPlTmr3r731cXxx5AMc=","e68c2b8378951334":"l1Ts7xFtGYBP0V1Xk6OBFHLSOsUwarg610uDskiV3026i18EW7+UC7MPFh2GWa6zPkn/SQUln0TpuEASI1xIozPfjWDLWJ6F5VSQRUhMY3mA+HSAxXMu","3117827e4c288e98":"i1POpHAvkkukhNC5YE1dmy1uwSQj1egKfE9lx87UmMj45p/PmhXgTIBYwPiqFbeJ3QrixA4j8Vyanq80i2YPUTpa8VrCtg==","d816c504cd6052bb":"4MZdGvhF1PjVskzOIwt3GAyRM3Ka5qz4jjpkjAEOoQSw1TTXqrt5CnfQozQiAFsr8PTSkx87kDn04ecBJuXQmVcqDBtIUA==","78e3710c8e318638":"KdE1YC+aW6mM4dAuv97DrhQQXpcj9xeFkCt5u/k3laWsVmF09ojxuIxa/yQ+uwTirAfOmO0GZcD4jAIqukI8dtNcPPL23Snb/GpDiEsnnw==","fcf0eb15e498dc0e":"Ol+72y+ZUn9KA1FJuRt/omqTOl9mSR5ZT1wL21eFAvjOaZuaWEDs+DK4wAl9ZS44Z0Mz40gYsoYmuLfzdEuaEwWzIg==","f0ec4ce6ae4fe08d":"qFtVVsXwr9gUwpbdqMmvpGkwmFG55AshjTmlaAd99NU7wpdwoTctRId6WIV9tE7aRuDlmpWPSq1vTEr2/iVJ2xMhr0ECc0yA8zOnl6+sQQ==","183fd4f5afd916ed":"QQIZEHPSocX6cRZeTXMrwTXg+WR7v4KR/RBEb5T0usheKkiG7F7CRlBPO7Q07632/weABaSXSGF42tlomyG/969g9UzkNHqA8TzRb3tXASRPfY/z","0a53eadb227433c7":"b/QjurtrGzrFZNkB8XPxq8Ox5Z/bUbSZH6vK+bfNTYeWF8G/uVZ6subMkD3IaVxaKP2wCoom6nM7IljLKnXFfO2Kyx1g65mZqkkJ/4n2zofcNX6yIH/V","01980567a893ab14":"7DxunA5MkmLMbZMkBaxbluZsONN/gAQ5a+Z5G+zqwdNdhfNL7UEb7GoOgm4EyPeoAryZr3+Tc/h/beguLXjNKncmqkJhrP3IDogDFowO","b6a37226d41611d5":"aQeN9cGXjOkBzl7bbkhLxweig5LUNGcTg3vmc1plRoFy3M45cicAhdGcYDV5KDvQXYH2lcK8+BERFW89a0Uf+fhEV3EBdkzsovm554hIA9yrY7ZJ","693b265806d54e66":"DinRHlsjDKPwwP6+TsdZ6/K/UIiIuUdQcT8i/fqMSYBSH8twUYQzIuB5FxnO9HyiX7vdGULsoxf5nX68YWu8+L7Aw2TNU95ZRKgeSTSv0BQ=","921a7b256533cc63":"RlRCF2tN1/AWMXrjFQGyrBmflmuwdgADX5gVhAWIOw8NNpVpj5ds3uLQpPyWpBuRXIbyP2QfqMUbAv7FGjeiUn8gQKmt8mq+gBzae66C6FEna6lX+nNy67Q=","12182a19e2c9b83c":"9uaQeO/84m0/pGHikVxwx6O7VymTesXtm37ME+GcNfmj6XRYL9AVAPazdJEBepmSGHtiFIwga8OQlZZkoLEx+iHZ2DhehnR3cjJs/D3e8mgK0eAUBA==","3ca4f58b06e09116":"kN7S9GttEhqjXrN71InlJRqeKl6NDNoCHiTCVoNP8BH0yYQtCObW8Gk6DCjFw2Rt9HKkixbypT3Gdn6eGMJBlg8rPUWwY50dmDkA54Be0MaB2n6A","e06ee6f289f48d0e":"Fw3X6kyx+ShdDHpIDLVDi0CFJD7Ugkozf/aA/70iUOFjNyLRTY+9t0++ETIyAraJuxmrh6buoLkiajCSPNDCbw5TiatxKB8VZ3pVjlHTIKuZNh9Knw==","e1dc47cf0dbcad3d":"Gft8oFhEGnXfIbWtsbrfsn7mq00b/XPNRNWYqT6pdFNHtid7UnR5ZvCrkbslRpC3v+2RXOS+gNiMW+rcY7Mjux0ehB1KsbVC57jk+Q9VckR08NXA","cf8a56d4f1e508e5":"hoZjkOrikIJ2elJfAGbSbzErf1yp+sihezL/xhHNLLuzh1nJiw/wIM4ULXrCB0xL7MMJv9MTccRXS40B8uc5oLiSh7a1X/aEf9WRv60fKMZZ+yHjEg==","03157baeb1dba1c6":"8u3fv/MY+aDwH8TfNlKYxjYwzRqsoHfISsOVh+cqR1lf0T1Jn0DkyOqgxTLjG2nAUafjENo727lRcsyp8tZSJ4XuXcFgQmnPbB4uTEHW","82dc58ed5faacf28":"Z/at9cUtCy9PbPIX7MsJbymqHjfj5RY4qeVlmpOLzWLtw6XwqLaQ+ZnWoyo8L9y3rDR62WjXMCHRzlq8WJ8AXt3o4v0ouSRkIfM8fNyRrExY/Q8=","6fa1a7ce6298b0e9":"4Oq+XtD/zd72xJbQLGyE2ofONDHo9tUTslqrhV8VSCYOq6SQWbOpnGgF6e3knrC8Sv/sbWeyVh7aRXRHxktviftJwgQDART3MI3DS/0=","a3dc63c6042fa2ab":"YrPN3jXB/coNgNuvFOV8R1uQZpazQwU/AEeNdcsJitw5wNPR4nPwn+oQ4Zd702lcc4PvlHK6G/1GalKS410784LpFQawqMFdFuQ35lwsywi4iTtKCmHuwZA=","3e187a46634d1ed0":"Pr61oi89D5WxZ7nj6EABC024zATh5duG5VmXb7nvI2TvAQTAPzvyQcBqXYWJKZNmZLBSzORXD0rArgy5YdKHdfJdOs2MLCI2VxbaWOX2MLMBjkc=","ddef952ec95ff2df":"Qfq2cQOaBaRm8738kBnmgQeGHJarR1ix+QB7ZJ87N1CHYr6Yw7xbe0Lq85M38JgM74RSXCn2cIs4Walf/oLShw7ozcNs8BnqKm/bp14=","199c834c687f9943":"Hef9tOSaFsiFP5q1UOKyxcFw9hUtAw/Ffq/+E2PuXIEWVbxHhqdzA7LD4KX6aXkOtKGhXR+CukhdEED6r1xg+9CtSfiJow==","8b52b543e3125988":"Nl0B2lEE3LY2j1C654U5wTo02LzzczLQkchs3jleTlhdoJ6VE9csYSvlvri9VGNqMDH3g7a8tpOEHRvQW185pRCqQ1/7JDz1ui68xiElKfpZ9Oc=","43ae2a623fc2ba55":"NBvnhS9kxAJ9xJpor0RqhKvltWWVH3w+N+tXOC557SycY8+PXF4NN/EqaI8uAKJubV2OfBy6eEsUUCc3C9lly9ZMxbQ=","c6c9941bcd06db9b":"UyuqRDkRRIkt4Uewb+7Bex/lNX551dfF6O2K5bSccQqU5KRs3OVvi5ME2ucj4ejzr5CH686jZhZ7guMazbkvGIF1a6K5","85af83d80728c21b":"7jTxTMZRVSTnq0SVch9sNkUpENzhf9jJLm/BrZbWPekjAYGX5pDyt1qlp/8NEOIfHBDen7KximzH2kKEtGl1ao+r8djRzi38erkPa+bahR0=","d0c382568386f3a3":"cERpXgY8ydc69iM+Yj/FAwnWNFIOWiH7IrC87Da9VPWpw4HWacT7p57YGU4sJQc/HMukXyuhEZqwHqIq03SmiMQQUpRvzU2Ixxx/CkNCdao4Sg==","b054fb1b452a9ef0":"pseZKJJS5EFdYuhvmMczbGGEs3uaHxbfRx4VG9reNekiLsyED6PQBFOMpmOgoRtySIf+mKySI+at0VoMC7OzsQnkDpzcSEg=","82de4bb1e92fe3dc":"2HE7olXFWGaZDwZeyitwuxqpAFabASs9oBpMrSoAEw8ikQIHl6rQ0ffspPH+mg8Igzqi+rlkUQ7hruIYWlBbVRQM1CPVfbD0h+k=","08cd7ec5e27c2423":"VZskAiqNt8KR7j638APPJLB3GGZLRFmoYTEitSxCKViW8bCxibMuySnNG4hwZ8wxXvgZExruPID+jYQ/+BZXPVPKjuDiCg==","36d77164503406ad":"ZWBAjjHXooLghnjvIO7ljz0xAFQU0oJFWXVl4YQsrv2LCXPcF0Sbz0yR43Rnlbf6pY1mCLyIk8ZhlN7w/Q24uip8xFi/ivJCp2hZgmzHFNG3ZDw=","7cea629750a79746":"hy9qU2+WDFCsrqbWyBNO0OY+MtuBsH0f5RfcEf7q6pZFZaNrmMKsnHTasIQNQtAUnZUbFEzFpHKVfEVvXHD8SQCoaE6NkQqoaQLspHYsi9QIj7Qy6TNY","66ea7ced06d3040a":"1LPQaO5khVsXKB6V1iM2MmelnN4I1KDFrM+U00nbLVCamr3hZZjrAncCBjN77S2JOTeZa6adl0rqydZAMyIWQsN6YSjeYrpT0wu9rob26K3K9rhK8+c=","021f46b52f2fe4a0":"ltSwEq0ztaF92n7YvWsyVrFFWxyQlDxn39MiV4nrSiJiPw3ItqClWnVZ7jbWchA5r83CqzCpOyli8aze1bgqHD5N6f2c6OX+4C8fFpIB","e60c9e4ff9022a4a":"HiOit8t0Un/0sjA7Z1oUT6XRyuueX7+MNjueYvLms2Wni6bvh9jv3gAij/S6a2R9wsKQIFWtOuaauT2dT9QTPjNC/7/BqltXuUhZfIYuyDfnvEaR0g==","ccfc5c73b9788580":"R38vU+XCKKjF0cI4uP6IdLKha+dxkBSOpC/T4aLI+zotCNydCFH08e4aOisSqmLAeCHkMTdNW7S0TFLQF/72794voLthkg4W2CNwdpY=","89dd85c2b95fd390":"GeQ1dHW7xfOAYn6h5vT3HDzf9mk+K2SR3/7QQUW719KqU1nO7pJPh2uxjQz0V6KnOvpUhTpCy/d2hHInIWmRxTrkbDGnU7bi+nSID4jydAv9LYw6","89424bff9f4ec57a":"chBrYWYBQm7nx2mslMJ7gvhDL1DhRLGKpRDRRkkx5f3XnBZqrPCDSgtVmuxqjdms8a2F7dKqJFNcDtBaj88QUj55zJKoRFXTTU2j6aC0FR2oeM63KW0=","3492ca7606935958":"2JKAFLN5IFiB0p8XCFDVOIBxsM4q+1dmLFCPEZDgk7Km2iZblV2FDVlo3ZKGaS+105rjqfutTlDq4pZFvfy7tTb/SRAjFwzuuGUTVxkl","1ac12026a7a3cf01":"dbTHjaRA3yQJTFsPd6v80r5AqMgTCfIdvGfpccAd/HnvLWKpfhfmHuqXfALVhWdJvjUg3IjWCQSlcLDrZnRtzcA4+vVZO9KT7pKauj2WHxsSreo=","456009c422ab7ce9":"PZw7Khx6ghjA6h53Q5Y6i/Ff81DXWhfFBvl/xrsYW0Hgiqd/euNa0NwYv2+PUZdp4GhQYojMv28F/RmSLsUVrg3lUfKpMTtVnhQLPg==","6888e10d9f9aa62b":"er04qGI9c3JbBlOXEacbSFJwEEPV/rs5MZTPE5kFUGCi7zeXmVGJQmw2Kv5V3wgNRMK4gXvvby565sotBcGOOVwx9hhjQxUrvE0+jM+Mr6HjvIlRfw==","5486240633425223":"KpOc0dcAgG/cMBh8d6RXVCxK0ltUs+Kgjf3ZE/GG5iLpa3D6vl7g23O5qYotc9zz7E7rb/HwjFNcOfuO1mFUtSf2ewyD8mVzOjBaKS66","6c8bf359c455317e":"UihLFAHdNnUB6eVeLcFLdua3QccCfJkbx4PPmHt48URnjK2IOJxYIoV96XluDmJiuRWeOotQQenZ4akMKlgK+V2bmIqiScvyYYfp7fALWS0GwsUDK/Z7tQ==","1de5495c60f32041":"RCQlLRXYSQOWTN/YJBRQ8jO47edpSePZyECOf0Vr/vmKkYmyGkNWXgheNOJ4I0ZMPNvvyRbnqPCn0XDPYcFwm2JjUM5cMel/n8p36g==","6132cb4d9251836a":"ZcI+IUxKWkxQ5ZTYXY28zrJbEQ27O+ZgGlprgBPBFUSzG97MEzL6eUMDiBdO3vprUW8dUhCW3MxSfYALHEzo/5eXjLl5I8WW13IvD/wH","693ae4eee68e4b71":"pEjD5XCwTwRLYkGd8aJy5ZrbAtYOU1NDyRVdwn1K0B98TtkrawHNal2P+Lm/5MBAffFUD5ue16J0QR4lUsfXTV0hFj8OCJLbLEmNi9Cn32dUgcJT","9002a8adaa374fb8":"Xo6+76KcnNk71Nyn9W2jEW6+2+10RJVbzB3uLSe2PH6QwPBjes8Yp81ysL+Szhq5ohWalOtDVjPmnbRo4VtRV8P6kQQtXZDDypjtD5LUrnY=","036dddd4deb175a3":"AsNMTZYoSuhqpGAOBl8SwYep3yxLCyBwmrBVdR3LJ0mpiVHxF9g3btWC8svt862bBfL55Fll6GUXSv85NolZjCu19x/loIjIxx8RPA==","bd18adbe558163ba":"MSMpxgwlSZV12Jhnr93AEsHp0Id4Vcin38k5rcdssggWG3SCOv6I1j5V6I1cVB5SXeeqY4uHHO7Trd+Jby2kjYb8Ll2NKBMRSJFE8kbOoI9k5IERyg==","8ded74781021e750":"Buff46KahYvUNU2rjoMk6a3t4r6JHWXHmJdbbnDSKKebfZbSOiKUTbIOz9X+63kwvW4Eca7tGGjiWiCPLoKKJubikR9E6xGKrdY3XmwZ2gmylZpj","04fcfb355f81ddee":"slBBuK22TzudUsTAvtxcIhVNJ/2ni57OPlCYmZy4jWM/sMzyoM5khv+d/OdVFGT5x3xTGms+dUCX/nURJIAZYVkf2Gz/TDcnbp7+BUyGeZh1MVqwMUpD3w==","cb1692d1a0ec1127":"bu1YSRKCJT2bR2CbKscrxZsu/iMlsDB49XmhNfRFXTlK/57Z3DI1JRDDN+jBeJyMIVSyXyk3ccg7LEA0DWYikY9b4SiYMOMtQsOu/nmC387lHaENCjBO","fb0b277e04d163f8":"x8xnXrnP0h4nVvCQ8NYc5aWjK+6TTT3MElW62rh1djEGs0zfJ9qhAyQnkYQuiRtC/BYkBoNvdlRoptyJwo30RrFKu6Zm5Bf0T7CEytbgT5k=","bc9a444e32d8f082":"8W4ua9GAoH+k5/5Xo2My3hpCR1WzwqpjZGwq8OZRwCAdYUJLD7E0o0kN4KA4g3QhFSD5qB8XmDAH3JFhbAsJ2HxJr9EziGS5j+l16teC97LQGA==","3024f611a203b484":"OFXyR5/H8vwNHNRAHmKT3RK3otA3zxyNNNBTuNg55AHfsNunxrBWurffxSfJgO/8H0vUv3xb+MJoRFTKIwfwq2xJgJcRpw5yWNue3IPSVgK2","ecdda02190a393f8":"6CiHlYOLIZG+pVQfSH/luI7PzWtmjjXuKzJVKHzNnIh6hAwHJGaMPHIQHGCRIB7hoJRKyPppTRAAZEwNCMJSs0JAmuzt2p/7LcdQVklBKfs=","1bbaa951e7299ce1":"zETqM6J3MwQmPyte5BDO6zZ/r/9CAVG2W+QaiaZGUNHr/FO5w5uSy0upiadSKilRVhQiboxCHYNynWTpnrsqvfcXVg/G7r53cbHWdeL81jlW16jFMw==","8ba78090860a9ba3":"eJKzqR7+VtTpmsAZCeJs8BVzCBSxw7448kM60lgsqxbrBZaCxz6SnhecU4QLjJMuaFcpM7906oNKaj45VVpeA9rxI7E92Z6E81g5pI8=","b94cf50a540b9f34":"PvHzMcmgaEJ1japKElRrLhkYa5FDhfaryARhtsQOZ/oHj5x6qB0aeT2GxjZsK0WQQExDLkVnx0c1/j39rXbG1+2X67Lq+NZii5Yk5TgOfMLifQ==","8aedeb4902334032":"Y+5dvaTCD3IyKZLI0oGI7teBZF9N2USBFEDESb6wB0jp9l780boJn+MDcfWb4X/ZsOHhCfBjdRRbhuBrBly3rZoorA44O79jhwB8aQMo/5MG","335394355611f8aa":"bjTFxr7YQbmlwofKwRHdSJy4xrEKLOF7JtUlsrIWM95SlHb633maJriXzlHqs9tPmQR2Cl1Uw0BI3xc1JTwwMLTAES40sIG1pR9nhmWI34Clug==","9cab704501701df1":"98QoJbnPPHGMClwodWNagRyLtEX3UQM9p8tfl0V8lgbLLTiYZY8lDvqOmLqIOjsQp6mNJoE74E4R56uPnQZRJdxZmmrwu86Znx1t3d+wfDFJHQA=","171ab2cb2c967bb2":"vB/efo66F9rAIzWF6w1C5q7RGKnys4yKQC8FixWB2UF6aEFdeL/3qr44CJs+LfYF+ke2ibpe+C+zt7zKoHTbeFGTWjYtJpOaXEkm67mmQZkKyk8vvP8=","f9b3d7ee2cc573e4":"8L+lQWvXK7R8FndpOVamWCUw7QmRQmttyl5e6w0B3AGcpVXRWG/CEISv2WqPULiLx/qWOzasMouwffgk2Bqz5LSl7hhCz0UmJdsYy3nadjg5P9g2Neqv","61589d1bf4d19d39":"m+FK1HPsw11jhUaRh5rFnXgewSlgvB+ywrjpFdUQBvQWoefaZ83WAnBsD2u61eQ/Y9qS+h21PtWLxJTZ4mER/AkDenz0sM9f2FxlR2LaMtgFY+6nVczl","8b76070f83dd70b0":"Mf2rVrOHyWLvqI/5zt9ABJFpwFqsRSzi7bAb/4KFh7+2cqNrS4BtgzS5Csm0SfPJsXXNod5+4X0D1Grsjn2kN+EulRJ4MDVXhpw2RXttOx5NdKG85w==","7954ab1029fbc1b2":"BigLJDPbI2+llOcceIUhiTrgI6YbGBeYmDp+yAfh9Bmf5fammWjarF2AqsOq3i9H8beJ6/lwKexyaC8s1BurGSvh0aNAUIsCVoDwn18=","59c8d28486837720":"SIwLUiYYPNJVuIRtj1zkwfOvb8jcors7anL/CMijMPH+npt4Qz2hQxJITOoE5OZu8uYsevkuDUFZP32pKEkhs34qcpzkcBhT0Y47JBp8Jvuisw==","d0e23ae5e28ec870":"Kb+9TXk2bghwgeZrI79P3aatL9/maDMblPxpssubW0a9FBJUrUGQnZHcdqmfWczx84Bkt60FY0dGsCsSO+EWOel+w42ASjk9xnZhD0cjt2OaIBffEhU=","89d2aa1b50db26e9":"FaqqK6nO79WiglBBn1raFFwMZpqbU6OwIry3eSL30iv+EuTF/YaPCX38BPx/iu+UVzqptUOuZf1IYpamfKFe42ap3w5mcwDRuzvzUzI=","33db7576727cca5b":"s9nVUDZo+xIf58l6oXM9FurSvExfSF1tUboEiyBdp5CAHjwS8uR47bX+sfXpCzcqJ/4XLTIlqYQ2npkZSBMc44gHaONMf7yWpWqVw2f/ZKU=","9613c86806ebaf9f":"BPabat0h0xMk86SFU+WoLTkkP478Su0IDXiG12knU4n9zgKGTWB+EPLPHn5tButsaZt5I6KReMj+KTpB6QAtFL4Z6ml2Z6VMpuw9Ew==","d146284384ab15f5":"EyXaCzmMBt70dxtWZbDjbkhPtHJz3bRTCz0tllZpyPGQOIzYOQtu3U8ar0NJm1DnVxau8FEJlZmWY12/JRpsGan7rumsvURuqG0sg0ffzepebHpP","613cea9f92e5f5b3":"Ooikk4G07huR6QyjtkOLEQkKob5QM9RWq6o39TDMQrnP3qT8oQteBWWbnSf0baaizq8L8yOWm3hIRClKyiEzIEoTbAiGEGBZCepVQjO3HACB/g==","2ad5ab18cf75fc74":"tLYe/LeLyXWCvc1/gVmaEzCGLkSQa4woGJco1LzNUaRurVH9NHzdMHMrmA70zlttA23+uK/F32i9AOqnPlaR4Y+EqqOFPvRrCpGlaX+qU5IgeQ==","214fbecc87ebbd24":"8x5P7tlhWtsgX8bR6sKgpLXZ7XRkTyimYf+52aYUqx/eZ44WvVkFnUyaUmOGnt4CA1DRH/06t2LeCaE/lflY+gqe4ZYajQqKFCG4m6oBLnXMgekO","56108a3bdca57c21":"GNKJ1+aplK6L4Wr6sFyeuu3jnEwjNWlmTqE1BQ3m/AWBb3f8htk5Z8vjFXdi1fS2i6+H4ctFsXjp7l3oQbOsg/5tIYpZ9LRR+kbX7M5hCeVCjGCQeHo6nA==","ff91fa889d2c28fb":"mxAwmpxQ/5rdwE23eMTpFRPhvptxMFRWm8xEpC+TZhfBbWt/GlhJ+C8ru7/XZMqPKp7N47MXsWcAE6Q+PNWoHai6bEmKRTkOxMTb93/rVSkvpyk6bA==","ae627b810e304506":"/Oju7+GYuzAPXxcL+MOKiHieS8vJsErnEpAu2qXg9CWXyMZPVDhO+p6obeOJQ++NraqWTT5s3ticQr6dtnCiZp9QwXOOndmS347UTpHoKX+U933+ZA==","6ece83f876bd825e":"ZTMNkDTC1dSeLEjynIZOJCuWqiUV1J9JL7yqlhDgelRAn97I3TYqYZBBsLJ/AENp7dAl7GyhUfdACzGkZlhrB2MNPPTdIL5gwGEPoWkI2ZuQFkI+wXPv5w==","c28b23d74cc618da":"guCmPLpyGyzz5C7feUOEbDugxVjX/J3UFjl2gBigdDT2WF6NeNzsxp1ZvpGti8ja5keVoa684HlMZGB1bVZlV/tTH8qhxmzALxTNTPBK7gpWUAeqyg==","4c3b1ccb933ec764":"th5zBDHxHe/+BB1iKtRt+m63ViP3k+8azJFjdyBlAAdU+vKuxkNYpwc/Krez5vXNrQb1zlI87CnBU3iP7rgpq3Un0Afbj8iF/imKNArUuuQ7qphSIWWfGy80","d80bd1e14f786487":"Dfb70i/A2olJOOOWGR1FrVRVLvRxlKYYNStH/7prqjHITPuS8ymMU0h1dLY/RDM1AUTi19DnE4uJ57Nu7gSCRKkdBnaxdruWnWoRWoRd","3988c3a2ca018c81":"JYWt86JAlG3FGCmL9mckHKI69n3hwRO4NyhCcHSQFLL4f+lYN9VTEsi7/8bf6SUXk2ieFGMDBBSflhHB9VX40A1rvOXpNMpNjRVeSjT7+8E=","6658e22e2cc28f54":"KJ4DDNbOvHKwoMsR9dqoft2BGdsBHu3PoVaVrFZe/rcyIZ2r5xD/a5zy+zEVR0f/7HyBPO4CuUuFA0Z76AgDhagTAf9dm1fJSsk7Qtpzq+Izuuc=","49f784db402d47aa":"IYKGG2PVTOnFN2AJ4kX5gBXKDcmAefctq69My1xfg+T28gCpvAVlRk6ONMwf9JAswRrv96T6ryW2tDJnu4iPGrNLehyTU9+ctf9nXpEjfBEl1Yci0qI=","2446d9493d9a18fa":"+eHPNMyShpX8qU3V1cggTeHBjZTTNFJT5qGfW6hSOq/cUGtDUJ9UPq/UJUEUg+Z88jjpUZGE7S3IXhTsfSiafaQhsW1d/JTFZHgl6ALmXJoQhyB0XWA=","fbde5eca4bac7c4f":"efM7FmAGu9QFpUCtNM+WM90BXThcpb8XmOOfVEV+XEgjqNB8I+LBDgQ3xMoER/5d7gpWYXDkyWBviE9AfR6mqEioB5azJraX04TpVmXR","dd6b8b985a9238a3":"GtOPjZEuy3ULWIkJ/e2ZGLoV2lvOpJExcGcP7n/7D6hnxDqkobLZpRlbw9NqOjyegA6V6Y3H2izE4AEg/zG0CPytdiTF1i63+MUxZruJIXPPEw==","44b8d300ded089db":"BwyIW/DoRR50K81BdShwC9u3TjWLFrrZKxo39r1xHvAl+S8EL/dljO+xHWDVDVN2sWJEDtl3HZZnHOCtfRfp5CcR0pglreCyF+jYh6LOVQ==","5ebc39defd8740c5":"yLYgWmQsObwcfBbrVEF4V2Gm9T00aos2W2F49uSMLK+/vmkzbd9eHcLfyy6DqPf92kPKsTdXXp74gxuMqiAitO8KTy6IPfq1wSJ/2oeRhA==","d7a33e03ed2db294":"sIUBKdM8O4NsspaZrd2VLArgJGiUvGeYNYENEzLHVhWOgDjh3FssuA1U3daiYI1/ZMLJtf+ax2ExgDl8854da8zoC82QONxVQMFDi7/gEd96","f6a8b5ebe7e511de":"YLD2ph+JbLYoG5v7kv3eJJq6qqsUmCGjlH5Bu7ZW6I92lxs4nMXbM9tZTH/EjNohg7eR9jyXfzitzaCahS9nPLhJ97UL7o5O8Bk=","40608c9e0325539c":"3Bnx95dsq98qixV2hh/9grbf/JqntJnTREiD1FhHRQQxiGQl4VCw5HLqnWdRRZLUc9QPUNHW3cF6fDl/N18C9JgZsG8VYWu9C50ItJUaKMrt49J+aQ==","5eb6caecede99c6f":"VVyLulugeeJdDGd9gzTOPbWsDtWykNr1ZMlQXSCdn0EWoKTSAiFDR8bCyRdYjiFXy/68D8zP4qQPr1JFumCWxYgYjYv9yQL0wcN40wc=","6b5da8bcfe2f1e02":"4br3ltgBMer5RoG1mbfoJWTIpLQTtBOjewLOBT2FQHO5Vl8PuulOphq+In8OcVXIfF0YBxT/4YkKzXgKXZIt8eXJlgyq92A9qtv5leg=","fc8e3fa7ca7a6c1b":"Ic9xWS0SHGa+gWcRPd8GJ5S1qF1rrj1VleH8pN16S7wAM9Xdroq1a5AGGUqA5DU2Z4Q/CHSKgMoXppfgAYV5kBFv+y+nqgqdDAVnuFxUzy/QeCmhjI+jhA==","5eef31127df94453":"5sXLjUt4D5ACs/4aNMMjqUTN/DyVhYJ42DKdk1R3cV6vtEt2INQaaMiBBTOjL514x1RprWSnKPM/+Q+91iVtP/LgXYNm7A==","c089e649d86871cc":"L8PvWqjh6WyomaEmzQ9mi6HQcR+GPDqUsPLOvy0DRgrNJw/o9odIJid/BrEYNfCfNpq2bawhyNmBpin3ARRBL61YT19LLMhEnF7Wlt1i8bVFYMi5UpM=","200397ddde08a282":"JlLeDaXniNe8Hx9kJRz7y5w+WCcjjJfOiEl3idK2o8/iamoilMlvd07s9GAYkrVIPwSo2QL79Lq9bQ5oe/LjjBAe0crHOMuZqAFhMs8Fks9ou69J7w==","c29f0317ac0f4b42":"r7oRIaHprtdn6s1ckF8kq8npeBhGYh2yLP3Ptx2QyewnPmUyph4mzvlAThB6kqKOtcgWcHt1yTqy3XspQWsmuK/SmpnxrDUr822aU9Qe1cXghpM=","cde2fb71d6c704cc":"CgdjagHfR+n64fohMTisCjpAjEkV6ualBNh+mCnDwZ8NEKwOgiidgrkuHNDuFE48D0gHzIq1/Bti3fXLkBVb0D2sOMQpBbW7E48WQWIGecHdSrVK","6825935cd5facae5":"Z+CvP85EUSPco1jaR8kv99zfjBX9IpkWbxgq2nf8rht5tmxkqeVmS2ssmRc3Vl8oQ5Z9zaejRcQDJxl9EVznopzFGA3f5YV6VSIS8Ei5jiR7GN4fXoBcgTI=","c35a06d60fcba97f":"qEZtq+DKrjy8hPntAINF4+3oHllimbQLXus39Q0miXFJ9mns8Zxl3FCiSI+04ajmDmlP8FJgmyxzM1DSU4IG1uQKXx992ohJ+A==","20edcb3a94df258f":"BAidV4peWIMA1gnCoai65r0pG2xIgpVH0pPPSAnuQOW2omgX3VTbPVzvT/2SN+ygcy3bFnhsuxAEuPjYKka05TJnOZXyLHlIX+dWloQVDY0N2MIlrylGKHJfNw==","62a767a59303418e":"IqBpKE6RaVb5IOAzLe9gHUkw8nRn28GIEn4AC0jHhdDKCM6GyjFGxnFAE0EcLH12jWYwVyVp8lycqZlW4BDTHT6q/mv7K8NGCVdk","ae3533ed900ba9b9":"wEYcMmMg2Bb5CBeZM2b4r098lha3kqECvg5pxXzcuXrd4oKQsrvXs5RhyNbIYkKdMH4NucpGR9OsQm2euYKH8NB9UXmf+tkO781qIFVipPi3HT3E","194a8af1e985cc28":"KRHtBGaqEIQQwFXtEFII/YXT+xUrhGV+UMvpcqJygn8N+adBQJAyM2ryEXAYruj6yGqMtSS6woI2gJDvdzTUOr9cDuYivpcx5ndXrcv9DtKGs+ugO/9b","b5ed7b420197eff5":"afXdeCPkBLeyMCCXyuswi9NqjlKnku1c9zamG2iF7P6WywOCnNDnhfv/TLQ5hZ3+CwFNkotEDQRHB3YrhBMLyqUe20y8t5njOq57BdA/ITIr2TiE","a03af7bc069f5454":"jGO8sRjYVEMWgKvIkaPhRehbOInmRLXSU0nU01aDX9BW8PA6HMaXj6WpfCVjq6TDskHTymlNbfRLTOphNTkpALeDky1Aj9V26rOlaT6N/UzO","c5aefdad6180f27d":"zRIad0/Cw5uOL2lPCwUenrj67iOG2ofFrE+xhy6C6S4PcUcZdH2qkiuUnzkE/5gw4c5GI+fnFyWZpO5g62D7ZrYqiXTvBCH8/gGk6seY","f20e2d8a8d2cb2d0":"2FMW3wgPlIxpqvnGZtnGz8RWmtBbciD2y8RlNlF6GzybD1yDH27nkCJFWIly5JA5s7Lw3enUskg3353t3SxUPb6k1Jsgel3v","9fdb53e07d743e71":"bJx707JPJdw5RlBA8LVFs9d89ZjdODBBjLGtApUmH+I6GkXkBMkU/LOCyjZcZwcAutkJUmE2e4lVreVsZwCf809jPxQvFwIpMIouN1365LD+qVbl/oYexWnm","28255ea50e73e2df":"f4s6D7rAoUcyLPVsa3gBv17o8843wmQivN4rz7sH/nXIlLX857y2y//M9E3JDi5aVWPwPhuPmpikfYTJUK29fkpaxbspC1ffREVBEH7RXuGDyhxjIRDNBV2N","3d81d55d8c9d5041":"SuQYqqmusVx95IuDykOI969RjP82+GzTNvt3rFkTC1w9SXghqEa5/A44TBjVwm9HJIOQPdnVGERaye7OQzXL6gAOC6E32qPB/FM9l3kj/14OBRhN2V0=","a8f17be96a2dce4a":"44Z3FjZ0rUdCP7tv2xsccmkWw/4PPb1idMZKt/zKXn0UFkMwSBHcsuW0AcGM/G0P6blPwMz9ef2kUCXc2PQQP9Z7O4hr2Te65QilylDbK5aNgRAS/Wg=","d44ee9e8fc36d5d4":"xcNf2qZVteE3vBVFSnI4hXW6vSxRVXJ9WW1hRtF6wJYNq354R1kMwcKEQsly6aWcx0LGq5CiE/B6F9z2EIm76qL6f2kOKNycE7oWVxsa","a00dd053816d88e1":"earsyGKjoqJA3Y5QiMJxYxduxb/bHZT3dAE1A1kHeLx1dV1jgRBtot+lp9LTAEz0Soz8nGwsFKPNG/bIhoPwX13uha0b+5dEkDAlSqdTgGqRMPE=","f9bb72e6b82ae656":"j+3lPdNWKeGXkm3nVjLzM9H8+/yLZyh781BptDBz85gzIzDU35U/MsjW2UvRKUEnTLsqLhfvTJCnv7yUToKH8KCheKXD4HuSCv2FSdOiDM5qzEv7kB1/hg==","be5dfea1fa706442":"mYURd3T3XfM+axFMsdQ0u9ENL+BmYvJqxcwVtmNUNLKFlsL3K74K5uduzforgN5PWftTmhVybEBbLTbdZGPEOLoCFguSlCPlvmRqk5wc8gBRXOrNAIYvTQ==","e2087cbc9e010536":"AJMIEJyo7mxVQh2UYxZqoabArcnR/VLNks866/UMBMoEZSFCpihf1w9WnWeXs9BGjU5sNSEq1BsUSVE0eW1Se+pOXsw11O+L9Lf/zVA0Jw==","1b28af1d55c8af7d":"PsyWyU9Jj44ss/DC8EJEFnETzYaMaXDE0RAtFUs2BQDTA1UIlO4pfURoDI5jzAH3USGbegDqAoDweQIImDwi4YWjcJkygETkiW2gEHlUyMxk","1fe74014fa652c91":"hoBJGRk4pE38jrWnyx/wdhUlCjw4W4jhK0N7T8mMVYVfR4e/tW0ozsZqVoxwfhoR+4JuWQtDsMJP+ciHIekhIOK0IcACJZz6H81L7AXlblePsBAvmcqYcElrWw==","5167c0ec84ef20a9":"kyboIhfFP9v03TgG5hiocd1i7Y4mmgngZrwoYNCn6V7iJyInmWVtiNOO0wPQjFRYzfLrswN/E8a4oSSnNOVxjlIjVTtqfvR9d/vyGiUw","13fd7728df162ea8":"kOEFRDrCnUmvA31cTKglL0sRA+griAcJB3CORJDPwCyASK7uSUrTKtYRdvhPggHorITx0opqeLzXQrFg2uq1Q8Rj6cosCArPCdFwvzTTsq4FUQ==","28e518ae20763660":"zO6to8KZS6RB5NYEWuqj3Ri+/8k1iyeZUi+LEwKcv5hTdOm/2x90YuRIUcNAZv24+RnFcWzNnQV2+dh6l8K8CNmFMsBLJVsIPMCEzPs=","1266218e27d1af31":"NEpjRnqFbNcVDisw4pjTCqtMDD+lkx3ncWawtutS05kvoYAe/dzqbS84MVByfdGfNkiyBMv4rj4nyjEM0z+MmtipKP8mV923jKf/jlpC","7b16f51dc952cdc0":"xtGiFqjzA8B2chv01QUqBmDcFyrkbI8HRDWoMpCotfqOyrMQHh233f9vI0HLZrwbKWPrrVenWYJWsk5u5HflTG8x76XL9pJb3NY3/9Q4","a6a7253c66212c2e":"8/zTKrL+pkHetV8b6R1WYPbZiEyrhF+CMOW4dMol0CgJEEwJXM32GstcKRBQJZm05vVPPt9wwYkekAmRCWUXiyJ6iOT6vqU8MEB/x6SbIiBHib+8","dcf79d53c969bd8f":"+hQTw1trg74mY+4qK0hcxC/riUrJ2ImL37LF0UzNcxneY4dbhTxrjch56EhQBBqDCuci0iSk3PAF0qfdCeKSBK9zxNbixCPOWHEnuKU=","b74c3385b4351cfb":"n1LbF88MkPj0Bk/c8I8g8NBSUakqmm/j8j61YnomGcj3RyuENpcn7rGuViFtEXUeiifNe6SPkp+oYTOvSqWpS/D81c3XMgfSh8A=","f77e657c79ff99b5":"zLWPnEpI5OZtMyNvz8CrHLS1p95ETEUwzXcXCYq8ClfLHDZEJQmXPnvAOy31n65yE6WvGEpzN0PIMPHCrhj7Oi2hAUtfLJb2PdDDaQ==","5a5e424ca22257c0":"13j+dEeFIGUivI61PglUUrmNf2YnOHr+k85AyZmGqhuQ46M+aBB5Qk1zNHaisXlDSsdxjuS5PVfPwBZ0Zxv+x7HwDTL7y1axAnzC","dc7d4a3e2401c389":"hPL+zf8KaloeSRG/DtkGxksjReJS3jWLx2+NpLiYTq7WLnYcz6DygRR6JaT/P6TxXXG51REKv78ag+9R9pvXg7NfKV7yT2pmoDK05qAvrIyoFkk=","715cd72f06ed1a94":"pQ6dMw6Go3AmlNbqrNeKoqTuiF22fQPCAuiXYMHBRouzIdulXNRUs0l5snIffPVVkYRYqGBjEMnnUaeOGgaBIUrMi12l4lTnUCXrlQrrjHis4A5nBA==","a3c45d74862e107a":"ptO9km7BOEecFo8ZPTo+JNuV3dMHRSdWZqwZZiKRDWGTXF2BGnWDRHfDROZ/u5au5tdt+mbYexu3Zulrzxfo6B2mfxMfaP3ahroniZmafg==","2164f1af699273f2":"F+Yo23XqQVXQqq5tQCsSCDn6M3x3yIqdVMiZ+22tXWcYYZjB9pw3nTdzSuBDaPoyOL1CRQdMw7++tMM1NPpgh4hAEvXtZ8gqle/ApHpoyLJ5","029676d545ebddaa":"0tGcOdWT3AlvLhQLO5qYK4lZX11Imn9THMQX3zSO0rbGfcL0x6SZevbJml9EGjSyOh/uL8rVK80XKXrKs4xJ5kTfJCXlw9k1wgE=","c122d379a962fef3":"o3tT1gdyp7X7FrKch8c4QoM3YgwVsINb6iEpACsarTzxS29IGaMiuSnsUSuMD4LBNhqwez/fgkPvwehqkgeyYOEMTp5d7kK4EpQx8yc=","c68d2f9a13919ac8":"MpUbFEeSzNONzOgWXmWoFZ9fMdCREqhAmoJ0Vvge3jBdGugCqkKNlQ/BzeotJk1ndLArbuHEYswjXCvSdK1mCjqRCs+o54HzpdnrK5vl6rE=","1acf6f1ef0fa5280":"HJhvqdmscs+qc/Bvpfbf6nv1D/Sc6TQB4tvZupxHy3SCbXnCb6evgAJtMjXEQUGBMo+ojlMts58GZLRzOldcxUDL5gIcfgUeX3HK3xwKdJHN","6e40ec55de6d804e":"Ekd3/V+UUSdmoyHouGAarLDCqbgC3No0h2TKsP+0zXg2aBwinOpdoCaLssNQo1h9QyPrneYUWzqm/RVLdSHefCWxrhDBgpJwEeWTHIU=","ae6a9719d2f044a7":"fCeY6x/2ce3ncqF5Eo7M851jQ/0y5s3Zsc2u1fePoM5sojZMYhHcpVwuntL1LfWVtVTIrRCASFMawdtd7zGs1FyawGx5DnQIhAp/GXvs4BMG/Xs=","b44548265df3d69b":"giuQ2kuoAQdzCGCmG9OogpyH+pezZ8Ai3zJrZvdQp+tMY+l/d9Q8hHLwpQjfHNa76LYoTWjACdZGOlk6PPLd/p9kIh0Nvq7mG+OqOo2twkq+9fUwEi3QepU=","48577ae549a0ec5b":"e6Xqpj9HMYQIi+vcw3yTNPbdRFUG+H4FV43pPHwItmCFh3B6TR2xlHDSdRLb8Mb1J2ag4A7yJjjNhnNEY4Qlhk8qDyXPvtUiUNlEaN6wNfkM","02eb9389160cce66":"D+dUqN+VvDQYAp/IOc9j4OzBYCOI7ITwcbQ6Qtxh4MTeXCUBCUns3ljwXrifXl0haEkeAhGkLToYscLXiWcHcQPVIuXHx9T6rZAs5AWz4hBDrA7rSr8=","14f83edd22ab401e":"bG4L6CrQHMR2pr2mrCvxJugGHCUwhFYNFH78USmhog6RI2gARJqqRqqPktZrUl1XQdobSPGDVXkhyQ9FcQJJS0qKqodDp3y3esQ+M6fE7gb5LR7ludltWfLM4ts=","85e45af0df2d00b0":"0vpoPsBQmkKYKdR84WbC4N7jvWAR6hJYivWeeEoAoNZr7mlg4l0H8PRm5LeY8Eb6H7Td5SFV+hb+Fw3oO7S08aspY3Hd4uSRi29RCIfJMNQydzSg","5a2d9313794e8d34":"C8A3W5ujpNy3VUtyEGbfbKY6Z0xa/uyPQYBRnbsIyTaB00Hv9OIbceEKR5vmsInYPl5JN6RXMrYOEyQcZCP/oUWKeETVw9T1xz62To78WIGF+Q==","e57b321f0f7a5dd3":"Sd0ABqvHZzdmcTMEZ9guORhNfLmCkhwYzSbWT/NUM03zGy4MkeE1hnZUVSvugE4GnUPDLZzO/G1DB4N8225SPkdb0zuWA7xRs5B0NY+Vpkg=","66a675b5f884b62f":"a/ZIwoqWRDJH27i1ye4P8D+A/TV0ebSZlY4TrP1cpLt6H4cbb/0yaTpFt3jHv1dHH0rTPyFXZUv7a48MWCIenYY3qeK8SmD4ZrscOBASxaL2wVpcZEdDq/SaQOo=","26860d5edc1dd099":"ThHw97cGQGIMELzahccj/zjlF+LbuJfRPJfc+XKnduipF7Dc1KybGrhjbrGnLyeU2w0dTm6M86IAOh6f8Bgbp9lhALvgoHJqjVGorPU+Q/zAndUhQw==","22f3c1c2c1045be9":"Xbvm6ZvIeERRgRqxr4pb+JSXETyfPVI/XL+nIwUXkrEL1+2/vrDfSXh/k6f0IWDaYED4kSyXPVMMp/j7hjYbLegfhiasXhz7dHzSB7k3iOr8u3QPIr8=","2d452abff10012da":"A/hT1/zkN2LLEev+9w0fxcUyXSJ6LVVajVVG/qy3O3n+rM348393WhnefUl7DEjPHZTF/raigBZjH7nlt2dQQ1CjkM1x+Mbk0R9zJSu7RqNasFNi","3e6d3240d6c0facb":"vUaHnUB/hDPJBYmBm6I4wywN7UQ9DCVT3Wxt+HxnIE03fQWEIGjnQ+b0zZh2Nvqo/baQUcmPICvRYGk+/vA8qnbRQ6JpL0V6VtKOB+VEj/0WCQ==","8a0170c7483ad464":"h8c8Kn9Sh1X45IPcLGntNT5bRswtus1OPS3w70JAvnt43pjbvbjUiF/Debd8f2Ud5LtoibDDPZkAytJA5ncR34FV+Gu5tNj7VDxEtH7ncg==","fbe50be6de8b9dea":"H71EAMhR0jWLHAWTwjiuEZTxB30p1VXvm/JM4QsgzTYLWivQq6Ei2sGd/nmeB84jZGmHSXglNIUXSRAS6NYSKfs2uHAiFzq/cruUnyfEWA==","d70ac1be2327c01d":"axEiBzZulaz+wMTOO1Pv0PNebz18jmgC0iw/BqwJPLnVMcwVLpegdJwcH94yhTMvhfIJbsuhqgg5NENndHYD3USl65TtnrJ1mKYyKF1c/RoCaLoAglE=","106a85862614efff":"FSdZIt9ID6XztzpiLhKzIOTp4pNg5S4mo+ST/Tyvs/DJ6ZhLhQW9mvoceYvJOARyCllRhUSu1Gc+qTkso6aPqJNu2xhiLs78Gne455UfCtZLwQ==","7b44125725feaedf":"svJPQJFBKhrVz5rhAO7HQ+XYqZnT2bGn8m7KuCm4pWc7kKvmk8D4oL2nda4KE/g6qqoMLHgkDTiTyZeAjht2MrC7nNnjPqUhtUC/A9A6u+9x","48e8f803322828d5":"nLnBJl9gktg60+4McfEA32KsJ1FQoletAwqr2yAGhFyJocwR81kZ0VaRnRlKW9esXY8cuq0MyGT/hciDFnp7DNwN5RcIv4blU8Sy2+wO","69619f492d14ecc3":"WfLG9d6jeS27rT9tA8HpH/de5PJtqqj00Vqjd9NC55M8cXX6lULYzgo0V11oTbjmeDfMDDujWm49h3VVf9z+6KKleJJZdBdicE0RIkeiGWuO","2eac1c7e068e8834":"dbfcyV0RVBzJ9W+RwaxxhaTGoEJKJQoRB6j2TvJEw7+Vv/JTS3lysYhWaK55tlVH50oi8ofZ7+zVEDOrf0cXI5z3SL6s4gaXSIcitVMuAw==","41d765767065eb36":"RNHAntV2whTrC15rvTJ2k0Z6VTGWJi7mQtKI7K+9WsoohsDflOkF94EiaLfftowjMNyftX5KgMZl1CV6QdNpwYkXv3G5XQHMthwSXQErEnlotyE76kVKOw==","6b2f77871aa26b3e":"MiAFlZWesHTx6rcyZdrmu7cCzU1EGOt6lnOWgA5ZBF/FneJUPpyLGN2wpxPyhYg+8dhoWFdW4zY+NmFBqa+kzzGvpZpqipUpNyjr1AMI3cM=","fb5c4771c87ce768":"Hk/gDNaUZ8y4AlLbnctGa+CyJs7aTU0aCvthFpjJIBDaQyBHJOpggOGlpCqK1+ArWwI5lBmldxbPKRihYIZcAn7XqZ+0QMRbVME4T8R4U0yZxM4oxvs=","f2c182ff0d14b090":"Pqvuay08PIZqOVJjGW5TCoIAzAXKNeqTpp+Hmf2VOuaTR11HQoV/Ya9ChgdcIEOIyKf/gdnwg3C7nIrBpgBYLlr/04b1wNsFZrBjQ0fedhhUz+70HVApPg==","6f8ba1feb7ad9ab9":"z0GZrdblkon6cTH/r4LoVbV7SLlj5FZhN79xuLceyJsLHNG7q3A9k7lLx1Byies0S/t11RDt9xqZmRrJLdzWECg9+Af7H/48WIz+LI9VUSlX6a9sT+MVe3ID","c0949e7826e037ac":"fuwz8ORBhrCu8kqAtXkB4OAGoil4buoipQsqhOseEwwN1mJ4aShsUJInNCzNBAovCTcvblaIF6bq7CV+Rpk6+hBn3FZZi0N1E2TmbqPbC4Q0vc6QH967/uq8MA==","77e42a4526542e42":"ss2GoYNxVP3jXdWamkWcNAsceQZi4aSZR/kX6rOcpzIg0OzNZ/TfceLdOAmVvjz1BgzOA5/I4tTbil5Ayr0Bf6OFIxjkojrDIom0KXu1oqKgFA==","65a3d384b3926ce8":"NyAOJm4M1ygvN7e5cz+Vu7lk+IpxL+7Kujr7daUGLeD8+N3jdVWQWA3kNv9qYILv3igsdKV4wqojbGXnltPfRTayJR7hVQAECYacBHo4Zt7MTX8=","5cc6641713e0ef1d":"yuEbAYQQbWN40IjdRhHgfQynPA3KKH59doGzb8Oflgl+5ydrP9+Z3TlZvQQ9E+Yo07QAUQ621d21RghrV1gd7PfmAfAz9wvN+9kordAsN/f0O/kGwDSOOSYVhQ==","f02f5c4cdffe6a9e":"PAYEpV+gzSImq2oVljzToLEiMzLRQpnBtsB3BJFuplArvEab85/ju3mbPf4tM9x6F1JiO8t9zIot9yCgP/UgfX7t2jLphKHmEohnOkMtsQ==","3ca48c057d122510":"5XKHK761G1v2ClNcfcCo97tVFaPMG0GRbG5kfxQREmUmQwkabLViJ3jwdtlxptm7Rb5Z932Ctr3aE9aB9GOkYqPmAbK/ehiU48A=","85a9098dda748116":"eCivtO0gcuPgEqFrNseVd+ud8JoHmIqRM4LAljvXh9aXufrdHqsbraotNRPYYoLn9dxNcIzf6Y1O+iBndIKFdmTnjGH4DacYT20eUw==","169ed54649b22f62":"+0hvzG0pqhUZvUz7PMo4ztVUdNaoezDCg93ZvzotBTI1qjg6R9PdwcdGhaUcguUb0+bv00Gm9r/Q3ri2qM6nC5iZ8S70lCnxxvurnlShrF+h8MI4bcdg","f850168da6007d82":"72L5I1gPwNK0PiiiLcyVV6DhaW3OK+06WalBSV6tJO90daNRK7PnztNcxoxtcaDIEgbH5Q3l3Y+8U/wiP7ntmN7PDwAkta2ZHWq5B+vrxcbrUFaVy7RX","908a66ef5651e717":"QN9LKl6VmhDX5vuX+FMn/4EtQZ+hV0UutP237XGUDvhMTv4GDMh7cSvw3g4shPUvEA1YKr5HDRocoTKB4DEk9vI2n4IXw4Wool2gYg/xlv5VKFKqYg==","190cadd5df0a44b9":"6UEeFtf0L/tJFLoRTBBeu98xFUqCABvbANhSyWM+OFjO35A2zoXIY8idcYTdgl9fKj0uLnt0o+3jZTcd1xR2bpj2n1f+/zea7SAi","978143c7f823174c":"vxJmVSIwbXrV/xG5XZOyy7RcKrszn7e2AUJj/KmMaCEM4k96t1VHMzHqlD7g8JuwocFs88y3x4sSH3gIekeZbB3g3ZChLLTqRCvNE53V+RvMT9zdcMbn8IYf","8446ccc9f9b61317":"KMjtlobWPsyRkPFqIt66NeTy8FuWOEcgklbTiDtbuCWY3O2hGwN0DVn0FcM3lITvmcy3K6jQ2+9wcX0KI+juJhTTVAIZTg==","d56e7248e1e79b23":"ipp16P6YHtBP2aaQXEfJ3WosoTARhriKs/Ne9u+CmA+N1s2mnkiTOrfBRwXvzKvAfoE45QofhYlteI7HhYoU4ciZvwBayEseDWdJt7A=","8e64008b3ba91d0c":"nuyEdF17SaoJmdI693cTA1ggLzn3VWfpdykCcyzDdBToy0iUbQFQCLC8AYWoGQuxfZikT2vnfWB8pu6tZn/1CXR4PsX8qqZzRzhWb+1+DzY=","eb3ae73463a31dbb":"X99ft485YcnMMVaXMB4ZWC0X8M/AxrID/hGW4rNvwN+mWVaK4OGkKSAjmqP9cdrk/MmLefCjyNXfOHclNd4bBcJwkvIiMMMT9CIIK7Y2JlkGKq4VjEdNRbM=","ed1751d30ca04d37":"AHY5v/lT71LKFkfxDEY+Gsl088IoLS+ZtM/24QuP5rfk07jeWK45WTm+3frcrpjohKPPBjv7XGexWQQFkNs6gx3WhdtswqsDNIaYzkJCfji0TK4=","54fb7737514cef11":"rMiAi23Zq72cTPxWHozk4w5+23lysjffSrdG0+UxxbN8jvyG3mcZVppI2P8TFeqPZTXhVH7iGiGAHW2te7+ZgG6NX9EhgFAV/SZ7E+xl36ACyg==","6f41582881f4967a":"E+uduzWTC+DTCGUThcPRJAC7VE5QRXtE5YfSX/vqBleYwBT0qldV9hH5MJfDNkGR2xXZwfunQxp5zZxVofkqafRXrvC4t+OKfho8f9mhZys=","0bfcb7d0e940ba05":"XJcI/fkIb+H0Ahaff1WZprcDL8vro2Tz+xsvm3Z19oPsIvJAgXytB5uSQHsQMFTIqLY+gfGUT2Qt+jJGA+EMMNMplBAfvxNunC4=","21fb1b9c215fbf38":"iv4jfaw2zoqfcCNcViabdudJ8wEqXUN7HoV6hgskYoQ6Bc/QBV4CLrhXhK3Toa4HEld4xX3+kjdcXUVmHnqJRYBzKGtyMNP0erHqrbtkoBOL7kHp2rQ=","ddce4276ebfce2bb":"la4bxfy6LN1Sr4JeczkL6xd0j6crmr4nQIhz3xfWtHnvx1d/VBC+Jk4bDJufqC5ODGz0/m3h9Rm/DdUofD4iixumaByoXlQVoL08RBPgWst2Z6ANvzR/FQTSzXfNXvy6pB69ZxktNcg=","b2afb41980a55fde":"uoaszHogkckISRj6jjNZkMh8F6GSjpxw5QsucljPYDfDzrpPYUWL+0eSOH+Fw62I2yXXB3iadxMnKOJMXEmO3RXridTy3KpzSzHlLryiHM7pqvFuxpiFYYC5Bg==","9c79d21f033e9947":"5oRBVPJhZXdJUox6wGKe/0d7Uy654TvsA3B/Q8ytn6QinZfuPnAYBgYnlqg6s5i0GV5OmnzPa/MfFcv3dRymdb2nAh2kYcy7vvjLRQA/388=","1500b4488faf615c":"bYQIbIuWRWNFMojaGOUQVgbwlCzUA0AEekS+1cgyPJANcPuRW7kDbLG8MPy/0zfwVChTnpJ2TC3479ZIsv2Ep2z08SCuJMFCV7Ag7mImiAVu98BZjzI=","3ca5c6c883716beb":"EpckbAtf0k6fHqWDA4a+pik4oFcZq8h2tJBTasGikA+ptVed9wXzht4qPSBJWS9O3V7to1sw6ni+67QxkYRQl8lmWdaKSKjKZK+/c/4NLJtfa4V6ZxaY","d32fc3d24948ecce":"ZPJ+c0DXXATkOo16v1GBdngmKR6WbOwGyFspv8OjfpEBdnTWGIdaaBPlh7jVMlo5ifpzM0FHWuBnUScRV3hy20261z2B0MC4qElYEe7s","a7d63c4c953288ca":"EM+Bjc26hoFinGl6wbybe+yI2MUv45o9bENRp8SxfmzOycfuauzH/bp7Knkm4keFmM+qzvRgXNgsuUhaO5sML3bGSx6xeWwkkfHYkg==","71f4eb4e41e64eed":"44WDiPtiueGHbiRtrsKQY+IxGQlNP/SRvxbdnNqBeiGCXohC+ICZ2HWcuMLY2eAlNgBkE7oTjYSchDplRsxX4NdjcVuGnkwfVjOReVYNCHV+yZXC","78bb5a8fa4f813a8":"+gfyOyTQ6GM41uBZ8/IDDcDj0/XXG61Ly7gpn0rR5Bq5Icfxf/nFScHkQLRPyqWNHr5tbqE7hCKdsl7o2kR9qy3q5tpYa0liGsJC45Y=","2824983798ba9109":"nFj1j4pmdfBFlPYidPRdZgcsoJ+1y15stKW2GiVMm3rnGABRYk3NEfoZXFC/zq9QS2PADuwW+VBaV8ym7uDsTecYN7YHZNdipaw2LBKDpCn6pvM=","68069289cc8bd1cd":"MzIjpvyUAGG+duh1lhfiIRafIblDVxMz2LRHHDnuDmWzCFJhg6qcL8Wo0t9WKZ8NEaD8E9XlEtSoxejwHlJkLaOjDSSyKkKSmvOgBelUqhOuLv4=","a6dbe3cb23490dc6":"Kyg5A6PyiCceiFcXIlyjUNhoZngQCvY6dNIUTeV70OLCKorPfAdeNk38bfGdsvnChNWQY/mIy9xcv/NAiwSv9IVyu+qZZPSrPp4GXClxHzM+VHUGnlpm","b123304f3ae1499b":"5pl/Cpyg9C4KpkkwdW//BLvxMh0xzYvlJS4nBYLXx2cuw7tudd8KRDGKbbHOXAVlypxrQnTa10Ew3XKf4Pr2pVV+PyfWcRw8Qi85BLdMTXabhBokLA==","e6ec4443866d9ed3":"MSTDVi5v8l1fwOxXQo/v/gsMHJaD4VZaO8n54JzPuJwu7kgjUZAP2iwMh0EjLcnFZNTJ1ItrpdDCtrSOVxDT9bGN3+g202AWVbO4Z+1BY/2oazHaNT0j+XE2JVoZIg==","5a69f3f3522826fa":"MsJvnXk8iy6Vl5wbUquZ5A1JctPskAf+ZlnD6ukFmTTSb+rZZiLhdGzIg0eguOZq6pV1GLwh2ZZvIDq3xbozie/ulpHoXmtPv2PnVo0INlqWOuE=","674bf1a96fc8550e":"VtMHO5iJQiebbZCAXAhJuk9Mz2qopZJrtXjqUzXJHcolaOz+itIcqNEvutUXXBhUcAPHDv0UoG8Fm1jLCAHEry1sQl5eHg==","b8b974a7b554181e":"hW/9Tg0iU0OA19cfCUNVim7s3styhCW8a9k1yzwJWD+YmcFNKmy72OUGqdsL9Otv5K+mdoC0oWuW8/mhTqYYcy/DSnZ12nlCpaiBfkVzmM2b/A==","4423e99c50c1d0f1":"axPf1blEOcRswPDLN309EM6HziYc5lZT5uhYmMnLZd6wQOc9K7M8w6oLQ9VojFnWVaKUioP2ULHTs3/N7mk/1fWwkQ==","10fc0d85599fb0d3":"uZnXn5x5ds3aPFRN79GHc7GStPtjKenHJQTJbAA208/wQ/xrUD9sR8nHizx0bgjjFMioUS8Oa+SZh5EE7nGrOpkrFvy4QNUDHieEenCdJC7VzZWS7XWPQp3tm1C9ZwI=","a5757e56d413b91d":"nniKKDpJPf9bqhCIsN1qHQJS0omaCq8O58U40fy8bOoXj1H7FRBg6BqYEzSumRPBPgHRXjQ4Qt54/LhZfvzH9Z0leJmHSsI9+78=","da36728b9c5e4bfb":"eLNclEvmq9kYWITHeCFY0DPzb54hHy4/XBCFO3GMcav6suPchuIAXaDao0jN4JyeuhElIHOU5qw965InFFCWCkLgTFx57Fm4nG5q7Mg=","da45a248fd46b561":"mJNR2TC2HvyO6lLTfMOmyIh/B4A1YAY5jaTpIUe3p0cq8NeJrQ1wTckrLJ6UeDaBiWcMnBLyTk2UtSG+l1bSdLYAgpfD7ac9fECuu3dBw/rQeKs=","0d7d1bab436dea0c":"/Tm4tuErQAVaTmEQNsEXbn//NWWfkv/KAUxH1dMEhrIYw3j6aJLB98cSG6ih8+ei7lhE3dwZBQrJ7b/d4bkf9zfpyGIBoHCLg+Q=","906eaa0ccc6b57f3":"dB/Kt9EF6Q6Unp1eKpPCHSs5Z34XsJ7xKO6fsvvfIfU1V+iBARke9SnZTWeMnnMYqx8+hPGnYwGJuBK+HtvwPFtlWukEIllFFQiIH1NZ4w==","9ba8f99ab7192b91":"D4p7kapkLWlTwKVtges4avU89lv37uwTKNMW5up+NwG/9J8wGiSbG5wSIksI3kCMuTENdLHB7ZK7V81gMpjQEBtGzW7IEw==","8d7bced32c2afcdd":"Z/G9+EuIBQbA262fNkIcYiTgVw5jS6yKD+uCYrgI/E1PSVf+SmkfROywyTojq0VJAXQuMy2wP2wabsMfZYNHHlWxxIgVBOjWv0IzPVTYFkLr+LhxJPcXeBAK","74ba51cef2bd5f3f":"RGnq0DTaOjv/P3TLGfFYNZiEB7ndAMkp4X57PfK6EcU8QiIgirdQ2cI0yTRRvumxVbaaPT/temADBdG9S7cbRjQic6LEun8L2ERkQ5ZONpPyAWFA","bf23fc76ae4858dd":"Nzxv/7dtxXOhHlws874AQ2KESVNbHXS9BmxMKd0LHz/hA2v9hOX3aVEtdfUYSoF8agLbtXSLtl0cbI8HGNHh4ih2sT5H9Xyh+8hAjrrygxqoVgK95rmb87ev","2017244b8bf84349":"j/J22UlnQGgjysQL8w9z0lA+5WQdR9r8xycGpfsx3LzJVCSffzHUmI282imIW0yh0MmdSCAQVkC4zdG9unjEWQHEEuWweRnH9/21vHig","cfed1bad838ebccf":"jSCDEWlC7Ib1WOs5B1T/AsQprvlR0iYDxBYP2/M3Ri4qlGEv9bbC3GpVBbm6rSbHHVPU1xxcnTwILwqN4Lh82BlV6BoLwSGRvK8=","c28a3bf75833ee1e":"gXHeS9SJl1047KamvFmhE8Y6wiBdpIjEc8pHR/yoSUd4SetSYcu7VsTSGkMPI84YoFGKBI/2dI0RISYzAu9n+/wDUEdFNOvN2SQ=","8f45960a8df22987":"TgWkayXpojG2kUaqDHg/DI+ecaxlq6F7NQx39hSeRNv0nBH0Sr5zFDOE6fDuWNDA+pVslhnv6LXfb9J3lA16LzPFHboTlIy874CQzrgmGMWU9h8Tyi8=","ab11c62317610343":"rJofl7w7Woj8WkvmJX4x8tjeZQR9WNBfAKRBzyyq4r7K7az7J80xfxOMGj1xlZmR7cbZC4FzRr4hw3pgLevepCLD9vY6seay","37b77dc7e371da8f":"a4k3+QHwmLwc6YzY1dqoyIUgjQNDE+7yMb6X0VPPqwuKNjAWNL8Qz7XW+K1xYhNmftxnUMofcUtF4ImrobUEL+vYa48rHWDC","ac77c4f0961e5542":"VBe9rK8skBhTFdLKB+3aOYmIWdG5qkdJ7Tb67OWp/GTovFrcdbBHkAQjzs5jNJatqibkjziMiUMq8yYAbAMJPRbbZ/slYboxdM5PpKeVWpka","135e8462121c6e41":"r586+Fu84Gb57/5VixbRYdvC3zRzbxtYxLkL03GecUjQgscfwMuNFG7fLWE89UlMc+IjMPlihthX6FZC7i3m8xIO5e9FaLlh","9a0bf861fa314576":"o59vcV0LsECvu2qwDdt9I5mAuZzQLRfPEaZHkavmou36++IlHitI8STU2b0a4vkMZjCaYU/kLz5BF4iLARRkVkqVx6rk","9cf879c0c1daf45d":"pHcB9qWEdl2/uqQbfL7Rjvop5Mn0eMgR6cfzjreCEJE9ZiW6+I9FIlRXUEojR36gqd/809EHkYLcuNtakuI1C7bg5O74N30=","8b98ef25948f49f8":"2pbv4dxVgs2qHv/l937kTryIZ0joJ7dg14Jjg57WQaHOJx8PJaBafJFBynIsSeHy/qJgEgws6yd1yLp4CjZmwLZqeuS4fSwzrd+01YY=","412bfc0ca2bbe390":"QC6+hxy/C3wH84aisbkJCDzaKGM+WEgw5kkbcv561dHtEpwdsGBBsJTWhlyCdYLctqkTq64b5MPT3B65Dqyqi9/FVjH3I7vn8vO26cB8nXooMhYT4hh0+OBLnQ==","1a4347de7ac92729":"3IfTyb1OBQm0AQ/DmtokVO5XCab+vicl+D7lk2OhEdDa1M9VTQzD0JhiVIbHg4mfTWk0ba0WJI2oZJcP3CJBbhtl7hexUzfKRx1zkQ==","11c3d42d7040bb43":"XgFKADjQenZqrpY4GYw/5m/GCrsitkSKjKq1CxAcJjDVpypVAyRd9FRuOarLJsmMhuPFoGniI5ioDvPqxha0uJuRMlxJeYX+x3LV","1a446ec9e0b71c99":"x6yOBHOHaH177gPTV01jBnw0vukMG+1qFWLgpxXz16RCbFazo5DtHa537+lmcIoznrdC1UZpotdm+xE3QC+ntPeb5tf4LHLCt/6Y8wFfdahx77EkqA==","1ea84860ea6c7c42":"LwsGUCthHP/FDEgeGtPTDn8P/sv7xs8CB9mISP86f6a3C5Bln9zPZ38HNtrgBdfQ5gFYNyNYlSzQYvmQHfd9N9VK3Vqu6AetlLrekgpUwmrtZd8=","6eec7cb8f91d0248":"tTAIml6Rl9JMK+YRQF7mEj7ZZB9JS+RMe7wizbaPs/McZG15lxvf01BmcVGksvQj7C70LXShaG0dddv2tJiE3TcLjknXjJ3yI00d1ts=","c49b922e29a9bbbe":"DmPhA7F2bXSBUqQRspDlJYxyu/9HDwuzasvHq/0Iln+DGFyBoHYQ7J9qYSCA3oEiUIHm0+Zd1fUBgU7qt8qNFHDaxwnI0+pQN0208kg=","041d9b7f943e4fc6":"xFoh2nI+oUzbfEMoaUqctoUU+R9hY3W9OvYd6vmf0ape02KP5kvbORcpFC7E6ejzNpSf9PDNDkvQe6yadMx15vY1uQqS9TtQfig=","5906f0f1924da6a3":"K6fuotqqQJ2Pk+mX5xUQYMN3eUSeRFGjUxCe1uMVAVDSPcWjxdVmM/ATFZz4f50Tlgz3qjMfLe43nxpAzlskfgEiiYE3En9IwSw=","f4b25e1e2afc73d6":"kERtqwxIPkPp5ymgW1UNFP6ug3X2UrsVOszQitBr74EzrVKDAjXpoFt1PFHX9s48ELG5qV/bdW6s5J3ThvFKC58h+0B9DDmaBE4CpAR6pm8Z0A==","b1d51a049335eccb":"nLSUcNzOF1eh2a8XCchrBYiUWDSRDDMZlIDS7b8cVDAphQlwwfVcmMq6c0AnFYQENnRI/w3yK8RQSb8GaAJ1FB+Y5hEm+S4tazCubk8LtZ1XH4Vx1no=","6105eb79d07df0ca":"Z6g/ORNAoEz5sBT5rDNMl85SZp7qI1VYxEErIn81KmfLfykdhL9GipaLNhOXrNtIYKk0rJBHwIyfSZKpjIAQe1bRuamA7uaXxnr4BaJUtw==","d889f13a05c865de":"toPR6Ng2vRPCGjwFee0bNLGP9Q0FO44s/KW0CZFPLzdkEKzKtIm2mXIcA1xsofnCUkVS7nBC7MiUmCaR5qIfhRhQ+lH5LT3W","fe6e4322d640ead5":"p6eNul7PThZf6QcTJXcevWBuDWJp94KykFalyLROkeauen6L0vHtElebLlRexISXFTUoUDGeyd6J7+Ltk5UTuAu5AypPD/o=","18fbcbc738f72811":"6c6deGZXRwER1x+WyplIpZABpTORRsFBNNYsjMv4caouqSbX8acP6aLKIp9UUVDoK/V1sDaYcJwgBDx5kjHenNtT","58302807f69841b9":"3O06L+Xs7Wh/RyitVaMhMM88PaqhB+nWmIRcaflPIYA4haEaZk9Bo7mBJBlT7mXNiYJlKImvjvYavt6nlBjzp02vrxXROA==","7a4ce7632d808b96":"80d1Xr5RLRsTRtl2v24zOMkqJ7Sal5nWT1xdceAeJKL2R7vU0oTfSsgSTXsi7VmwCn19WAtK68BnqpCZ/bv3ftUf8wnikjj5jR1qYqX36gpynA==","cba662b1b5ad826d":"RgepFlNNnMSTTpx/WWFgsW96x8LZVfEqA7F++WvvmvOqgvKJs4gP+sPEYuLnusgDMERsLbDL/kvOpdn7lrJjkBDM/wvxRLw=","ae761f3120d427ff":"6dMyyfIZ+LL0dF1u95P3HKQhZ4eyV+WDCEj3zG1mHQP/TdGQZNtoRQD/K0udzuN25OiRHG0CQ9IfPxgG7joRX97nMA==","1ab37682ca6c070e":"uQPoI9hzeZ9XA5PdE0W01XPw0VtfyRcuSIHWcyBYcOe68UHUpBM7VNffg/hoU70x7kLzJUSWD5fB3MQTj8EqELGTMtBcYHEXu6oSDj2nDwF4E2RQCw8oqg==","6496a93fdf8e2e12":"lo53nOUPimbuRzWXUnO+nV4Ol2IdsuA8nlFcSE1xE8vTcTmjBci4b+yAAF55WgGB29agl22JEc3G1qai1OsXFWio","bed8f783deeb0a9d":"TtCtp1OQdWDY+BJZb6FfosY4s+uGvQ/xYDKXS7omxnunfepmD6m0QV9O5SJKLFNCaF1YRN4e87kCkwErVCdqj9BaKaNv9oDtFNFpZwcgwQDU9so=","f6e905f1400b61c3":"DAXyhZWal3HYqnC1ttECU4/oDzKIO/NULWDxAdDtpL7nG4Aa3+qoRgRJYtyfV8+NqeekI8rZ4JKWV9PaBUmJiYzCT7TvvhJv","b81bbc205e4083a2":"F5aYYNpS5nuh4Ni8g03Gfqg3xnFJCdn6zvV9MOh+1pbh7BCyWFKf93ZspiLXUDxsPPW0PcQZzKHhQI5wUfrtYGhI4N6aGA==","5a4277e02abb37e8":"xidJ6xFlCmu+aacCXTKgzVJZnY697ytNXyI5hjz7XWAX2nsdSu2U+fYtiMGJrf+KVdkw7SuuCv+EYiGZXMtHAlHIcCrBiq6x6qF1","ca9be2f598d548fa":"0pkl/KCHUFw1SWyMclEADEYNEKeMSrdsowHeuFOj8h57BsCHYPwS/dRidw5ea/7y35/uY5a8Abrcp7XiuuLy8UA40IZqvYsj","578f79c731493932":"E+eFHwFu/j6mH3z1HSE3usm8dcG0TyVditFIXd4zw7G+WfH6RXUwV94lZB4Y/O9Nob7TFguJ/MwP08YKyjeDwq5ZFe4=","52727981b8611ce6":"whKohrVcrFgFWoJK6SS1MAqm+pYNsojPiSRw0e02zjWF9Rup5GFxipgJxsV6ezbJ3MpzCyKPKu70V9I4oxrAGoAWLnevGtyP+9I=","6c9ccb2459f975a5":"mcfNUTXnwh/r6oGKQHE9xh3C8b3DnEVY78p+Uq14rZA3uIDimV/exhbFhEKnnVl5Mo3Dj1cT5SLAZFTCJxW//kj1Bg==","3e68dbe13b673148":"1eSC6B9Bm9bNegpEpxKQ/QVZImXxyTRWlHAVvEoIkwPhc32rmTE4HYLKsNEp5REDu0ZjNcFw+zj0G65vS9ejkikTeOB70JY=","0c4112e384ef2106":"EzRTTMyHRGEoMcjrnpZcJXzqVzuTyjtG9lcSvM5XYIIe5PJRYh2MqVwdkuG98+QFpoDaw/Msw59F7a4XZxSqbbUS3LJ7LKmOxQ=="};
 /*MEMBERS_END*/
 
-// Penghubung Google Drive: isi dengan alamat web app Google Apps Script (lihat PETUNJUK-GOOGLE-DRIVE.txt).
+// Penghubung Google (Apps Script): isi dengan alamat web app (lihat PETUNJUK-GOOGLE-DRIVE.txt).
+// Dipakai untuk riset dari Drive, pengumuman, kalender, Education, pemeringkat, dan log admin.
 // Daftar riset lalu dibaca langsung dari folder Drive, hanya file PDF, dan otomatis ikut berubah
 // saat Anda menambah PDF baru. Selama masih kosong, portal memakai daftar RISET_STATIS di bawah.
-const RISET_API_URL = "";
+const API_URL = "";
 
 // Urutan bulan di halaman riset: "terbaru" (bulan terbaru di atas) atau "terlama".
 const URUTAN_BULAN = "terbaru";
@@ -599,9 +734,10 @@ function enterApp(){
   $("wHi").textContent = member.nama.split(" ")[0];
   $("wRole").textContent = (member.jabatan ? member.jabatan + " · " : "") + "Gen " + member.gen;
   muatRiset();
+  if(typeof muatModul === "function") muatModul();
   setAuth(true);
   step(1);
-  view("r");
+  view("b");
   window.scrollTo(0,0);
 }
 $("bVerify").onclick = ()=>{
@@ -609,6 +745,7 @@ $("bVerify").onclick = ()=>{
   stopCam();
   saveSession();
   enterApp();
+  if(typeof kirimLog === "function") kirimLog("login", "verifikasi", photo);
 };
 
 /* Ingat perangkat */
@@ -699,8 +836,8 @@ function gambarRiset(){
 }
 
 async function ambilRiset(){
-  if(!RISET_API_URL) return RISET_STATIS.slice();
-  const r = await fetch(RISET_API_URL, { method:"POST", headers:{ "Content-Type":"text/plain;charset=utf-8" }, body: JSON.stringify({ action:"list", nia: member.no }) });
+  if(!API_URL) return RISET_STATIS.slice();
+  const r = await fetch(API_URL, { method:"POST", headers:{ "Content-Type":"text/plain;charset=utf-8" }, body: JSON.stringify({ action:"list", nia: member.no }) });
   const d = await r.json();
   if(!d || !d.ok) throw new Error((d && d.pesan) || "gagal");
   return (d.items || []).filter(it=>it && it.url);
@@ -712,6 +849,7 @@ async function muatRiset(){
   try{
     risetItems = await ambilRiset();
     gambarRiset();
+    if(typeof updateStatRiset === "function") updateStatRiset();
   }catch(e){
     risetItems = [];
     box.innerHTML = "";
@@ -721,6 +859,7 @@ async function muatRiset(){
 $("cariRiset").addEventListener("input", ()=>{ if(risetItems.length) gambarRiset(); });
 
 function logDownload(r){
+  if(typeof kirimLog === "function") kirimLog("unduh", r.judul);
   const entry = { nomor: member.no, nama: member.nama, riset: r.judul, waktu: new Date().toISOString(), foto: photo };
   try{
     const key = "kipm_log", old = JSON.parse(localStorage.getItem(key) || "[]");
@@ -735,7 +874,7 @@ $("bOut").onclick = ()=>{
   member = null; photo = null; $("nomor").value = "";
   $("shot").classList.add("hidden"); $("bRetake").classList.add("hidden");
   $("bVerify").disabled = true; $("ph").classList.remove("hidden"); $("bCam").classList.remove("hidden");
-  say("m2",""); setAuth(false); view("r"); step(1);
+  say("m2",""); setAuth(false); view("b"); step(1);
 };
 
 /* =====================================================
@@ -957,20 +1096,13 @@ $("viewCalc").addEventListener("input", calcAll);
 $("viewCalc").addEventListener("change", calcAll);
 
 /* Navigasi tab */
+const VIEWS = { b:"viewBeranda", r:"viewRiset", c:"viewCalc", p:"viewPasar", e:"viewEdu", a:"viewAdmin" };
 function view(w){
-  $("viewRiset").classList.toggle("hidden", w!=="r");
-  $("viewCalc").classList.toggle("hidden", w!=="c");
-  $("tabR").setAttribute("aria-selected", w==="r");
-  $("tabC").setAttribute("aria-selected", w==="c");
+  Object.keys(VIEWS).forEach(k=>{ $(VIEWS[k]).classList.toggle("hidden", k !== w); });
+  document.querySelectorAll("#nav .tab").forEach(t=>t.setAttribute("aria-selected", t.dataset.v === w));
+  if(typeof saatTampil === "function") saatTampil(w);
 }
-$("tabR").onclick = ()=>view("r");
-$("tabC").onclick = ()=>view("c");
-document.querySelectorAll(".sub").forEach(btn=>{
-  btn.onclick = ()=>{
-    document.querySelectorAll(".sub").forEach(x=>x.setAttribute("aria-selected", x===btn));
-    ["c1","c2","c3"].forEach(id=>$(id).classList.toggle("hidden", id!==btn.dataset.t));
-  };
-});
+document.querySelectorAll("#nav .tab").forEach(t=>{ t.onclick = ()=>{ view(t.dataset.v); window.scrollTo(0,0); }; });
 
 addRow(); addRow(); applyBroker();
 restoreSession();
@@ -992,6 +1124,709 @@ installBtns.forEach(id=>{
 if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
   navigator.serviceWorker.register("sw.js").catch(()=>{});
 }
+</script>
+<script>
+/* =====================================================
+   MODUL TAMBAHAN: data portal, halaman baru, kalkulator baru
+   ===================================================== */
+const $$ = (sel, root) => Array.prototype.slice.call((root || document).querySelectorAll(sel));
+const el = (tag, cls, text) => { const e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; };
+const hariIni = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0"); };
+const hariKe = t => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(t || ""); return m ? Date.UTC(+m[1], +m[2]-1, +m[3]) / 864e5 : NaN; };
+const kvEl = (k, v, cls) => { const d = el("div","kv"); d.append(el("span",null,k)); d.append(el("b",cls||"",v)); return d; };
+const BLN = ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"];
+const pctS = (n, d) => isFinite(n) ? nf(n, d == null ? 2 : d) + "%" : "-";
+const tambahTahun = (n) => { const d = new Date(); d.setFullYear(d.getFullYear() + n); return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0"); };
+
+/* ---------- Penghubung server (Google Apps Script) ---------- */
+async function apiPost(obj){
+  if(!API_URL) throw new Error("noapi");
+  const r = await fetch(API_URL, { method:"POST", headers:{ "Content-Type":"text/plain;charset=utf-8" }, body: JSON.stringify(Object.assign({ nia: member.no }, obj)) });
+  const d = await r.json();
+  if(!d || !d.ok) throw new Error((d && d.pesan) || "gagal");
+  return d;
+}
+function kirimLog(event, detail, foto){
+  if(!API_URL || !member) return;
+  try{
+    fetch(API_URL, { method:"POST", headers:{ "Content-Type":"text/plain;charset=utf-8" }, keepalive: !foto,
+      body: JSON.stringify({ action:"log", nia: member.no, event, detail: detail || "", foto: foto || undefined }) }).catch(()=>{});
+  }catch(e){}
+}
+
+/* ---------- Data contoh (dipakai selama API_URL kosong) ---------- */
+function dataContoh(){
+  const h = hariIni();
+  return { ok:true, contoh:true, admin:false,
+    pengumuman:[{ tanggal:h, judul:"Selamat datang di KIPM-UP SIGMA", isi:"Portal riset dan alat investasi anggota KIPM-UP. Pengumuman dari pengurus akan tampil di sini setelah penghubung Google Sheets dipasang.", tautan:"", penting:false }],
+    kalender:[
+      { tanggal:"2026-04-10", jenis:"IPO", kode:"WBSA", judul:"Pencatatan saham perdana WBSA", keterangan:"PT BSA Logistics Indonesia Tbk", tautan:"" },
+      { tanggal:"2026-07-07", jenis:"IPO", kode:"JECX", judul:"Pencatatan saham perdana JECX", keterangan:"PT Nitrasanata Dharma Tbk", tautan:"" },
+      { tanggal:"2026-07-08", jenis:"IPO", kode:"EMMI", judul:"Pencatatan saham perdana EMMI", keterangan:"PT Esa Medika Mandiri Tbk", tautan:"" },
+      { tanggal:"2026-07-09", jenis:"IPO", kode:"PRDL", judul:"Pencatatan saham perdana PRDL", keterangan:"PT Prodia Diagnostic Line Tbk", tautan:"" },
+      { tanggal:"2026-07-10", jenis:"IPO", kode:"RANS", judul:"Pencatatan saham perdana RANS", keterangan:"PT Rans Entertainmen Indonesia Tbk", tautan:"" }],
+    kelas:[], education:[],
+    reksadana:[
+      { nama:"Contoh Reksa Dana Pasar Uang", mi:"MI Contoh", jenis:"Pasar Uang", r1:4.8, r3:4.5, r5:4.6, biaya:0.5, minBeli:10000, aum:800, tanggal:h, tautan:"" },
+      { nama:"Contoh Reksa Dana Pendapatan Tetap", mi:"MI Contoh", jenis:"Pendapatan Tetap", r1:6.9, r3:6.2, r5:6.4, biaya:1.0, minBeli:10000, aum:600, tanggal:h, tautan:"" },
+      { nama:"Contoh Reksa Dana Campuran", mi:"MI Contoh", jenis:"Campuran", r1:8.7, r3:7.9, r5:8.1, biaya:1.8, minBeli:10000, aum:300, tanggal:h, tautan:"" },
+      { nama:"Contoh Reksa Dana Saham", mi:"MI Contoh", jenis:"Saham", r1:11.2, r3:9.4, r5:8.8, biaya:2.0, minBeli:10000, aum:500, tanggal:h, tautan:"" }],
+    obligasi:[
+      { nama:"Contoh SBN Ritel", jenis:"SBN Ritel", kupon:6.25, jatuhTempo:tambahTahun(3), harga:100, rating:"-", minBeli:1000000, frek:12, tanggal:h, tautan:"" },
+      { nama:"Contoh Obligasi Pemerintah (FR)", jenis:"SBN (FR)", kupon:6.875, jatuhTempo:tambahTahun(5), harga:98.5, rating:"-", minBeli:5000000, frek:2, tanggal:h, tautan:"" },
+      { nama:"Contoh Obligasi Korporasi", jenis:"Korporasi", kupon:8.5, jatuhTempo:tambahTahun(3), harga:100, rating:"idAA", minBeli:5000000, frek:4, tanggal:h, tautan:"" }]
+  };
+}
+
+let DATA = null;
+async function muatData(){
+  if(!API_URL){ DATA = dataContoh(); return; }
+  try{ DATA = await apiPost({ action:"data" }); DATA.contoh = false; }
+  catch(e){ DATA = { error:true, contoh:false, admin:false, pengumuman:[], kalender:[], kelas:[], education:[], reksadana:[], obligasi:[] }; }
+}
+
+/* ---------- Widget pasar (TradingView) ---------- */
+// true  : widget dijalankan di dalam iframe terisolasi, sehingga skrip pihak ketiga tidak bisa membaca data login di halaman ini.
+// false : widget dipasang langsung di halaman (pakai ini hanya jika widget tidak tampil dengan mode isolasi).
+const TV_ISOLASI = true;
+// Format: [simbol TradingView, nama tampilan]. Ubah atau tambah sesuai kebutuhan.
+const PASAR_GRUP = [
+  ["Indeks dan volatilitas", [["TVC:DXY","DXY"], ["CBOE:VIX","VIX"]]],
+  ["Imbal hasil obligasi",   [["TVC:US10Y","US10Y"], ["TVC:US20Y","US20Y"], ["TVC:ID01Y","ID1Y"], ["TVC:ID10Y","ID10Y"]]],
+  ["Valas",                  [["FX_IDC:USDIDR","USD/IDR"]]],
+  ["Komoditas",              [["TVC:UKOIL","UKOIL (Brent)"], ["NYMEX:CL1!","CL1! (WTI)"], ["OANDA:XAUUSD","XAUUSD (Emas)"]]],
+  ["Kripto",                 [["COINBASE:BTCUSD","BTCUSD"], ["COINBASE:ETHUSD","ETHUSD"], ["COINBASE:SOLUSD","SOLUSD"]]]
+];
+
+function tvWidget(skrip, konfig, tinggi){
+  const wrap = el("div","tvwrap");
+  const cfg = Object.assign({ colorTheme:"dark", isTransparent:true, locale:"id" }, konfig);
+  const src = "https://s3.tradingview.com/external-embedding/embed-widget-" + skrip + ".js";
+  if(TV_ISOLASI){
+    const f = document.createElement("iframe");
+    f.className = "tvframe"; f.style.height = tinggi + "px";
+    f.setAttribute("sandbox","allow-scripts allow-popups allow-popups-to-escape-sandbox");
+    f.setAttribute("title","Data pasar");
+    f.setAttribute("loading","lazy");
+    f.srcdoc = '<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:transparent}</style></head><body>' +
+      '<div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>' +
+      '<scr' + 'ipt type="text/javascript" src="' + src + '" async>' + JSON.stringify(cfg) + '</scr' + 'ipt></div></body></html>';
+    wrap.append(f);
+  }else{
+    const box = el("div","tradingview-widget-container");
+    box.append(el("div","tradingview-widget-container__widget"));
+    const sc = document.createElement("script");
+    sc.type = "text/javascript"; sc.src = src; sc.async = true; sc.text = JSON.stringify(cfg);
+    box.append(sc); wrap.append(box);
+  }
+  return wrap;
+}
+function semuaSimbol(){ const out = []; PASAR_GRUP.forEach(g=>g[1].forEach(s=>out.push(s))); return out; }
+function pasangTicker(){
+  const box = $("tapeBeranda");
+  if(!box || box._siap) return; box._siap = true;
+  box.append(tvWidget("ticker-tape", { symbols: semuaSimbol().map(s=>({ proName:s[0], description:s[1] })), showSymbolLogo:false, displayMode:"adaptive" }, 78));
+}
+function muatPasar(){
+  const a = $("pasarOverview"), b = $("pasarEvents");
+  if(!a || a._siap) return; a._siap = true;
+  a.append(tvWidget("market-overview", { width:"100%", height:520, dateRange:"1D", showChart:true, showSymbolLogo:false, showFloatingTooltip:false,
+    tabs: PASAR_GRUP.map(g=>({ title:g[0], originalTitle:g[0], symbols:g[1].map(s=>({ s:s[0], d:s[1] })) })) }, 520));
+  b.append(tvWidget("events", { width:"100%", height:520, importanceFilter:"-1,0,1", countryFilter:"id,us,cn,eu,jp" }, 520));
+}
+
+/* ---------- Beranda: pengumuman dan kalender ---------- */
+function renderBeranda(){
+  const h = hariIni();
+  // pengumuman
+  let terlihat = ""; try{ terlihat = localStorage.getItem("kipm_sigma_seen") || ""; }catch(e){}
+  const ann = (DATA.pengumuman || []).slice().sort((a,b)=>a.tanggal < b.tanggal ? 1 : -1).slice(0,10);
+  const box = $("annList"); box.innerHTML = "";
+  let baru = 0;
+  if(!ann.length) box.append(el("div","rstate", DATA.error ? "Pengumuman belum bisa dimuat." : "Belum ada pengumuman."));
+  ann.forEach(a=>{
+    const isBaru = !terlihat || a.tanggal > terlihat; if(isBaru) baru++;
+    const d = el("div","ann" + (a.penting ? " penting" : ""));
+    const top = el("div","anntop");
+    top.append(el("b",null,a.judul));
+    if(a.penting) top.append(el("span","tag tg-warn","Penting"));
+    if(isBaru) top.append(el("span","tag tg-new","Baru"));
+    d.append(top);
+    d.append(el("small",null, tglID(a.tanggal) || a.tanggal));
+    if(a.isi) d.append(el("p",null,a.isi));
+    if(/^https?:\/\//.test(a.tautan || "")){ const l = el("a","btn ghost sm","Buka tautan"); l.href = a.tautan; l.target = "_blank"; l.rel = "noopener"; d.append(l); }
+    box.append(d);
+  });
+  try{ if(ann.length) localStorage.setItem("kipm_sigma_seen", ann[0].tanggal); }catch(e){}
+  // ringkasan
+  const saya = (DATA.education || []).find(r=>r.me);
+  $("statEdu").textContent = saya ? saya.kelas.filter(Boolean).length + " / 5" : "-";
+  $("statAcara").textContent = (DATA.kalender || []).filter(k=>k.tanggal >= h).length;
+  $("statBaru").textContent = baru;
+  renderKalender();
+}
+function updateStatRiset(){ if($("statRiset")) $("statRiset").textContent = risetItems.length; }
+
+function renderKalender(){
+  const box = $("kalList"); box.innerHTML = "";
+  const h = hariIni();
+  const jenis = $("kalJenis").value || "semua", waktu = $("kalWaktu").value || "mendatang";
+  const items = (DATA.kalender || []).filter(k=>jenis === "semua" || k.jenis === jenis);
+  const up = items.filter(k=>k.tanggal >= h).sort((a,b)=>a.tanggal < b.tanggal ? -1 : 1);
+  const lalu = items.filter(k=>k.tanggal < h).sort((a,b)=>a.tanggal < b.tanggal ? 1 : -1);
+  let tampil, info = "";
+  if(waktu === "mendatang"){ if(up.length) tampil = up; else { tampil = lalu.slice(0,6); if(tampil.length) info = "Belum ada jadwal mendatang. Menampilkan jadwal terakhir."; } }
+  else if(waktu === "lewat") tampil = lalu; else tampil = up.concat(lalu);
+  if(!tampil.length){ box.append(el("div","rstate", DATA.error ? "Kalender belum bisa dimuat." : "Belum ada jadwal.")); return; }
+  if(info) box.append(el("p","note",info));
+  tampil.slice(0,40).forEach(k=>{
+    const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(k.tanggal) || [];
+    const row = el("div","kal");
+    const dt = el("div","kdate"); dt.append(el("b",null,m[3] ? String(+m[3]) : "-")); dt.append(el("span",null,m[2] ? BLN[+m[2]-1] + " " + m[1] : ""));
+    const info2 = el("div","kinfo");
+    const t = el("div","ktop"); 
+    t.append(el("span","tag jn jn-" + String(k.jenis).toLowerCase().replace(/\s+/g,""), k.jenis));
+    if(k.kode) t.append(el("b",null,k.kode));
+    info2.append(t); info2.append(el("div",null,k.judul));
+    if(k.keterangan) info2.append(el("small",null,k.keterangan));
+    row.append(dt, info2);
+    if(/^https?:\/\//.test(k.tautan || "")){ const l = el("a","btn ghost sm","Detail"); l.href = k.tautan; l.target = "_blank"; l.rel = "noopener"; row.append(l); }
+    box.append(row);
+  });
+}
+
+/* ---------- Education ---------- */
+let eduLimit = 40;
+function renderEdu(){
+  const dariSheet = {}; (DATA.kelas || []).forEach(k=>{ dariSheet[k.no] = k; });
+  const kelas = [1,2,3,4,5].map(n=>dariSheet[n] || { no:n, judul:"Kelas " + n, deskripsi:"Materi akan segera diumumkan.", status:"Segera", tautan:"" });
+  const peserta = DATA.education || [];
+  const saya = peserta.find(p=>p.me);
+  // progres saya
+  const me = $("eduMe"); me.innerHTML = "";
+  if(saya){
+    const n = saya.kelas.filter(Boolean).length;
+    me.append(el("b",null,"Progres Anda: " + n + " dari 5 kelas"));
+    const pips = el("div","pips big"); saya.kelas.forEach((d,i)=>{ const p = el("span","pip" + (d ? " on" : ""), String(i+1)); pips.append(p); }); me.append(pips);
+  }else{
+    me.append(el("span","muted", API_URL ? "Anda belum tercatat mengikuti kelas Education." : "Progres Anda akan tampil setelah data Education tersambung."));
+  }
+  // kartu kelas
+  const grid = $("eduKelas"); grid.innerHTML = "";
+  kelas.slice(0,5).forEach(k=>{
+    const selesai = peserta.filter(p=>p.kelas[k.no - 1]).length;
+    const c = el("div","kelas" + (saya && saya.kelas[k.no - 1] ? " done" : ""));
+    c.append(el("div","kno", String(k.no)));
+    const b = el("div","kbody");
+    b.append(el("b",null,k.judul));
+    b.append(el("p",null,k.deskripsi));
+    const f = el("div","kfoot");
+    f.append(el("span","tag " + (/tersedia/i.test(k.status) ? "tg-new" : "tg-muted"), /tersedia/i.test(k.status) ? "Tersedia" : "Segera"));
+    if(peserta.length) f.append(el("small",null, selesai + " peserta selesai"));
+    if(/tersedia/i.test(k.status) && /^https?:\/\//.test(k.tautan || "")){ const l = el("a","btn ghost sm","Buka materi"); l.href = k.tautan; l.target = "_blank"; l.rel = "noopener"; f.append(l); }
+    b.append(f); c.append(b); grid.append(c);
+  });
+  // statistik
+  const st = $("eduStat"); st.innerHTML = "";
+  if(peserta.length){
+    const lulus = peserta.filter(p=>p.kelas.every(Boolean)).length;
+    const rata = peserta.reduce((a,p)=>a + p.kelas.filter(Boolean).length, 0) / peserta.length;
+    [["Peserta", peserta.length], ["Selesai 5 kelas", lulus], ["Rata-rata kelas diikuti", nf(rata,1) + " / 5"]].forEach(x=>{
+      const s = el("div","stat"); s.append(el("b",null,String(x[1]))); s.append(el("span",null,x[0])); st.append(s);
+    });
+  }
+  // filter angkatan
+  const gs = $("eduGen"); const pilih = gs.value;
+  const gens = Array.from(new Set(peserta.map(p=>p.gen).filter(Boolean))).sort((a,b)=>Number(a) - Number(b));
+  gs.innerHTML = ""; const o0 = document.createElement("option"); o0.value = ""; o0.textContent = "Semua angkatan"; gs.append(o0);
+  gens.forEach(g=>{ const o = document.createElement("option"); o.value = g; o.textContent = "Gen " + g; gs.append(o); });
+  gs.value = pilih;
+  renderPeserta();
+}
+function renderPeserta(){
+  const box = $("eduList"); box.innerHTML = "";
+  const peserta = DATA.education || [];
+  if(!peserta.length){
+    box.append(el("div","rstate", API_URL ? "Belum ada peserta yang tercatat." : "Daftar peserta akan tampil setelah penghubung Google Sheets dipasang (lihat PETUNJUK-GOOGLE-DRIVE.txt)."));
+    $("eduLagi").classList.add("hidden"); return;
+  }
+  const q = ($("eduCari").value || "").trim().toLowerCase(), gen = $("eduGen").value, urut = $("eduUrut").value;
+  let rows = peserta.filter(p=>(!gen || p.gen === gen) && (!q || p.nama.toLowerCase().indexOf(q) >= 0));
+  const n = p => p.kelas.filter(Boolean).length;
+  rows.sort((a,b)=> urut === "nama" ? a.nama.localeCompare(b.nama) : (n(b) - n(a) || a.nama.localeCompare(b.nama)));
+  if(!rows.length){ box.append(el("div","rstate","Tidak ada peserta yang cocok.")); $("eduLagi").classList.add("hidden"); return; }
+  rows.slice(0, eduLimit).forEach(p=>{
+    const r = el("div","peserta" + (p.me ? " me" : ""));
+    const ini = p.nama.split(/\s+/).slice(0,2).map(x=>x.charAt(0).toUpperCase()).join("");
+    r.append(el("div","avatar", ini));
+    const info = el("div","pinfo");
+    const t = el("div","ptop"); t.append(el("b",null,p.nama)); if(p.me) t.append(el("span","tag tg-new","Anda"));
+    info.append(t); if(p.gen) info.append(el("small",null,"Gen " + p.gen));
+    r.append(info);
+    const pips = el("div","pips"); p.kelas.forEach((d,i)=>pips.append(el("span","pip" + (d ? " on" : ""), String(i+1))));
+    r.append(pips);
+    const c = el("div","pcount", n(p) + "/5"); if(n(p) === 5) c.classList.add("full");
+    r.append(c);
+    box.append(r);
+  });
+  $("eduLagi").classList.toggle("hidden", rows.length <= eduLimit);
+}
+
+/* ---------- Panel admin ---------- */
+async function muatAdmin(){
+  const box = $("adminBody"); box.innerHTML = ""; box.append(el("div","rstate","Memuat data admin..."));
+  if(!API_URL){ box.innerHTML = ""; box.append(el("div","rstate","Panel admin aktif setelah penghubung Google Sheets dipasang.")); return; }
+  try{
+    const d = await apiPost({ action:"admin" });
+    box.innerHTML = "";
+    const cards = el("div","stats");
+    [["Login 7 hari", d.ringkasan.login7], ["Unduhan 7 hari", d.ringkasan.unduh7], ["Anggota aktif 7 hari", d.ringkasan.aktif7], ["Total catatan", d.ringkasan.total]].forEach(x=>{
+      const s = el("div","stat"); s.append(el("b",null,String(x[1]))); s.append(el("span",null,x[0])); cards.append(s);
+    });
+    box.append(cards);
+    box.append(el("h4","rt","Aktivitas 14 hari terakhir"));
+    const maks = Math.max(1, ...d.harian.map(x=>x.login + x.unduh));
+    const bars = el("div","bars");
+    if(!d.harian.length) bars.append(el("div","muted","Belum ada aktivitas."));
+    d.harian.forEach(x=>{
+      const r = el("div","brow"); r.append(el("span",null,tglID(x.tanggal) || x.tanggal));
+      const w = el("div","bwrap"); const b1 = el("i","b1"); b1.style.width = (x.login / maks * 100) + "%"; const b2 = el("i","b2"); b2.style.width = (x.unduh / maks * 100) + "%"; w.append(b1, b2);
+      r.append(w); r.append(el("small",null, x.login + " login, " + x.unduh + " unduhan")); bars.append(r);
+    });
+    box.append(bars);
+    box.append(el("h4","rt","Riset paling banyak diunduh"));
+    const t1 = el("div","tbl"); const tb1 = document.createElement("table");
+    tb1.innerHTML = "<thead><tr><th>Riset</th><th>Unduhan</th></tr></thead>";
+    const body1 = document.createElement("tbody");
+    d.topRiset.forEach(x=>{ const tr = document.createElement("tr"); const a = document.createElement("td"); a.textContent = x.judul; const b = document.createElement("td"); b.textContent = x.jumlah; tr.append(a, b); body1.append(tr); });
+    if(!d.topRiset.length){ const tr = document.createElement("tr"); const a = document.createElement("td"); a.textContent = "Belum ada unduhan."; tr.append(a); body1.append(tr); }
+    tb1.append(body1); t1.append(tb1); box.append(t1);
+    box.append(el("h4","rt","Aktivitas terbaru"));
+    const t2 = el("div","tbl"); const tb2 = document.createElement("table");
+    tb2.innerHTML = "<thead><tr><th>Waktu</th><th>Anggota</th><th>Aktivitas</th><th>Detail</th></tr></thead>";
+    const body2 = document.createElement("tbody");
+    d.terbaru.forEach(x=>{
+      const tr = document.createElement("tr");
+      [x.waktu, x.nama ? x.nama + " (" + x.nia + ")" : x.nia, x.event === "login" ? "Login" : "Unduh", x.detail].forEach(v=>{ const td = document.createElement("td"); td.textContent = v; tr.append(td); });
+      body2.append(tr);
+    });
+    tb2.append(body2); t2.append(tb2); box.append(t2);
+  }catch(e){
+    box.innerHTML = ""; box.append(el("div","rstate","Data admin belum bisa dimuat."));
+  }
+}
+
+/* =====================================================
+   KALKULATOR TAMBAHAN (fungsi hitung murni, mudah diuji)
+   ===================================================== */
+function tickIDX(p){ return p < 200 ? 1 : p < 500 ? 2 : p < 2000 ? 5 : p < 5000 ? 10 : 25; }
+function araPersen(p){ return p <= 200 ? 35 : (p <= 5000 ? 25 : 20); }
+function hargaARA(p, pct){ const raw = p * (1 + pct/100); const t = tickIDX(raw); return Math.floor(raw / t + 1e-9) * t; }
+function hargaARB(p, pct){ const raw = Math.max(p * (1 - pct/100), 50); const t = tickIDX(raw); return Math.max(50, Math.ceil(raw / t - 1e-9) * t); }
+
+function hitungIPO(v, c){
+  if(!(v.harga > 0) || !(v.lot > 0)) return { pesan:"Isi harga penawaran dan jumlah lot." };
+  const fo = (v.feeo || 0) / 100;
+  const jatah = v._k_jatah ? Math.min(Math.max(v.jatah, 0), 100) : 100;
+  const dana = v.harga * v.lot * 100 * (1 + fo);
+  const lotDapat = Math.floor(v.lot * jatah / 100 + 1e-9);
+  const terpakai = v.harga * lotDapat * 100 * (1 + fo);
+  const baris = [
+    ["Dana yang ditahan saat pemesanan", rp(dana)],
+    ["Perkiraan lot yang didapat", nf(lotDapat,0) + " lot (" + nf(lotDapat*100,0) + " lembar)"],
+    ["Dana terpakai", rp(terpakai)],
+    ["Dana dikembalikan", rp(dana - terpakai)],
+    ["Harga impas jual (setelah fee)", px(v.harga * (1 + fo) / (1 - c.s))]
+  ];
+  if(v.jual > 0 && lotDapat > 0){
+    const bersih = lotDapat * 100 * v.jual * (1 - c.s), pnl = bersih - terpakai;
+    baris.push(["Fee jual di " + px(v.jual), rp(lotDapat * 100 * v.jual * c.s)]);
+    baris.push(["Hasil bersih jika dijual", rp(bersih)]);
+    baris.push(["Untung/rugi bersih", rp(pnl) + " (" + pctS(pnl / terpakai * 100) + ")", cl(pnl)]);
+  }
+  return { baris, catatan:["Jatah sebenarnya bergantung pada oversubscribe dan sistem alokasi (pooling atau fixed). Isi 100 jika yakin dapat penuh."] };
+}
+
+function hitungARA(v){
+  if(!(v.harga > 0)) return { pesan:"Isi harga acuan." };
+  const n = Math.min(Math.max(Math.round(v.hari) || 1, 1), 15);
+  const arb = v.arb > 0 ? v.arb : 15, manual = v.ara > 0 ? v.ara : 0;
+  let p = v.harga, tabel = "";
+  for(let i = 1; i <= n; i++){
+    const np = hargaARA(p, manual || araPersen(p));
+    tabel += "<tr><td>Hari " + i + "</td><td>" + px(np) + "</td><td>+" + nf((np / p - 1) * 100, 2) + "%</td><td>+" + nf((np / v.harga - 1) * 100, 1) + "%</td></tr>";
+    p = np;
+  }
+  const pct1 = manual || araPersen(v.harga);
+  return {
+    baris:[
+      ["Fraksi harga pada harga acuan", rp(tickIDX(v.harga))],
+      ["Batas ARA hari 1 (" + nf(pct1,0) + "%)", px(hargaARA(v.harga, pct1))],
+      ["Batas ARB hari 1 (" + nf(arb,0) + "%)", px(hargaARB(v.harga, arb))],
+      { html:'<div class="tbl"><table><thead><tr><th>Hari</th><th>Harga ARA</th><th>Naik</th><th>Kumulatif</th></tr></thead><tbody>' + tabel + "</tbody></table></div>" }
+    ],
+    catatan:["Persentase bawaan: ARA 35% (harga Rp50 sampai 200), 25% (di atas 200 sampai 5.000), 20% (di atas 5.000), ARB 15%. Aturan BEI bisa berubah, isi kolom persen jika perlu menyesuaikan.", "Harga dibulatkan sesuai fraksi harga BEI."]
+  };
+}
+
+function hitungSplit(v){
+  const S = v.lot * 100;
+  if(!(S > 0) || !(v.lama > 0) || !(v.baru > 0)) return { pesan:"Isi lot dan rasio (lama : baru)." };
+  const raw = S * v.baru / v.lama, baru = Math.floor(raw + 1e-9), sisa = raw - baru;
+  const jenis = v.baru > v.lama ? "Stock split" : (v.baru < v.lama ? "Reverse split" : "Tidak ada perubahan");
+  const baris = [
+    ["Jenis aksi", jenis + " (" + nf(v.lama,0) + " : " + nf(v.baru,0) + ")"],
+    ["Saham sebelum", nf(S,0) + " lembar"],
+    ["Saham sesudah", nf(baru,0) + " lembar (" + nf(baru/100,2) + " lot)"]
+  ];
+  if(sisa > 1e-6) baris.push(["Pecahan saham (dibulatkan ke bawah)", nf(sisa,2) + " lembar"]);
+  if(v.avg > 0) baris.push(["Harga rata-rata baru", px(v.avg * v.lama / v.baru)]);
+  if(v.harga > 0) baris.push(["Harga pasar teoritis baru", px(v.harga * v.lama / v.baru)]);
+  if(v.avg > 0) baris.push(["Nilai modal (tidak berubah)", rp(S * v.avg)]);
+  return { baris, catatan:["Secara teori nilai posisi tidak berubah. Perlakuan pecahan saham pada reverse split diatur emiten dan bisa dibayar tunai, cek keterbukaan informasi."] };
+}
+
+function hitungValuasi(v){
+  if(!(v.harga > 0)) return { pesan:"Isi harga saham." };
+  const baris = [];
+  if(v.eps > 0){ baris.push(["PER (harga / laba per saham)", nf(v.harga / v.eps,2) + "x"]); baris.push(["Earnings yield", pctS(v.eps / v.harga * 100)]); }
+  else if(v._k_eps) baris.push(["PER", "Tidak berarti (EPS nol atau negatif)"]);
+  if(v.bvps > 0){ baris.push(["PBV (harga / nilai buku)", nf(v.harga / v.bvps,2) + "x"]); }
+  if(v.eps > 0 && v.bvps > 0) baris.push(["ROE tersirat (EPS / BVPS)", pctS(v.eps / v.bvps * 100)]);
+  const wajar = [];
+  if(v.eps > 0 && v.perw > 0){ const w = v.eps * v.perw; wajar.push(w); baris.push(["Harga wajar menurut PER " + nf(v.perw,1) + "x", px(w) + " (" + (w >= v.harga ? "+" : "") + nf((w / v.harga - 1) * 100,1) + "%)", cl(w - v.harga)]); }
+  if(v.bvps > 0 && v.pbvw > 0){ const w = v.bvps * v.pbvw; wajar.push(w); baris.push(["Harga wajar menurut PBV " + nf(v.pbvw,2) + "x", px(w) + " (" + (w >= v.harga ? "+" : "") + nf((w / v.harga - 1) * 100,1) + "%)", cl(w - v.harga)]); }
+  if(wajar.length === 2){ const r = (wajar[0] + wajar[1]) / 2; baris.push(["Rata-rata dua metode", px(r) + " (" + (r >= v.harga ? "+" : "") + nf((r / v.harga - 1) * 100,1) + "%)", cl(r - v.harga)]); }
+  if(!baris.length) return { pesan:"Isi EPS atau nilai buku per saham." };
+  return { baris, catatan:["PER dan PBV wajar sebaiknya diambil dari rata-rata sektor atau riwayat emiten sendiri, bukan satu angka untuk semua saham. Ini alat bantu, bukan rekomendasi."] };
+}
+
+function hitungDividen(v){
+  if(!(v.harga > 0) || !(v.dps > 0)) return { pesan:"Isi harga saham dan dividen per saham." };
+  const pj = (v._k_pajak ? v.pajak : 10) / 100;
+  const baris = [
+    ["Dividend yield kotor", pctS(v.dps / v.harga * 100)],
+    ["Dividend yield bersih (setelah pajak " + nf(pj*100,0) + "%)", pctS(v.dps * (1 - pj) / v.harga * 100)],
+    ["Harga ex-dividen teoritis", px(v.harga - v.dps)]
+  ];
+  if(v.avg > 0) baris.push(["Yield bersih terhadap harga beli Anda", pctS(v.dps * (1 - pj) / v.avg * 100)]);
+  if(v.lot > 0){
+    const kotor = v.dps * v.lot * 100;
+    baris.push(["Dividen kotor diterima", rp(kotor)]); baris.push(["Pajak dividen", rp(kotor * pj)]); baris.push(["Dividen bersih diterima", rp(kotor * (1 - pj)), "pos"]);
+  }
+  return { baris, catatan:["Pajak dividen 10% adalah tarif umum untuk orang pribadi dalam negeri. Sesuaikan jika kondisi Anda berbeda. Dividen belum tentu dibayar setiap tahun."] };
+}
+
+function hitungDCA(v){
+  const N = Math.round(v.tahun * 12);
+  if(!(N > 0) || !(v.awal > 0 || v.bulanan > 0)) return { pesan:"Isi modal awal atau setoran bulanan, dan jangka waktu." };
+  const rm = Math.pow(1 + v.ret / 100, 1/12) - 1;
+  let val = v.awal, disetor = v.awal, dep = v.bulanan, tabel = "";
+  for(let m = 1; m <= N; m++){
+    if(m > 1 && (m - 1) % 12 === 0) dep *= 1 + v.naik / 100;
+    val = val * (1 + rm) + dep; disetor += dep;
+    if(m % 12 === 0 || m === N) tabel += "<tr><td>" + nf(m/12,1) + "</td><td>" + rp(disetor) + "</td><td>" + rp(val) + "</td></tr>";
+  }
+  const riil = val / Math.pow(1 + v.inf / 100, N / 12);
+  return {
+    baris:[
+      ["Total dana disetor", rp(disetor)],
+      ["Perkiraan nilai akhir", rp(val), "pos"],
+      ["Perkiraan keuntungan", rp(val - disetor), cl(val - disetor)],
+      ["Nilai akhir setelah inflasi (daya beli sekarang)", rp(riil)],
+      { html:'<div class="tbl"><table><thead><tr><th>Tahun</th><th>Disetor</th><th>Nilai</th></tr></thead><tbody>' + tabel + "</tbody></table></div>" }
+    ],
+    catatan:["Setoran dianggap masuk di akhir bulan. Return diasumsikan tetap, padahal hasil nyata bisa naik turun."]
+  };
+}
+
+function hitungRD(v){
+  const N = Math.round(v.tahun * 12);
+  if(!(N > 0) || !(v.awal > 0 || v.bulanan > 0)) return { pesan:"Isi investasi awal atau setoran bulanan, dan jangka waktu." };
+  const rm = Math.pow(1 + v.ret / 100, 1/12) - 1, fb_ = v.feeB / 100, fj = v.feeJ / 100;
+  let val = v.awal * (1 - fb_), valTanpa = v.awal, disetor = v.awal, feeBeli = v.awal * fb_;
+  for(let m = 1; m <= N; m++){ val = val * (1 + rm) + v.bulanan * (1 - fb_); valTanpa = valTanpa * (1 + rm) + v.bulanan; disetor += v.bulanan; feeBeli += v.bulanan * fb_; }
+  const feeJual = val * fj, bersih = val - feeJual;
+  return {
+    baris:[
+      ["Total dana disetor", rp(disetor)],
+      ["Total fee pembelian", rp(feeBeli)],
+      ["Nilai akhir sebelum fee penjualan", rp(val)],
+      ["Fee penjualan", rp(feeJual)],
+      ["Hasil bersih diterima", rp(bersih), "pos"],
+      ["Keuntungan bersih", rp(bersih - disetor) + " (" + pctS((bersih - disetor) / disetor * 100) + ")", cl(bersih - disetor)],
+      ["Selisih akibat fee dibanding tanpa fee", rp(valTanpa - bersih), "neg"]
+    ],
+    catatan:["Return diasumsikan sudah bersih dari biaya pengelolaan (sudah tercermin di NAV). Hasil nyata bisa naik turun dan tidak dijamin."]
+  };
+}
+
+function hitungSBN(v){
+  if(!(v.nominal > 0) || !(v.kupon > 0) || !(v.tenor > 0)) return { pesan:"Isi nominal, kupon, dan tenor." };
+  const pj = (v._k_pajak ? v.pajak : 10) / 100, pd = (v._k_pajakD ? v.pajakD : 20) / 100;
+  const kuponBulan = v.nominal * v.kupon / 100 / 12, bersihBulan = kuponBulan * (1 - pj);
+  const yBersih = v.kupon * (1 - pj);
+  const baris = [
+    ["Kupon per bulan (kotor)", rp(kuponBulan)],
+    ["Pajak kupon per bulan", rp(kuponBulan * pj)],
+    ["Kupon per bulan (bersih)", rp(bersihBulan), "pos"],
+    ["Total kupon bersih selama " + nf(v.tenor,1) + " tahun", rp(bersihBulan * 12 * v.tenor)],
+    ["Total diterima (pokok + kupon bersih)", rp(v.nominal + bersihBulan * 12 * v.tenor)],
+    ["Yield bersih per tahun", pctS(yBersih)]
+  ];
+  if(v.depo > 0){
+    const yD = v.depo * (1 - pd), selisih = yBersih - yD;
+    baris.push(["Pembanding: yield deposito bersih (pajak " + nf(pd*100,0) + "%)", pctS(yD)]);
+    baris.push(["Selisih yield bersih SBN dibanding deposito", (selisih >= 0 ? "+" : "") + nf(selisih,2) + " poin", cl(selisih)]);
+    baris.push(["Selisih perolehan selama tenor (bunga sederhana)", rp((yBersih - yD) / 100 * v.nominal * v.tenor), cl(selisih)]);
+  }
+  return { baris, catatan:["Kupon SBN ritel dibayar bulanan. Pada SBR, kupon mengambang dan bisa berubah. Pokok SBN dijamin pemerintah, deposito dijamin LPS sesuai batas penjaminan. Cek ketentuan penawaran terbaru."] };
+}
+
+function hargaObligasi(y, c, n, red){ let pv = 0; for(let k = 1; k <= n; k++) pv += c / Math.pow(1 + y, k); return pv + red / Math.pow(1 + y, n); }
+function cariYield(harga, c, n, red){
+  let lo = -0.95, hi = 1.5;
+  for(let i = 0; i < 200; i++){ const mid = (lo + hi) / 2; if(hargaObligasi(mid, c, n, red) > harga) lo = mid; else hi = mid; }
+  return (lo + hi) / 2;
+}
+function analisisObligasi(harga, kupon, tenor, frek, pK, pG){
+  const n = Math.round(tenor * frek);
+  if(!(n >= 1) || !(harga > 0)) return null;
+  const c = kupon / frek, y = cariYield(harga, c, n, 100);
+  const cNet = c * (1 - pK), redNet = 100 - Math.max(0, 100 - harga) * pG;
+  const yNet = cariYield(harga, cNet, n, redNet);
+  let mac = 0; for(let k = 1; k <= n; k++) mac += k * (c / Math.pow(1 + y, k)); mac += n * 100 / Math.pow(1 + y, n);
+  mac = mac / harga / frek;
+  return { n, bruto: y * frek * 100, neto: yNet * frek * 100, efektif: (Math.pow(1 + y, frek) - 1) * 100, current: kupon / harga * 100, mac, mod: mac / (1 + y) };
+}
+function hitungYTM(v){
+  if(!(v.harga > 0) || !(v.kupon >= 0) || !(v.tenor > 0)) return { pesan:"Isi harga, kupon, dan sisa tenor." };
+  const frek = Number(v.frek) || 2;
+  const a = analisisObligasi(v.harga, v.kupon, v.tenor, frek, (v._k_pajakK ? v.pajakK : 10) / 100, (v._k_pajakG ? v.pajakG : 10) / 100);
+  if(!a) return { pesan:"Sisa tenor terlalu pendek untuk dihitung." };
+  return {
+    baris:[
+      ["Current yield (kupon / harga)", pctS(a.current)],
+      ["YTM sebelum pajak", pctS(a.bruto, 3)],
+      ["YTM efektif tahunan (sebelum pajak)", pctS(a.efektif, 3)],
+      ["YTM setelah pajak", pctS(a.neto, 3), "pos"],
+      ["Durasi Macaulay", nf(a.mac,2) + " tahun"],
+      ["Durasi modifikasi", nf(a.mod,2)],
+      ["Perkiraan harga turun jika yield naik 1 poin", "-" + nf(a.mod,2) + "%", "neg"]
+    ],
+    catatan:["Harga dihitung sebagai persen dari nominal (harga bersih, tanpa bunga berjalan), ditahan sampai jatuh tempo. Pajak kupon 10% dan pajak atas selisih harga beli di bawah nominal dianggap 10% final. Sesuaikan jika berbeda."]
+  };
+}
+
+const ALOKASI = {
+  "Konservatif": { pasar:40, obligasi:40, saham:15, lain:5,  rd:"Pasar uang dan pendapatan tetap" },
+  "Moderat":     { pasar:15, obligasi:35, saham:40, lain:10, rd:"Pendapatan tetap dan campuran, sebagian saham" },
+  "Agresif":     { pasar:5,  obligasi:20, saham:65, lain:10, rd:"Campuran dan saham" }
+};
+let PROFIL = "";
+function hitungProfil(v){
+  const s = [1,2,3,4,5,6].reduce((a,i)=>a + (Number(v["q" + i]) || 0), 0);
+  const profil = s <= 11 ? "Konservatif" : (s <= 17 ? "Moderat" : "Agresif");
+  PROFIL = profil;
+  const a = ALOKASI[profil];
+  const bar = (n, w, cls) => '<div class="alo"><span>' + n + '</span><div class="bwrap"><i class="' + cls + '" style="width:' + w + '%"></i></div><b>' + w + '%</b></div>';
+  return {
+    baris:[
+      ["Skor", s + " dari 24"],
+      ["Profil risiko", profil, "pos"],
+      { html: bar("Pasar uang / deposito", a.pasar, "b3") + bar("Obligasi / SBN", a.obligasi, "b4") + bar("Saham", a.saham, "b1") + bar("Emas / lainnya", a.lain, "b2") },
+      ["Jenis reksa dana yang umum sesuai", a.rd]
+    ],
+    catatan:["Alokasi di atas hanya ilustrasi umum untuk belajar, bukan rekomendasi pribadi. Profil Anda bisa berubah seiring waktu, tujuan, dan kondisi keuangan. Profil ini otomatis dipakai di Pemeringkat reksa dana."]
+  };
+}
+
+/* ---------- Pemeringkat (data dari Google Sheet pengurus) ---------- */
+const RISIKO_JENIS = { "Pasar Uang":1, "Pendapatan Tetap":2, "Campuran":3, "Saham":4 };
+const BATAS_PROFIL = { "Konservatif":2, "Moderat":3, "Agresif":4 };
+function buatTabel(kepala, baris){
+  const wrap = el("div","tbl"); const t = document.createElement("table");
+  const h = document.createElement("thead"); const hr = document.createElement("tr");
+  kepala.forEach(k=>{ const th = document.createElement("th"); th.textContent = k; hr.append(th); }); h.append(hr); t.append(h);
+  const b = document.createElement("tbody");
+  baris.forEach(r=>{ const tr = document.createElement("tr"); r.forEach(x=>{ const td = document.createElement("td"); td.textContent = x; tr.append(td); }); b.append(tr); });
+  t.append(b); wrap.append(t); return wrap;
+}
+function peringatanData(out, daftar){
+  if(DATA && DATA.contoh) out.append(el("p","note neg","Ini data CONTOH. Pengurus belum mengisi data asli, jangan dipakai untuk keputusan."));
+  else if(!daftar.length) out.append(el("p","note", DATA && DATA.error ? "Data belum bisa dimuat." : "Data belum diisi pengurus."));
+  const tgl = daftar.map(x=>x.tanggal).filter(Boolean).sort().pop();
+  if(tgl && hariKe(hariIni()) - hariKe(tgl) > 45) out.append(el("p","note neg","Data terakhir diperbarui " + (tglID(tgl) || tgl) + " (lebih dari 45 hari). Periksa data terbaru di sumber resmi."));
+}
+function renderRD(out, v){
+  const daftar = (DATA && DATA.reksadana) || [];
+  peringatanData(out, daftar);
+  const batas = BATAS_PROFIL[v.risk] || 2, h = v.hor || "3", budget = v.budget || 0;
+  const kunci = h === "1" ? "r1" : (h === "5" ? "r5" : "r3");
+  const jenisUrut = Object.keys(RISIKO_JENIS).filter(j=>RISIKO_JENIS[j] <= batas);
+  let ada = false;
+  jenisUrut.forEach(j=>{
+    const baris = daftar.filter(f=>f.jenis === j && f[kunci] != null && (!(budget > 0) || f.minBeli == null || f.minBeli <= budget)).sort((a,b)=>b[kunci] - a[kunci]).slice(0,5);
+    if(!baris.length) return; ada = true;
+    out.append(el("h4","rt","Jenis: " + j));
+    out.append(buatTabel(["#","Reksa dana","Return " + h + "T","Return 1T","Biaya kelola","Min beli"],
+      baris.map((f,i)=>[i+1, f.nama + (f.mi ? " (" + f.mi + ")" : ""), pctS(f[kunci]) + (h === "1" ? "" : "/th"), f.r1 != null ? pctS(f.r1) : "-", f.biaya != null ? pctS(f.biaya) : "-", f.minBeli != null ? rp(f.minBeli) : "-"])));
+  });
+  if(!ada && daftar.length) out.append(el("p","note","Tidak ada reksa dana yang cocok dengan filter."));
+  out.append(el("p","note","Peringkat hanya membandingkan reksa dana dalam jenis yang sama, berdasarkan kinerja masa lalu pada horizon yang dipilih. Kinerja masa lalu tidak menjamin hasil di masa depan. Periksa prospektus, risiko, dan fund factsheet resmi sebelum membeli."));
+}
+function renderOB(out, v){
+  const daftar = (DATA && DATA.obligasi) || [];
+  peringatanData(out, daftar);
+  const pj = (v._k_pajak ? v.pajak : 10) / 100, maks = v.tenorMaks || 0, hi = hariIni();
+  const hasil = [];
+  daftar.forEach(o=>{
+    if(v.jenis !== "semua" && o.jenis !== v.jenis) return;
+    const tenor = (hariKe(o.jatuhTempo) - hariKe(hi)) / 365.25;
+    if(!(tenor > 0.05) || (maks > 0 && tenor > maks)) return;
+    const a = analisisObligasi(o.harga || 100, o.kupon, tenor, o.frek || 2, pj, pj);
+    if(a) hasil.push({ o, tenor, a });
+  });
+  const jenisAda = Array.from(new Set(hasil.map(x=>x.o.jenis)));
+  jenisAda.forEach(j=>{
+    const baris = hasil.filter(x=>x.o.jenis === j).sort((p,q)=>q.a.neto - p.a.neto).slice(0,8);
+    out.append(el("h4","rt","Jenis: " + j));
+    out.append(buatTabel(["#","Nama","Kupon","Jatuh tempo","Sisa","Harga","YTM neto","Rating","Min beli"],
+      baris.map((x,i)=>[i+1, x.o.nama, pctS(x.o.kupon), tglID(x.o.jatuhTempo) || x.o.jatuhTempo, nf(x.tenor,1) + " th", nf(x.o.harga || 100,2), pctS(x.a.neto), x.o.rating || "-", x.o.minBeli != null ? rp(x.o.minBeli) : "-"])));
+  });
+  if(!jenisAda.length && daftar.length) out.append(el("p","note","Tidak ada obligasi yang cocok dengan filter."));
+  out.append(el("p","note","Diurutkan menurut YTM setelah pajak dalam jenis yang sama, dihitung dari data yang diisi pengurus dan ditahan sampai jatuh tempo. Yield tinggi pada obligasi korporasi biasanya disertai risiko gagal bayar lebih besar, periksa peringkat dan prospektus."));
+}
+
+/* ---------- Kerangka kalkulator ---------- */
+const OPSI_PROFIL = {
+  q1:["Kapan dana mulai dipakai?",[["1","Kurang dari 1 tahun"],["2","1 sampai 3 tahun"],["3","3 sampai 7 tahun"],["4","Lebih dari 7 tahun"]]],
+  q2:["Tujuan utama investasi",[["1","Menjaga nilai uang"],["2","Pendapatan rutin"],["3","Pertumbuhan moderat"],["4","Pertumbuhan maksimal"]]],
+  q3:["Jika nilai investasi turun 20% dalam sebulan",[["1","Jual semuanya"],["2","Jual sebagian"],["3","Tetap bertahan"],["4","Tambah pembelian"]]],
+  q4:["Pengalaman investasi",[["1","Belum pernah"],["2","Deposito atau pasar uang"],["3","Reksa dana atau obligasi"],["4","Saham atau instrumen berisiko"]]],
+  q5:["Dana darurat dan kewajiban",[["1","Belum ada dana darurat"],["2","Kurang dari 6 bulan"],["3","Sekitar 6 bulan"],["4","Lebih dari 6 bulan dan tanpa cicilan besar"]]],
+  q6:["Penghasilan",[["1","Tidak tetap"],["2","Sebagian tetap"],["3","Tetap"],["4","Tetap dan berlebih"]]]
+};
+const KALK_DEF = [
+  { id:"k_ipo", judul:"Kalkulator IPO", desc:"Hitung dana yang ditahan, jatah, dan hasil jual saham IPO setelah fee.", fee:true, hitung:hitungIPO,
+    fields:[{id:"harga",label:"Harga penawaran (Rp)",ph:"500"},{id:"lot",label:"Jumlah lot dipesan",ph:"100",step:"1"},{id:"jatah",label:"Perkiraan jatah (% dari pesanan)",val:"100",ph:"10"},{id:"feeo",label:"Fee pemesanan IPO (%)",val:"0",ph:"0"},{id:"jual",label:"Harga jual target (Rp)",ph:"675",span2:true}] },
+  { id:"k_ara", judul:"ARA/ARB dan fraksi harga", desc:"Lihat fraksi harga, batas ARA/ARB, dan harga ARA beberapa hari berturut-turut.", hitung:hitungARA,
+    fields:[{id:"harga",label:"Harga acuan (Rp)",ph:"100"},{id:"hari",label:"Jumlah hari ARA berturut-turut",val:"5",ph:"5",step:"1"},{id:"ara",label:"ARA (%), kosongkan untuk aturan bawaan",ph:"35"},{id:"arb",label:"ARB (%), kosongkan untuk 15%",ph:"15"}] },
+  { id:"k_split", judul:"Stock split dan reverse split", desc:"Hitung jumlah saham, harga rata-rata, dan harga teoritis setelah split. Rasio ditulis lama : baru (split 1:5, reverse split 5:1).", hitung:hitungSplit,
+    fields:[{id:"lot",label:"Lot dimiliki",ph:"100",step:"1"},{id:"avg",label:"Harga rata-rata (Rp)",ph:"1000"},{id:"lama",label:"Rasio lama",ph:"1"},{id:"baru",label:"Rasio baru",ph:"5"},{id:"harga",label:"Harga pasar saat ini (Rp), opsional",ph:"1200",span2:true}] },
+  { id:"k_val", judul:"Valuasi PER dan PBV", desc:"Hitung PER, PBV, ROE tersirat, dan harga wajar dari PER atau PBV yang Anda anggap wajar.", hitung:hitungValuasi,
+    fields:[{id:"harga",label:"Harga saham (Rp)",ph:"4500"},{id:"eps",label:"Laba per saham / EPS (Rp per tahun)",ph:"350"},{id:"bvps",label:"Nilai buku per saham / BVPS (Rp)",ph:"2500"},{id:"perw",label:"PER wajar (x), opsional",ph:"14"},{id:"pbvw",label:"PBV wajar (x), opsional",ph:"2",span2:true}] },
+  { id:"k_div", judul:"Dividend yield", desc:"Hitung yield dividen kotor dan bersih serta dividen yang akan diterima.", hitung:hitungDividen,
+    fields:[{id:"harga",label:"Harga saham (Rp)",ph:"4500"},{id:"dps",label:"Dividen per saham (Rp)",ph:"250"},{id:"lot",label:"Lot dimiliki, opsional",ph:"50",step:"1"},{id:"avg",label:"Harga rata-rata beli (Rp), opsional",ph:"4000"},{id:"pajak",label:"Pajak dividen (%)",val:"10",ph:"10",span2:true}] },
+  { id:"k_dca", judul:"Bunga majemuk dan investasi rutin", desc:"Proyeksi nilai investasi dengan setoran bulanan, kenaikan setoran tahunan, dan pengaruh inflasi.", hitung:hitungDCA,
+    fields:[{id:"awal",label:"Modal awal (Rp)",ph:"5000000"},{id:"bulanan",label:"Setoran per bulan (Rp)",ph:"1000000"},{id:"naik",label:"Kenaikan setoran per tahun (%)",val:"0",ph:"5"},{id:"ret",label:"Asumsi return per tahun (%)",ph:"10"},{id:"tahun",label:"Jangka waktu (tahun)",ph:"10"},{id:"inf",label:"Asumsi inflasi per tahun (%)",val:"3",ph:"3"}] },
+  { id:"k_rd", judul:"Proyeksi reksa dana dan biaya", desc:"Proyeksi hasil reksa dana setelah fee pembelian dan penjualan, dengan setoran rutin.", hitung:hitungRD,
+    fields:[{id:"awal",label:"Investasi awal (Rp)",ph:"5000000"},{id:"bulanan",label:"Setoran per bulan (Rp)",ph:"500000"},{id:"ret",label:"Asumsi return per tahun (%)",ph:"8"},{id:"tahun",label:"Jangka waktu (tahun)",ph:"5"},{id:"feeB",label:"Fee pembelian (%)",val:"0",ph:"0"},{id:"feeJ",label:"Fee penjualan (%)",val:"0",ph:"0"}] },
+  { id:"k_sbn", judul:"SBN ritel dan deposito", desc:"Hitung kupon bulanan bersih ORI, SBR, SR, atau ST dan bandingkan dengan deposito.", hitung:hitungSBN,
+    fields:[{id:"nominal",label:"Nominal investasi (Rp)",ph:"50000000"},{id:"kupon",label:"Kupon / imbalan per tahun (%)",ph:"6.25"},{id:"tenor",label:"Tenor (tahun)",ph:"3"},{id:"pajak",label:"Pajak kupon (%)",val:"10",ph:"10"},{id:"depo",label:"Bunga deposito pembanding (% per tahun)",ph:"4.5"},{id:"pajakD",label:"Pajak bunga deposito (%)",val:"20",ph:"20"}] },
+  { id:"k_ytm", judul:"Yield obligasi (YTM)", desc:"Hitung YTM sebelum dan sesudah pajak, current yield, serta durasi dari harga pasar obligasi.", hitung:hitungYTM,
+    fields:[{id:"harga",label:"Harga beli (% dari nominal)",ph:"98.5"},{id:"kupon",label:"Kupon per tahun (%)",ph:"6.875"},{id:"tenor",label:"Sisa tenor (tahun)",ph:"5"},{id:"frek",label:"Frekuensi kupon per tahun",val:"2",opts:[["12","12 (bulanan)"],["4","4 (triwulan)"],["2","2 (semesteran)"],["1","1 (tahunan)"]]},{id:"pajakK",label:"Pajak kupon (%)",val:"10",ph:"10"},{id:"pajakG",label:"Pajak selisih harga (%)",val:"10",ph:"10"}] },
+  { id:"k_prof", judul:"Profil risiko dan alokasi aset", desc:"Jawab enam pertanyaan untuk mengetahui profil risiko dan gambaran alokasi aset yang umum.", hitung:hitungProfil,
+    fields:Object.keys(OPSI_PROFIL).map((k,i)=>({ id:k, label:(i+1) + ". " + OPSI_PROFIL[k][0], opts:OPSI_PROFIL[k][1], val:"2", span2:true })) },
+  { id:"kf_rd", judul:"Pemeringkat reksa dana", desc:"Bandingkan reksa dana dalam jenis yang sama berdasarkan kinerja masa lalu, sesuai profil risiko dan horizon Anda. Data diisi pengurus.", render:renderRD,
+    fields:[{id:"risk",label:"Profil risiko",val:"Moderat",opts:[["Konservatif","Konservatif"],["Moderat","Moderat"],["Agresif","Agresif"]]},{id:"hor",label:"Horizon kinerja",val:"3",opts:[["1","1 tahun"],["3","3 tahun"],["5","5 tahun"]]},{id:"budget",label:"Dana yang tersedia (Rp), opsional",ph:"1000000",span2:true}] },
+  { id:"kf_ob", judul:"Pemeringkat obligasi dan SBN", desc:"Urutkan obligasi dan SBN menurut yield setelah pajak, dikelompokkan per jenis. Data diisi pengurus.", render:renderOB,
+    fields:[{id:"jenis",label:"Jenis",val:"semua",opts:[["semua","Semua jenis"],["SBN Ritel","SBN Ritel"],["SBN (FR)","SBN (FR)"],["Sukuk","Sukuk"],["Korporasi","Korporasi"]]},{id:"tenorMaks",label:"Sisa tenor maksimal (tahun), opsional",ph:"5"},{id:"pajak",label:"Pajak kupon (%)",val:"10",ph:"10",span2:true}] }
+];
+const GRUP_KALK = [
+  ["Trading", ["c1","c2","c3","k_ipo","k_ara","k_split"]],
+  ["Valuasi dan dividen", ["k_val","k_div"]],
+  ["Investasi", ["k_dca","k_rd","k_sbn","k_ytm"]],
+  ["Bantu memilih", ["k_prof","kf_rd","kf_ob"]]
+];
+const NAMA_KALK = { c1:"Average down", c2:"Right issue", c3:"Money management", k_ipo:"IPO", k_ara:"ARA/ARB dan fraksi", k_split:"Stock split", k_val:"PER dan PBV", k_div:"Dividen yield", k_dca:"Bunga majemuk", k_rd:"Reksa dana", k_sbn:"SBN dan deposito", k_ytm:"Yield obligasi", k_prof:"Profil risiko", kf_rd:"Pemeringkat reksa dana", kf_ob:"Pemeringkat obligasi" };
+
+function buatField(pid, fd){
+  const w = el("div", fd.span2 ? "span2" : "");
+  const l = el("label", null, fd.label); l.setAttribute("for", pid + "_" + fd.id);
+  let inp;
+  if(fd.opts){
+    inp = document.createElement("select");
+    fd.opts.forEach(o=>{ const op = document.createElement("option"); op.value = o[0]; op.textContent = o[1]; inp.append(op); });
+    inp.value = fd.val != null ? fd.val : fd.opts[0][0];
+  }else{
+    inp = document.createElement("input"); inp.type = "number"; inp.step = fd.step || "any"; inp.min = "0";
+    if(fd.ph) inp.placeholder = "Contoh: " + fd.ph;
+    if(fd.val != null) inp.value = fd.val;
+  }
+  inp.id = pid + "_" + fd.id; w.append(l, inp); return w;
+}
+function buatPanelKalk(def){
+  const box = el("div","box kpanel hidden"); box.id = def.id;
+  box.append(el("h3","t",def.judul)); box.append(el("p","hint",def.desc));
+  const cols = el("div","cols"), inn = el("div","in"), out = el("div","out");
+  const g = el("div","g2"); def.fields.forEach(fd=>g.append(buatField(def.id, fd))); inn.append(g);
+  if(def.fee) out.append(el("p","feeBanner"));
+  out.append(el("h4","rt","Hasil perhitungan"));
+  const res = el("div","res"); res.id = def.id + "_out"; out.append(res);
+  cols.append(inn, out); box.append(cols);
+  return box;
+}
+function bacaNilai(def){
+  const v = {};
+  def.fields.forEach(fd=>{
+    const e = $(def.id + "_" + fd.id);
+    v[fd.id] = fd.opts ? e.value : (parseFloat(e.value) || 0);
+    v["_k_" + fd.id] = e.value !== "";
+  });
+  return v;
+}
+function hitungKalk(def){
+  const out = $(def.id + "_out"); if(!out) return;
+  const v = bacaNilai(def);
+  out.innerHTML = "";
+  if(def.render){ def.render(out, v); return; }
+  let r; try{ r = def.hitung(v, { b: fb(), s: fs() }); }catch(e){ r = { pesan:"Periksa isian Anda." }; }
+  if(!r || r.pesan){ const p = el("p","hint", (r && r.pesan) || "Isi data di atas untuk melihat hasil."); p.style.margin = "0"; out.append(p); return; }
+  r.baris.forEach(b=>{
+    if(b.html){ const d = el("div"); d.innerHTML = b.html; out.append(d); }
+    else out.append(kvEl(b[0], b[1], b[2]));
+  });
+  (r.catatan || []).forEach(t=>out.append(el("p","note",t)));
+}
+function hitungSemuaBaru(){ KALK_DEF.forEach(hitungKalk); }
+function tampilKalk(id){
+  $$("#viewCalc .kpanel").forEach(p=>p.classList.toggle("hidden", p.id !== id));
+  $$("#chips .kchip").forEach(b=>b.setAttribute("aria-selected", b.dataset.t === id));
+}
+function bangunKalkulator(){
+  const wadah = $("kbaru"); KALK_DEF.forEach(d=>wadah.append(buatPanelKalk(d)));
+  const chips = $("chips");
+  GRUP_KALK.forEach(g=>{
+    const grp = el("div","kgrp"); grp.append(el("span","kg",g[0]));
+    const baris = el("div","krow");
+    g[1].forEach(id=>{ const b = el("button","kchip",NAMA_KALK[id]); b.type = "button"; b.dataset.t = id; b.setAttribute("role","tab"); b.setAttribute("aria-selected", id === "c1"); b.onclick = ()=>tampilKalk(id); baris.append(b); });
+    grp.append(baris); chips.append(grp);
+  });
+  $("viewCalc").addEventListener("input", hitungSemuaBaru);
+  $("viewCalc").addEventListener("change", ()=>{ hitungSemuaBaru(); if(typeof feeBanner === "function") feeBanner(); });
+  hitungSemuaBaru();
+  if(typeof feeBanner === "function") feeBanner();
+}
+
+/* ---------- Penghubung ke aplikasi utama ---------- */
+function saatTampil(w){
+  if(w === "p") muatPasar();
+  if(w === "a") muatAdmin();
+}
+async function muatModul(){
+  await muatData();
+  $("tabAdmin").classList.toggle("hidden", !DATA.admin);
+  renderBeranda(); renderEdu(); hitungSemuaBaru(); pasangTicker(); updateStatRiset();
+}
+$("kalJenis").addEventListener("change", ()=>{ if(DATA) renderKalender(); });
+$("kalWaktu").addEventListener("change", ()=>{ if(DATA) renderKalender(); });
+$("eduCari").addEventListener("input", ()=>{ eduLimit = 40; if(DATA) renderPeserta(); });
+$("eduGen").addEventListener("change", ()=>{ eduLimit = 40; if(DATA) renderPeserta(); });
+$("eduUrut").addEventListener("change", ()=>{ if(DATA) renderPeserta(); });
+$("eduLagi").onclick = ()=>{ eduLimit += 40; renderPeserta(); };
+bangunKalkulator();
+
 </script>
 </body>
 </html>
