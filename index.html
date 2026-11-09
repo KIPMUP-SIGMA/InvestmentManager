@@ -227,6 +227,7 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
 .jn-rightissue{color:#8AB4FF;border-color:rgba(138,180,255,.5)}
 .jn-dividen{color:var(--ok);border-color:rgba(91,217,154,.5)}
 .jn-rups{color:#C9B6FF;border-color:rgba(201,182,255,.5)}
+.jn-stocksplit{color:#F0A8FF;border-color:rgba(240,168,255,.5)}
 .jn-lainnya{color:var(--muted)}
 .eduMe{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 16px;padding:14px 16px;border:1px solid rgba(227,183,63,.35);border-radius:14px;background:rgba(227,183,63,.06)}
 .kelasgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:0 0 16px}
@@ -388,9 +389,10 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
       </div>
       <div class="card">
         <h2>Kalender pasar</h2>
-        <p class="hint">Jadwal IPO, right issue, dividen, RUPS, dan agenda lain.</p>
+        <p class="hint">Jadwal IPO, right issue, dividen, RUPS, stock split, dan agenda lain.</p>
+        <p class="note" id="kalNote" style="margin:-8px 0 14px"></p>
         <div class="rtools wrap">
-          <select id="kalJenis" class="sel"><option value="semua">Semua jenis</option><option>IPO</option><option>Right Issue</option><option>Dividen</option><option>RUPS</option><option>Lainnya</option></select>
+          <select id="kalJenis" class="sel"><option value="semua">Semua jenis</option><option>IPO</option><option>Right Issue</option><option>Dividen</option><option>RUPS</option><option>Stock Split</option><option>Lainnya</option></select>
           <select id="kalWaktu" class="sel"><option value="mendatang">Mendatang</option><option value="lewat">Sudah lewat</option><option value="semua">Semua</option></select>
         </div>
         <div id="kalList"></div>
@@ -569,6 +571,55 @@ const MEMBERS_ENC = {"221200f283617186":"HWMm13SBE6/p2sFW4gWrrE8bV8hyGR3yO6mwB0D
 // saat Anda menambah PDF baru. Selama masih kosong, portal memakai daftar RISET_STATIS di bawah.
 const API_URL = "";
 
+// Kalender corporate action (IPO, right issue, dividen, RUPS, stock split). Dipakai selama API_URL kosong.
+// Setelah penghubung Google Sheet dipasang, kalender dibaca dari sheet "Kalender" dan daftar ini tidak dipakai.
+// Data per tanggal di bawah, dari keterbukaan informasi BEI/KSEI dan pemberitaan. Jadwal bisa berubah, selalu cek sumber resmi.
+const KALENDER_DIPERBARUI = "2026-11-06";
+const KALENDER_STATIS = [
+  { tanggal:"2026-04-10", jenis:"IPO", kode:"WBSA", judul:"Pencatatan saham perdana WBSA", keterangan:"PT BSA Logistics Indonesia Tbk", tautan:"" },
+  { tanggal:"2026-07-07", jenis:"IPO", kode:"JECX", judul:"Pencatatan saham perdana JECX", keterangan:"PT Nitrasanata Dharma Tbk · harga IPO Rp1.250", tautan:"" },
+  { tanggal:"2026-07-07", jenis:"IPO", kode:"JELI", judul:"Pencatatan saham perdana JELI", keterangan:"PT Niramas Utama Tbk", tautan:"" },
+  { tanggal:"2026-07-08", jenis:"IPO", kode:"BACH", judul:"Pencatatan saham perdana BACH", keterangan:"PT Bach Multi Global Tbk · harga IPO Rp442", tautan:"" },
+  { tanggal:"2026-07-08", jenis:"IPO", kode:"EMMI", judul:"Pencatatan saham perdana EMMI", keterangan:"PT Esa Medika Mandiri Tbk · harga IPO Rp470", tautan:"" },
+  { tanggal:"2026-07-09", jenis:"IPO", kode:"PRDL", judul:"Pencatatan saham perdana PRDL", keterangan:"PT Prodia Diagnostic Line Tbk", tautan:"" },
+  { tanggal:"2026-07-10", jenis:"IPO", kode:"RANS", judul:"Pencatatan saham perdana RANS", keterangan:"PT Rans Entertainmen Indonesia Tbk · harga IPO Rp170", tautan:"" },
+  { tanggal:"2026-10-14", jenis:"Stock Split", kode:"PBSA", judul:"Stock split PBSA 1:2 mulai berlaku", keterangan:"PT Paramita Bangun Sarana Tbk · nominal Rp50 menjadi Rp25 · saham beredar 3 miliar menjadi 6 miliar · recording 15 Okt · pasar tunai 16 Okt", tautan:"https://pintarsaham.id/stock-split-pbsa-2026-rasio-12-cek-jadwal-dan-dampak-bagi-investor/" },
+  { tanggal:"2026-11-02", jenis:"Dividen", kode:"SIDO", judul:"Cum date dividen SIDO", keterangan:"PT Industri Jamu dan Farmasi Sido Muncul Tbk · Rp10 per saham · ex 3 Nov · pencatatan 4 Nov · bayar 20 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-02", jenis:"Right Issue", kode:"CBRE", judul:"Cum date right issue CBRE", keterangan:"PT Cakra Buana Resources Energi Tbk · rasio 100 : 260 · harga tebus Rp108 · ex 3 Nov · recording 4 Nov", tautan:"https://www.fortuneidn.com/market/nilai-rights-issue-cbre-maksimal-rp1-27-triliun-simak-jadwalnya-00-3dhnm-wlbdkn" },
+  { tanggal:"2026-11-04", jenis:"Right Issue", kode:"MGLV", judul:"Cum date right issue MGLV", keterangan:"PT NexAI Digital Infrastruktur Tbk · rasio 100 : 15 · harga tebus Rp8.880 · ex 5 Nov · recording 6 Nov (jadwal revisi setelah efektif 27 Okt)", tautan:"https://investortrust.id/market/120841/rights-issue-nexai-mglv-raih-pernyataan-efektif-simak-jadwal-pelaksanaan-ini" },
+  { tanggal:"2026-11-05", jenis:"Dividen", kode:"JPFA", judul:"Cum date dividen JPFA", keterangan:"PT Japfa Comfeed Indonesia Tbk · Rp90 per saham · ex 6 Nov · pencatatan 9 Nov · bayar 12 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-05", jenis:"Dividen", kode:"PTPS", judul:"Cum date dividen PTPS", keterangan:"PT Pulau Subur Tbk · Rp2 per saham · ex 6 Nov · pencatatan 9 Nov · bayar 18 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-05", jenis:"Dividen", kode:"UNTR", judul:"Cum date dividen UNTR", keterangan:"PT United Tractors Tbk · Rp430 per saham · ex 6 Nov · pencatatan 9 Nov · bayar 23 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-05", jenis:"IPO", kode:"ANDA", judul:"Book building IPO ANDA (5-17 November)", keterangan:"PT Andalan Artha Primanusa Tbk · kisaran harga Rp158-189 · 1,676 miliar saham (25,1%) · penjamin Henan Putihrai Sekuritas · belum efektif", tautan:"https://e-ipo.co.id/id/ipo/356/anda-pt-andalan-artha-primanusa-tbk" },
+  { tanggal:"2026-11-06", jenis:"Dividen", kode:"BUAH", judul:"Pembayaran dividen BUAH", keterangan:"PT Segar Kumala Indonesia Tbk · Rp10 per saham", tautan:"" },
+  { tanggal:"2026-11-06", jenis:"Dividen", kode:"CNMA", judul:"Cum date dividen CNMA", keterangan:"PT Nusantara Sejahtera Raya Tbk · Rp4 per saham · ex 9 Nov · pencatatan 10 Nov · bayar 19 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-06", jenis:"RUPS", kode:"BRIS", judul:"RUPSLB BRIS", keterangan:"PT Bank Syariah Indonesia Tbk · 10.00 WIB · agenda tunggal: persetujuan PMHMETD II (rights issue)", tautan:"https://www.cnbcindonesia.com/market/20261016182406-17-777013/bris-mau-gelar-rupslb-bahas-rights-issue" },
+  { tanggal:"2026-11-06", jenis:"Right Issue", kode:"CBRE", judul:"Perdagangan dan pelaksanaan HMETD CBRE (6-12 November)", keterangan:"Harga tebus Rp108 · rasio 100 : 260 · penyerahan saham 10-16 Nov · pembayaran saham tambahan 16 Nov · penjatahan 17 Nov", tautan:"https://www.fortuneidn.com/market/nilai-rights-issue-cbre-maksimal-rp1-27-triliun-simak-jadwalnya-00-3dhnm-wlbdkn" },
+  { tanggal:"2026-11-09", jenis:"Dividen", kode:"SMSM", judul:"Cum date dividen SMSM", keterangan:"PT Selamat Sempurna Tbk · Rp45 per saham · ex 10 Nov · pencatatan 11 Nov · bayar 26 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-10", jenis:"Dividen", kode:"AVIA", judul:"Cum date dividen AVIA", keterangan:"PT Avia Avian Tbk · Rp12 per saham · ex 11 Nov · pencatatan 12 Nov · bayar 19 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-10", jenis:"Dividen", kode:"BWPT", judul:"Cum date dividen BWPT", keterangan:"PT Eagle High Plantations Tbk · Rp1 per saham · ex 11 Nov · pencatatan 12 Nov · bayar 25 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-10", jenis:"Dividen", kode:"ITMG", judul:"Cum date dividen ITMG", keterangan:"PT Indo Tambangraya Megah Tbk · Rp1.191,09 per saham · ex 11 Nov · pencatatan 12 Nov · bayar 18 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-10", jenis:"Dividen", kode:"MEDC", judul:"Cum date dividen MEDC", keterangan:"PT Medco Energi Internasional Tbk · Rp21,65 per saham · ex 11 Nov · pencatatan 12 Nov · bayar 2 Des", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-10", jenis:"Dividen", kode:"SSMS", judul:"Cum date dividen SSMS", keterangan:"PT Sawit Sumbermas Sarana Tbk · Rp52,49 per saham · ex 11 Nov · pencatatan 12 Nov · bayar 2 Des", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-10", jenis:"Dividen", kode:"TAPG", judul:"Cum date dividen TAPG", keterangan:"PT Triputra Agro Persada Tbk · Rp70 per saham · ex 11 Nov · pencatatan 12 Nov · bayar 27 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-10", jenis:"Right Issue", kode:"MGLV", judul:"Perdagangan dan pelaksanaan HMETD MGLV (10-23 November)", keterangan:"Harga tebus Rp8.880 · rasio 100 : 15 · distribusi saham hasil pelaksanaan 12-25 Nov", tautan:"https://investortrust.id/market/120841/rights-issue-nexai-mglv-raih-pernyataan-efektif-simak-jadwal-pelaksanaan-ini" },
+  { tanggal:"2026-11-11", jenis:"Dividen", kode:"IFII", judul:"Cum date dividen IFII", keterangan:"PT Indonesia Fibreboard Industry Tbk · Rp5 per saham · ex 12 Nov · pencatatan 13 Nov · bayar 26 Nov", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-11", jenis:"Dividen", kode:"MIDI", judul:"Cum date dividen MIDI", keterangan:"PT Midi Utama Indonesia Tbk · Rp3,8 per saham · ex 12 Nov · pencatatan 13 Nov · bayar 1 Des", tautan:"https://katadata.co.id/finansial/bursa/6ae959331006b/14-emiten-tebar-dividen-november-2026-itmg-hingga-untr-cek-jadwal-dan-nilainya" },
+  { tanggal:"2026-11-13", jenis:"Dividen", kode:"CSRA", judul:"Pembayaran dividen CSRA", keterangan:"PT Cisadane Sawit Raya Tbk · Rp15 (cum 22 Okt) per saham", tautan:"" },
+  { tanggal:"2026-11-13", jenis:"Dividen", kode:"DMAS", judul:"Pembayaran dividen DMAS", keterangan:"PT Puradelta Lestari Tbk · Rp29 (cum 28 Okt) per saham", tautan:"" },
+  { tanggal:"2026-11-18", jenis:"Dividen", kode:"SCMA", judul:"Pembayaran dividen SCMA", keterangan:"PT Surya Citra Media Tbk · Rp8,4 (cum 27 Okt) per saham", tautan:"" },
+  { tanggal:"2026-11-19", jenis:"Dividen", kode:"AXIO", judul:"Pembayaran dividen AXIO", keterangan:"PT Tera Data Indonusa Tbk · Rp8 (cum 28 Okt) per saham", tautan:"" },
+  { tanggal:"2026-11-23", jenis:"RUPS", kode:"BYAN", judul:"RUPSLB BYAN", keterangan:"PT Bayan Resources Tbk · 14.00 WIB · agenda diumumkan saat pemanggilan", tautan:"https://www.cnbcindonesia.com/market/20261015154255-17-776525/bayan-gelar-rupslb-usai-dicaplok-haji-isam-mau-rombak-pengurus" },
+  { tanggal:"2026-11-23", jenis:"RUPS", kode:"PRDA", judul:"RUPSLB PRDA (stock split 1:5)", keterangan:"PT Prodia Widyahusada Tbk · persetujuan pemecahan saham 1:5", tautan:"https://investortrust.id/market/119401/prodia-prda-bakal-stock-split-1-5-simak-jadwal-lengkapnya" },
+  { tanggal:"2026-11-23", jenis:"RUPS", kode:"PTRO", judul:"RUPSLB PTRO", keterangan:"PT Petrosea Tbk · pengumuman RUPSLB 23 November 2026, cek keterbukaan informasi untuk agenda", tautan:"https://petrosea.com/id/rups/" },
+  { tanggal:"2026-11-23", jenis:"Right Issue", kode:"BMAS", judul:"Cum date right issue BMAS", keterangan:"PT Bank Kasikorn Indonesia Tbk · rasio 655 : 104 · harga tebus Rp350 · ex 24 Nov · recording 25 Nov · jadwal sementara", tautan:"https://infobanknews.com/kbank-indonesia-mau-rights-issue-rp101-triliun-simak-jadwalnya" },
+  { tanggal:"2026-11-26", jenis:"RUPS", kode:"SDRA", judul:"RUPSLB SDRA", keterangan:"PT Bank Woori Saudara Indonesia 1906 Tbk · 10.00 WIB · recording 3 Nov", tautan:"https://keuangan.kontan.co.id/news/bank-woori-saudara-sdra-gelar-rupslb-26-november-2026-apa-agendanya" },
+  { tanggal:"2026-11-27", jenis:"Right Issue", kode:"BMAS", judul:"Perdagangan dan pelaksanaan HMETD BMAS (27 November-3 Desember)", keterangan:"Penyerahan saham 1-7 Des · batas bayar saham tambahan 7 Des · jadwal sementara, cek keterbukaan informasi", tautan:"https://infobanknews.com/kbank-indonesia-mau-rights-issue-rp101-triliun-simak-jadwalnya" },
+  { tanggal:"2026-12-11", jenis:"RUPS", kode:"PKPK", judul:"RUPSLB PKPK (stock split 1:10)", keterangan:"PT Paragon Karya Perkasa Tbk · persetujuan pemecahan saham 1:10 · persetujuan prinsip BEI 23 Okt", tautan:"https://pintarsaham.id/pt-paragon-karya-perkasa-tbk-pkpk-umumkan-rencana-stock-split-rasio-110/" },
+  { tanggal:"2026-12-18", jenis:"Stock Split", kode:"PRDA", judul:"Stock split PRDA 1:5 mulai berlaku (rencana)", keterangan:"Nominal Rp100 menjadi Rp20 · saham beredar 937,5 juta menjadi 4,6875 miliar · akhir nominal lama 17 Des · berlaku jika RUPSLB 23 Nov menyetujui", tautan:"https://investortrust.id/market/119401/prodia-prda-bakal-stock-split-1-5-simak-jadwal-lengkapnya" },
+  { tanggal:"2026-12-29", jenis:"Stock Split", kode:"PKPK", judul:"Stock split PKPK 1:10 mulai berlaku (rencana)", keterangan:"Nominal Rp200 menjadi Rp20 · saham beredar 1,2 miliar menjadi 12 miliar · akhir nominal lama 28 Des · recording 30 Des · distribusi 4 Jan 2027 · berlaku jika RUPSLB 11 Des menyetujui", tautan:"https://pintarsaham.id/pt-paragon-karya-perkasa-tbk-pkpk-umumkan-rencana-stock-split-rasio-110/" }
+];
+
 // Urutan bulan di halaman riset: "terbaru" (bulan terbaru di atas) atau "terlama".
 const URUTAN_BULAN = "terbaru";
 
@@ -594,13 +645,14 @@ const LOG_ENDPOINT = "";
 // Gambar latar halaman login. Isi dengan nama file gambar yang Anda unggah ke GitHub
 // (samakan persis huruf besar-kecil dan ekstensinya), atau alamat lengkap https://...
 // Kosongkan ("") untuk memakai latar bawaan. Layar lebar 768 px ke bawah memakai gambar HP.
-const BACKGROUND_DESKTOP = "latar-desktop.jpg";
-const BACKGROUND_MOBILE  = "latar-mobile.jpg";
+const BACKGROUND_DESKTOP = "KIPM-UP Web.png";
+const BACKGROUND_MOBILE  = "KIPM-UP Mobile.png";
 const BG_POSITION_DESKTOP = "right center";
 const BG_POSITION_MOBILE  = "center top";
 (function(){
   const g = document.getElementById("gate");
-  const css = u => 'url("' + String(u).replace(/"/g, "%22") + '")';
+  const enc = u => { try{ return encodeURI(decodeURI(String(u))); }catch(e){ return String(u); } };   // spasi di nama file jadi %20
+  const css = u => 'url("' + enc(u) + '")';
   if(BACKGROUND_DESKTOP) g.style.setProperty("--bg-d", css(BACKGROUND_DESKTOP));
   if(BACKGROUND_MOBILE)  g.style.setProperty("--bg-m", css(BACKGROUND_MOBILE));
   g.style.setProperty("--pos-d", BG_POSITION_DESKTOP);
@@ -1159,12 +1211,7 @@ function dataContoh(){
   const h = hariIni();
   return { ok:true, contoh:true, admin:false,
     pengumuman:[{ tanggal:h, judul:"Selamat datang di KIPM-UP SIGMA", isi:"Portal riset dan alat investasi anggota KIPM-UP. Pengumuman dari pengurus akan tampil di sini setelah penghubung Google Sheets dipasang.", tautan:"", penting:false }],
-    kalender:[
-      { tanggal:"2026-04-10", jenis:"IPO", kode:"WBSA", judul:"Pencatatan saham perdana WBSA", keterangan:"PT BSA Logistics Indonesia Tbk", tautan:"" },
-      { tanggal:"2026-07-07", jenis:"IPO", kode:"JECX", judul:"Pencatatan saham perdana JECX", keterangan:"PT Nitrasanata Dharma Tbk", tautan:"" },
-      { tanggal:"2026-07-08", jenis:"IPO", kode:"EMMI", judul:"Pencatatan saham perdana EMMI", keterangan:"PT Esa Medika Mandiri Tbk", tautan:"" },
-      { tanggal:"2026-07-09", jenis:"IPO", kode:"PRDL", judul:"Pencatatan saham perdana PRDL", keterangan:"PT Prodia Diagnostic Line Tbk", tautan:"" },
-      { tanggal:"2026-07-10", jenis:"IPO", kode:"RANS", judul:"Pencatatan saham perdana RANS", keterangan:"PT Rans Entertainmen Indonesia Tbk", tautan:"" }],
+    kalender: KALENDER_STATIS.map(k=>Object.assign({}, k)),
     kelas:[], education:[],
     reksadana:[
       { nama:"Contoh Reksa Dana Pasar Uang", mi:"MI Contoh", jenis:"Pasar Uang", r1:4.8, r3:4.5, r5:4.6, biaya:0.5, minBeli:10000, aum:800, tanggal:h, tautan:"" },
@@ -1263,6 +1310,7 @@ function renderBeranda(){
   $("statEdu").textContent = saya ? saya.kelas.filter(Boolean).length + " / 5" : "-";
   $("statAcara").textContent = (DATA.kalender || []).filter(k=>k.tanggal >= h).length;
   $("statBaru").textContent = baru;
+  $("kalNote").textContent = (DATA.contoh ? "Diperbarui " + (tglID(KALENDER_DIPERBARUI) || KALENDER_DIPERBARUI) + ". " : "") + "Jadwal bisa berubah, selalu cek keterbukaan informasi BEI dan KSEI.";
   renderKalender();
 }
 function updateStatRiset(){ if($("statRiset")) $("statRiset").textContent = risetItems.length; }
