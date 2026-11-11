@@ -78,7 +78,22 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;
 .login .remember{display:flex;align-items:center;justify-content:center;gap:8px;text-transform:none;letter-spacing:0;font-size:.85rem;font-weight:500;color:#B7C3DD;margin:14px 0 0;cursor:pointer}
 .login .remember input{width:17px;height:17px;accent-color:var(--gold);cursor:pointer}
 .install{width:100%;margin-top:12px;font-size:.88rem;padding:10px 14px}
-.chip .avatar{width:36px;height:36px;border:2px solid var(--gold);font-size:.8rem}
+.avawrap{position:relative}
+.avabtn{width:36px;height:36px;border-radius:50%;padding:0;overflow:hidden;border:2px solid var(--gold);background:var(--s3);color:var(--gold-l);font-weight:700;font-size:.8rem;box-shadow:none;display:grid;place-items:center}
+.avabtn img{width:100%;height:100%;object-fit:cover;display:block}
+.avamenu{position:absolute;right:0;top:44px;min-width:170px;background:var(--s2);border:1px solid var(--line2);border-radius:12px;padding:6px;z-index:40;box-shadow:0 18px 40px -12px rgba(0,0,0,.8)}
+.avamenu button{display:block;width:100%;text-align:left;background:transparent;color:var(--ink);box-shadow:none;padding:9px 12px;border-radius:8px;font-weight:600;font-size:.88rem}
+.avamenu button:hover{background:rgba(255,255,255,.07);filter:none}
+input[type=password]{width:100%;padding:14px;font:inherit;font-size:1.05rem;border:1px solid var(--line2);border-radius:11px;background:#070D1C;color:var(--ink);letter-spacing:.08em}
+input[type=password]:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(227,183,63,.22)}
+.linkbtn{background:none;border:0;color:var(--dim);font-size:.78rem;text-decoration:underline;padding:6px 10px;box-shadow:none;font-weight:500}
+.linkbtn:hover{color:var(--silver);filter:none}
+.adminpage{min-height:100vh;padding:28px 0 48px}
+.adminhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+button.danger{background:transparent;color:#FFB4AE;border:1px solid rgba(255,123,114,.5);box-shadow:none}
+button.danger:hover{background:rgba(255,123,114,.12);filter:none}
+.ractions{display:flex;gap:8px;align-items:center;flex:none}
+.report .sm{margin-top:0}
 .fine{color:#7F8CA9;font-size:.76rem;text-align:center;margin:16px 0 0;line-height:1.65}
 .modal{position:fixed;inset:0;z-index:50;background:rgba(2,4,10,.8);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;padding:20px;overflow:auto}
 .modal .card{width:min(480px,100%);margin:0}
@@ -205,9 +220,6 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
 .stat{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
 .stat b{display:block;font-size:1.5rem;color:#fff;line-height:1.2}
 .stat span{color:var(--muted);font-size:.82rem}
-.tape{margin:0 0 16px;min-height:78px}
-.tvwrap{width:100%}
-.tvframe{width:100%;border:0;display:block}
 .tag{display:inline-block;font-size:.68rem;font-weight:700;border-radius:6px;padding:1px 7px;border:1px solid var(--line2);color:var(--silver)}
 .tg-new{color:var(--gold-l);border-color:rgba(227,183,63,.5)}
 .tg-warn{color:#FFB4AE;border-color:rgba(255,123,114,.5)}
@@ -310,14 +322,19 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
       <button type="button" class="tab" data-v="b" role="tab" aria-selected="true">Beranda</button>
       <button type="button" class="tab" data-v="r" role="tab" aria-selected="false">Riset</button>
       <button type="button" class="tab" data-v="c" role="tab" aria-selected="false">Kalkulator</button>
-      <button type="button" class="tab" data-v="p" role="tab" aria-selected="false">Pasar</button>
       <button type="button" class="tab" data-v="e" role="tab" aria-selected="false">Education</button>
-      <button type="button" class="tab hidden" id="tabAdmin" data-v="a" role="tab" aria-selected="false">Admin</button>
     </nav>
     <div class="chip hidden" id="chip">
       <button type="button" id="bInstall2" class="ghost hidden">Pasang aplikasi</button>
       <div class="cn"><b id="wName"></b><small>NIA <span id="wNo"></span></small></div>
-      <div class="avatar" id="wAva" aria-hidden="true"></div>
+      <div class="avawrap">
+        <button type="button" class="avabtn" id="bAva" aria-label="Foto profil" aria-haspopup="true" title="Foto profil"><img id="wAvaImg" class="hidden" alt=""><span id="wAva"></span></button>
+        <div class="avamenu hidden" id="avaMenu" role="menu">
+          <button type="button" id="bAvaGanti" role="menuitem">Ganti foto profil</button>
+          <button type="button" id="bAvaHapus" class="hidden" role="menuitem">Hapus foto</button>
+        </div>
+        <input type="file" id="fileAva" accept="image/*" class="hidden">
+      </div>
       <button id="bOut" class="ghost">Keluar</button>
     </div>
   </div>
@@ -344,6 +361,40 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
     <button type="button" id="bInstall" class="ghost install hidden">Pasang sebagai aplikasi desktop</button>
     <div class="msg" id="m1" role="alert"></div>
     <p class="fine">Dengan masuk, Anda menyetujui penggunaan platform ini untuk analisa.<br>Analisa bersifat <i>do your own research</i> dan disclaimer berlaku.</p>
+    <p class="fine" style="margin-top:6px"><button type="button" id="bAdminLink" class="linkbtn">Admin</button></p>
+  </div>
+</section>
+
+<!-- ADMIN: MASUK DENGAN KATA SANDI -->
+<div class="modal hidden" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="aTitle">
+  <div class="card" style="max-width:380px">
+    <h2 id="aTitle">Masuk admin</h2>
+    <p class="hint">Khusus pengurus. Masukkan kata sandi admin.</p>
+    <label for="adminPw">Kata sandi</label>
+    <input id="adminPw" type="password" autocomplete="off" placeholder="Kata sandi admin">
+    <div class="msg" id="aMsg" role="alert"></div>
+    <div class="row"><button type="button" id="bAdminMasuk">Masuk</button><button type="button" id="bAdminBatal" class="ghost">Batal</button></div>
+  </div>
+</div>
+
+<!-- ADMIN: HALAMAN PENGELOLAAN -->
+<section class="adminpage hidden" id="adminPage">
+  <div class="shell">
+    <div class="adminhead">
+      <div><h2>Admin KIPM-UP SIGMA</h2><p class="hint" style="margin:0">Kelola riset dan lihat aktivitas portal.</p></div>
+      <button type="button" id="bAdminKeluar" class="ghost">Keluar admin</button>
+    </div>
+    <div class="card">
+      <h2>Riset</h2>
+      <p class="hint">PDF yang ditambahkan ke folder Google Drive muncul otomatis bagi anggota dalam 5 menit. Tombol di bawah memaksanya tampil sekarang.</p>
+      <div class="row" style="margin-top:0"><button type="button" id="bAdminUpdate">Perbarui riset dari Drive</button></div>
+      <div class="msg" id="aInfo" role="status"></div>
+      <div id="aRiset"></div>
+    </div>
+    <div class="card">
+      <h2>Aktivitas</h2>
+      <div id="adminBody"></div>
+    </div>
   </div>
 </section>
 
@@ -355,7 +406,6 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
         <h2>Halo, <span id="wHi"></span></h2>
         <p id="wRole">Selamat datang di portal anggota KIPM-UP SIGMA.</p>
       </div>
-      <div id="tapeBeranda" class="tape"></div>
       <div class="stats">
         <div class="stat"><b id="statEdu">-</b><span>Progres Education Anda</span></div>
         <div class="stat"><b id="statRiset">-</b><span>Riset tersedia</span></div>
@@ -496,14 +546,6 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
       </div></div>
     </div>
   </div>
-    <div class="card hidden" id="viewPasar">
-      <h2>Pasar</h2>
-      <p class="hint">Harga pasar dari TradingView: DXY, VIX, imbal hasil US dan Indonesia, USD/IDR, minyak, emas, dan kripto. Sebagian data tertunda sesuai kebijakan penyedia data. Hanya informasi, bukan saran investasi.</p>
-      <div id="pasarOverview"></div>
-      <h4 class="rt" style="margin-top:22px">Kalender ekonomi</h4>
-      <div id="pasarEvents"></div>
-    </div>
-
     <div class="card hidden" id="viewEdu">
       <h2>Education</h2>
       <p class="hint">Lima kelas Education KIPM-UP. Progres peserta ditampilkan agar kita bisa saling menyemangati.</p>
@@ -520,11 +562,6 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
       <button type="button" id="eduLagi" class="ghost hidden">Tampilkan lebih banyak</button>
     </div>
 
-    <div class="card hidden" id="viewAdmin">
-      <h2>Admin</h2>
-      <p class="hint">Ringkasan penggunaan portal. Hanya terlihat oleh admin.</p>
-      <div id="adminBody"></div>
-    </div>
 
   </div>
 </main>
@@ -699,9 +736,38 @@ async function checkNumber(){
 $("b1").onclick = checkNumber;
 $("nomor").addEventListener("keydown", e=>{ if(e.key==="Enter") checkNumber(); });
 
+/* Foto profil (disimpan di perangkat ini, per NIA) */
+const AVA_KEY = no => "kipm_sigma_ava_" + no;
+function terapkanAvatar(){
+  let data = null; try{ data = localStorage.getItem(AVA_KEY(member.no)); }catch(e){}
+  $("wAvaImg").classList.toggle("hidden", !data);
+  $("wAva").classList.toggle("hidden", !!data);
+  $("bAvaHapus").classList.toggle("hidden", !data);
+  if(data) $("wAvaImg").src = data;
+}
+$("bAva").onclick = ev=>{ if(ev && ev.stopPropagation) ev.stopPropagation(); $("avaMenu").classList.toggle("hidden"); };
+document.addEventListener("click", ()=>$("avaMenu").classList.add("hidden"));
+$("bAvaGanti").onclick = ()=>{ $("avaMenu").classList.add("hidden"); $("fileAva").click(); };
+$("bAvaHapus").onclick = ()=>{ try{ localStorage.removeItem(AVA_KEY(member.no)); }catch(e){} $("avaMenu").classList.add("hidden"); terapkanAvatar(); };
+$("fileAva").onchange = e=>{
+  const f = e.target.files && e.target.files[0]; e.target.value = "";
+  if(!f || !/^image\//.test(f.type)) return;
+  const url = URL.createObjectURL(f), img = new Image();
+  img.onload = ()=>{
+    const m = Math.min(img.naturalWidth, img.naturalHeight), c = document.createElement("canvas");
+    c.width = c.height = 160;
+    c.getContext("2d").drawImage(img, (img.naturalWidth - m)/2, (img.naturalHeight - m)/2, m, m, 0, 0, 160, 160);
+    try{ localStorage.setItem(AVA_KEY(member.no), c.toDataURL("image/jpeg", .85)); }catch(err){}
+    URL.revokeObjectURL(url); terapkanAvatar();
+  };
+  img.onerror = ()=>URL.revokeObjectURL(url);
+  img.src = url;
+};
+
 function enterApp(){
   $("wName").textContent = member.nama; $("wNo").textContent = member.no;
   $("wAva").textContent = member.nama.split(/\s+/).slice(0,2).map(x=>x.charAt(0).toUpperCase()).join("");
+  terapkanAvatar();
   $("wHi").textContent = member.nama.split(" ")[0];
   $("wRole").textContent = (member.jabatan ? member.jabatan + " · " : "") + "Gen " + member.gen;
   muatRiset();
@@ -1056,11 +1122,10 @@ $("viewCalc").addEventListener("input", calcAll);
 $("viewCalc").addEventListener("change", calcAll);
 
 /* Navigasi tab */
-const VIEWS = { b:"viewBeranda", r:"viewRiset", c:"viewCalc", p:"viewPasar", e:"viewEdu", a:"viewAdmin" };
+const VIEWS = { b:"viewBeranda", r:"viewRiset", c:"viewCalc", e:"viewEdu" };
 function view(w){
   Object.keys(VIEWS).forEach(k=>{ $(VIEWS[k]).classList.toggle("hidden", k !== w); });
   document.querySelectorAll("#nav .tab").forEach(t=>t.setAttribute("aria-selected", t.dataset.v === w));
-  if(typeof saatTampil === "function") saatTampil(w);
 }
 document.querySelectorAll("#nav .tab").forEach(t=>{ t.onclick = ()=>{ view(t.dataset.v); window.scrollTo(0,0); }; });
 
@@ -1138,56 +1203,6 @@ async function muatData(){
   if(!API_URL){ DATA = dataContoh(); return; }
   try{ DATA = await apiPost({ action:"data" }); DATA.contoh = false; }
   catch(e){ DATA = { error:true, contoh:false, admin:false, pengumuman:[], kalender:[], kelas:[], education:[], reksadana:[], obligasi:[] }; }
-}
-
-/* ---------- Widget pasar (TradingView) ---------- */
-// true  : widget dijalankan di dalam iframe terisolasi, sehingga skrip pihak ketiga tidak bisa membaca data login di halaman ini.
-// false : widget dipasang langsung di halaman (pakai ini hanya jika widget tidak tampil dengan mode isolasi).
-const TV_ISOLASI = true;
-// Format: [simbol TradingView, nama tampilan]. Ubah atau tambah sesuai kebutuhan.
-const PASAR_GRUP = [
-  ["Indeks dan volatilitas", [["TVC:DXY","DXY"], ["CBOE:VIX","VIX"]]],
-  ["Imbal hasil obligasi",   [["TVC:US10Y","US10Y"], ["TVC:US20Y","US20Y"], ["TVC:ID01Y","ID1Y"], ["TVC:ID10Y","ID10Y"]]],
-  ["Valas",                  [["FX_IDC:USDIDR","USD/IDR"]]],
-  ["Komoditas",              [["TVC:UKOIL","UKOIL (Brent)"], ["NYMEX:CL1!","CL1! (WTI)"], ["OANDA:XAUUSD","XAUUSD (Emas)"]]],
-  ["Kripto",                 [["COINBASE:BTCUSD","BTCUSD"], ["COINBASE:ETHUSD","ETHUSD"], ["COINBASE:SOLUSD","SOLUSD"]]]
-];
-
-function tvWidget(skrip, konfig, tinggi){
-  const wrap = el("div","tvwrap");
-  const cfg = Object.assign({ colorTheme:"dark", isTransparent:true, locale:"id" }, konfig);
-  const src = "https://s3.tradingview.com/external-embedding/embed-widget-" + skrip + ".js";
-  if(TV_ISOLASI){
-    const f = document.createElement("iframe");
-    f.className = "tvframe"; f.style.height = tinggi + "px";
-    f.setAttribute("sandbox","allow-scripts allow-popups allow-popups-to-escape-sandbox");
-    f.setAttribute("title","Data pasar");
-    f.setAttribute("loading","lazy");
-    f.srcdoc = '<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:transparent}</style></head><body>' +
-      '<div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div>' +
-      '<scr' + 'ipt type="text/javascript" src="' + src + '" async>' + JSON.stringify(cfg) + '</scr' + 'ipt></div></body></html>';
-    wrap.append(f);
-  }else{
-    const box = el("div","tradingview-widget-container");
-    box.append(el("div","tradingview-widget-container__widget"));
-    const sc = document.createElement("script");
-    sc.type = "text/javascript"; sc.src = src; sc.async = true; sc.text = JSON.stringify(cfg);
-    box.append(sc); wrap.append(box);
-  }
-  return wrap;
-}
-function semuaSimbol(){ const out = []; PASAR_GRUP.forEach(g=>g[1].forEach(s=>out.push(s))); return out; }
-function pasangTicker(){
-  const box = $("tapeBeranda");
-  if(!box || box._siap) return; box._siap = true;
-  box.append(tvWidget("ticker-tape", { symbols: semuaSimbol().map(s=>({ proName:s[0], description:s[1] })), showSymbolLogo:false, displayMode:"adaptive" }, 78));
-}
-function muatPasar(){
-  const a = $("pasarOverview"), b = $("pasarEvents");
-  if(!a || a._siap) return; a._siap = true;
-  a.append(tvWidget("market-overview", { width:"100%", height:520, dateRange:"1D", showChart:true, showSymbolLogo:false, showFloatingTooltip:false,
-    tabs: PASAR_GRUP.map(g=>({ title:g[0], originalTitle:g[0], symbols:g[1].map(s=>({ s:s[0], d:s[1] })) })) }, 520));
-  b.append(tvWidget("events", { width:"100%", height:520, importanceFilter:"-1,0,1", countryFilter:"id,us,cn,eu,jp" }, 520));
 }
 
 /* ---------- Beranda: pengumuman dan kalender ---------- */
@@ -1328,49 +1343,117 @@ function renderPeserta(){
   $("eduLagi").classList.toggle("hidden", rows.length <= eduLimit);
 }
 
-/* ---------- Panel admin ---------- */
-async function muatAdmin(){
-  const box = $("adminBody"); box.innerHTML = ""; box.append(el("div","rstate","Memuat data admin..."));
-  if(!API_URL){ box.innerHTML = ""; box.append(el("div","rstate","Panel admin aktif setelah penghubung Google Sheets dipasang.")); return; }
+/* ---------- Admin (kata sandi, sebelum login anggota) ---------- */
+let adminPw = "";
+async function apiAdmin(action, extra){
+  if(!API_URL) throw new Error("noapi");
+  const r = await fetch(API_URL, { method:"POST", headers:{ "Content-Type":"text/plain;charset=utf-8" }, body: JSON.stringify(Object.assign({ action, password: adminPw }, extra || {})) });
+  const d = await r.json();
+  if(!d || !d.ok) throw new Error((d && d.pesan) || "gagal");
+  return d;
+}
+function tampilAdmin(on){
+  $("adminPage").classList.toggle("hidden", !on);
+  $("gate").classList.toggle("hidden", on);
+  if(on) window.scrollTo(0,0);
+}
+function bukaAdminModal(){
+  $("adminPw").value = ""; say("aMsg", "");
+  $("adminModal").classList.remove("hidden");
+  setTimeout(()=>{ if($("adminPw").focus) $("adminPw").focus(); }, 30);
+}
+async function masukAdmin(){
+  const pw = $("adminPw").value;
+  if(!pw){ say("aMsg","Kata sandi belum diisi.","err"); return; }
+  if(!API_URL){ say("aMsg","Penghubung Google belum dipasang, jadi admin belum bisa dipakai. Isi API_URL di index.html.","err"); return; }
+  adminPw = pw; $("bAdminMasuk").disabled = true; say("aMsg","Memeriksa...");
   try{
-    const d = await apiPost({ action:"admin" });
-    box.innerHTML = "";
-    const cards = el("div","stats");
-    [["Login 7 hari", d.ringkasan.login7], ["Unduhan 7 hari", d.ringkasan.unduh7], ["Anggota aktif 7 hari", d.ringkasan.aktif7], ["Total catatan", d.ringkasan.total]].forEach(x=>{
-      const s = el("div","stat"); s.append(el("b",null,String(x[1]))); s.append(el("span",null,x[0])); cards.append(s);
-    });
-    box.append(cards);
-    box.append(el("h4","rt","Aktivitas 14 hari terakhir"));
-    const maks = Math.max(1, ...d.harian.map(x=>x.login + x.unduh));
-    const bars = el("div","bars");
-    if(!d.harian.length) bars.append(el("div","muted","Belum ada aktivitas."));
-    d.harian.forEach(x=>{
-      const r = el("div","brow"); r.append(el("span",null,tglID(x.tanggal) || x.tanggal));
-      const w = el("div","bwrap"); const b1 = el("i","b1"); b1.style.width = (x.login / maks * 100) + "%"; const b2 = el("i","b2"); b2.style.width = (x.unduh / maks * 100) + "%"; w.append(b1, b2);
-      r.append(w); r.append(el("small",null, x.login + " login, " + x.unduh + " unduhan")); bars.append(r);
-    });
-    box.append(bars);
-    box.append(el("h4","rt","Riset paling banyak diunduh"));
-    const t1 = el("div","tbl"); const tb1 = document.createElement("table");
-    tb1.innerHTML = "<thead><tr><th>Riset</th><th>Unduhan</th></tr></thead>";
-    const body1 = document.createElement("tbody");
-    d.topRiset.forEach(x=>{ const tr = document.createElement("tr"); const a = document.createElement("td"); a.textContent = x.judul; const b = document.createElement("td"); b.textContent = x.jumlah; tr.append(a, b); body1.append(tr); });
-    if(!d.topRiset.length){ const tr = document.createElement("tr"); const a = document.createElement("td"); a.textContent = "Belum ada unduhan."; tr.append(a); body1.append(tr); }
-    tb1.append(body1); t1.append(tb1); box.append(t1);
-    box.append(el("h4","rt","Aktivitas terbaru"));
-    const t2 = el("div","tbl"); const tb2 = document.createElement("table");
-    tb2.innerHTML = "<thead><tr><th>Waktu</th><th>Anggota</th><th>Aktivitas</th><th>Detail</th></tr></thead>";
-    const body2 = document.createElement("tbody");
-    d.terbaru.forEach(x=>{
-      const tr = document.createElement("tr");
-      [x.waktu, x.nama ? x.nama + " (" + x.nia + ")" : x.nia, x.event === "login" ? "Login" : "Unduh", x.detail].forEach(v=>{ const td = document.createElement("td"); td.textContent = v; tr.append(td); });
-      body2.append(tr);
-    });
-    tb2.append(body2); t2.append(tb2); box.append(t2);
+    await apiAdmin("admin_login");
+    $("adminModal").classList.add("hidden"); $("adminPw").value = "";
+    tampilAdmin(true); muatAdminData();
   }catch(e){
-    box.innerHTML = ""; box.append(el("div","rstate","Data admin belum bisa dimuat."));
+    adminPw = "";
+    say("aMsg", /terkunci|Terlalu banyak/i.test(e.message) ? e.message : "Kata sandi salah.", "err");
+  }finally{ $("bAdminMasuk").disabled = false; }
+}
+function keluarAdmin(){ adminPw = ""; $("aInfo").textContent = ""; tampilAdmin(false); }
+
+function renderAdminRiset(items){
+  const box = $("aRiset"); box.innerHTML = "";
+  if(!items.length){ box.append(el("div","rstate","Belum ada riset PDF di folder Drive.")); return; }
+  items.slice().sort((a,b)=>(a.tanggal || "") < (b.tanggal || "") ? 1 : -1).forEach(it=>{
+    const row = el("div","report");
+    const ic = el("div","ic"); ic.innerHTML = ICON_FILE;
+    const info = el("div","meta"); const h = el("h3", null, it.judul || "Riset");
+    const sm = el("small","sub2"); sm.textContent = [it.perusahaan, tglID(it.tanggal), ukuranID(it.ukuran)].filter(Boolean).join(" \u00b7 ");
+    info.append(h, sm);
+    const act = el("div","ractions");
+    const buka = el("a","btn ghost sm","Buka"); buka.href = it.url; buka.target = "_blank"; buka.rel = "noopener";
+    const hapus = el("button","danger sm","Hapus"); hapus.type = "button";
+    hapus.onclick = ()=>hapusRiset(it);
+    act.append(buka, hapus);
+    row.append(ic, info, act); box.append(row);
+  });
+}
+async function perbaruiRiset(){
+  const btn = $("bAdminUpdate"); btn.disabled = true; say("aInfo","Memeriksa folder Drive...");
+  try{
+    const d = await apiAdmin("admin_perbarui");
+    renderAdminRiset(d.items || []);
+    say("aInfo", d.baru && d.baru.length ? d.total + " riset di Drive. Riset baru: " + d.baru.join(", ") + "." : d.total + " riset di Drive. Tidak ada riset baru.", "ok");
+  }catch(e){ say("aInfo","Gagal memperbarui riset: " + e.message, "err"); }
+  finally{ btn.disabled = false; }
+}
+async function hapusRiset(it){
+  if(!confirm('Hapus riset "' + it.judul + '" dari Google Drive?\nFile dipindahkan ke tempat sampah Drive dan masih bisa dipulihkan selama 30 hari.')) return;
+  say("aInfo","Menghapus...");
+  try{
+    const d = await apiAdmin("admin_hapus", { id: it.id });
+    renderAdminRiset(d.items || []);
+    say("aInfo",'Riset "' + it.judul + '" dihapus (ada di tempat sampah Drive).', "ok");
+  }catch(e){ say("aInfo","Gagal menghapus: " + e.message, "err"); }
+}
+const NAMA_EVENT = { login:"Login", unduh:"Unduh", admin_perbarui:"Admin: perbarui riset", admin_hapus:"Admin: hapus riset" };
+function renderAdminRingkasan(box, d){
+  box.innerHTML = "";
+  const cards = el("div","stats");
+  [["Login 7 hari", d.ringkasan.login7], ["Unduhan 7 hari", d.ringkasan.unduh7], ["Anggota aktif 7 hari", d.ringkasan.aktif7], ["Total catatan", d.ringkasan.total]].forEach(x=>{
+    const c = el("div","stat"); c.append(el("b",null,String(x[1]))); c.append(el("span",null,x[0])); cards.append(c);
+  });
+  box.append(cards);
+  box.append(el("h4","rt","Aktivitas 14 hari terakhir"));
+  const maks = Math.max(1, ...d.harian.map(x=>x.login + x.unduh));
+  const bars = el("div","bars");
+  if(!d.harian.length) bars.append(el("div","muted","Belum ada aktivitas."));
+  d.harian.forEach(x=>{
+    const r = el("div","brow"); r.append(el("span",null,tglID(x.tanggal) || x.tanggal));
+    const w = el("div","bwrap"); const b1 = el("i","b1"); b1.style.width = (x.login / maks * 100) + "%"; const b2 = el("i","b2"); b2.style.width = (x.unduh / maks * 100) + "%"; w.append(b1, b2);
+    r.append(w); r.append(el("small",null, x.login + " login, " + x.unduh + " unduhan")); bars.append(r);
+  });
+  box.append(bars);
+  box.append(el("h4","rt","Riset paling banyak diunduh"));
+  box.append(buatTabel(["Riset","Unduhan"], d.topRiset.length ? d.topRiset.map(x=>[x.judul, x.jumlah]) : [["Belum ada unduhan.",""]]));
+  box.append(el("h4","rt","Aktivitas terbaru"));
+  box.append(buatTabel(["Waktu","Anggota","Aktivitas","Detail"], d.terbaru.map(x=>[x.waktu, x.nama ? x.nama + " (" + x.nia + ")" : x.nia, NAMA_EVENT[x.event] || x.event, x.detail])));
+}
+async function muatAdminData(){
+  const box = $("adminBody"); box.innerHTML = ""; box.append(el("div","rstate","Memuat data..."));
+  say("aInfo","");
+  try{
+    const [r, a] = await Promise.all([apiAdmin("admin_riset"), apiAdmin("admin_ringkasan")]);
+    renderAdminRiset(r.items || []);
+    renderAdminRingkasan(box, a);
+  }catch(e){
+    box.innerHTML = ""; box.append(el("div","rstate","Data admin belum bisa dimuat. Coba masuk ulang."));
   }
 }
+$("bAdminLink").onclick = bukaAdminModal;
+$("bAdminMasuk").onclick = masukAdmin;
+$("bAdminBatal").onclick = ()=>$("adminModal").classList.add("hidden");
+$("adminPw").addEventListener("keydown", e=>{ if(e.key === "Enter") masukAdmin(); });
+$("bAdminUpdate").onclick = perbaruiRiset;
+$("bAdminKeluar").onclick = keluarAdmin;
+document.addEventListener("keydown", e=>{ if(e.key === "Escape" && !$("adminModal").classList.contains("hidden")) $("adminModal").classList.add("hidden"); });
 
 /* =====================================================
    KALKULATOR TAMBAHAN (fungsi hitung murni, mudah diuji)
@@ -1766,14 +1849,9 @@ function bangunKalkulator(){
 }
 
 /* ---------- Penghubung ke aplikasi utama ---------- */
-function saatTampil(w){
-  if(w === "p") muatPasar();
-  if(w === "a") muatAdmin();
-}
 async function muatModul(){
   await muatData();
-  $("tabAdmin").classList.toggle("hidden", !DATA.admin);
-  renderBeranda(); renderEdu(); hitungSemuaBaru(); pasangTicker(); updateStatRiset();
+  renderBeranda(); renderEdu(); hitungSemuaBaru(); updateStatRiset();
 }
 $("kalJenis").addEventListener("change", ()=>{ if(DATA) renderKalender(); });
 $("kalWaktu").addEventListener("change", ()=>{ if(DATA) renderKalender(); });
