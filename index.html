@@ -94,6 +94,19 @@ button.danger{background:transparent;color:#FFB4AE;border:1px solid rgba(255,123
 button.danger:hover{background:rgba(255,123,114,.12);filter:none}
 .ractions{display:flex;gap:8px;align-items:center;flex:none}
 .report .sm{margin-top:0}
+.disclaimer{border:1px solid rgba(255,123,114,.45);background:rgba(255,123,114,.07);border-radius:12px;padding:12px 14px;font-size:.82rem;color:var(--silver);margin:0 0 16px;line-height:1.55}
+.disclaimer b{color:#FFB4AE;letter-spacing:.08em;font-size:.78rem}
+.disclaimer p{margin:4px 0 0}
+.dy{color:#FFB4AE;font-weight:800;letter-spacing:.04em}
+.reader{position:fixed;inset:0;z-index:70;background:#04060C;display:flex;flex-direction:column}
+.rhead{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);color:#fff}
+.rhead b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rhead button{margin-top:0}
+.rnote{padding:8px 16px;font-size:.8rem;color:var(--silver);background:rgba(255,123,114,.08);border-bottom:1px solid rgba(255,123,114,.3)}
+.rbody{position:relative;flex:1;min-height:0;background:#fff}
+.rbody iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+.wm{position:absolute;inset:0;pointer-events:none;background-repeat:repeat}
+footer .dy{font-size:.82rem}
 .fine{color:#7F8CA9;font-size:.76rem;text-align:center;margin:16px 0 0;line-height:1.65}
 .modal{position:fixed;inset:0;z-index:50;background:rgba(2,4,10,.8);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;padding:20px;overflow:auto}
 .modal .card{width:min(480px,100%);margin:0}
@@ -360,10 +373,17 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
     <label class="remember"><input type="checkbox" id="remember" checked> Ingat perangkat ini</label>
     <button type="button" id="bInstall" class="ghost install hidden">Pasang sebagai aplikasi desktop</button>
     <div class="msg" id="m1" role="alert"></div>
-    <p class="fine">Dengan masuk, Anda menyetujui penggunaan platform ini untuk analisa.<br>Analisa bersifat <i>do your own research</i> dan disclaimer berlaku.</p>
+    <p class="fine">Dengan masuk, Anda menyetujui bahwa seluruh isi portal hanya untuk edukasi dan informasi, bukan rekomendasi atau keputusan finansial.<br><b class="dy">DYOR</b> (Do Your Own Research). Investasi mengandung risiko.</p>
     <p class="fine" style="margin-top:6px"><button type="button" id="bAdminLink" class="linkbtn">Admin</button></p>
   </div>
 </section>
+
+<!-- PEMBACA RISET (hanya baca) -->
+<div class="reader hidden" id="reader" role="dialog" aria-modal="true" aria-label="Baca riset">
+  <div class="rhead"><b id="rJudul"></b><button type="button" id="bRClose" class="ghost sm">Tutup</button></div>
+  <div class="rnote"><b class="dy">Hanya dibaca.</b> Dilarang mengunduh, menyalin, atau menyebarkan. DYOR: bukan rekomendasi atau keputusan finansial.</div>
+  <div class="rbody"><iframe id="rFrame" title="Dokumen riset" allow="fullscreen" referrerpolicy="no-referrer"></iframe><div id="rWm" class="wm" aria-hidden="true"></div></div>
+</div>
 
 <!-- ADMIN: MASUK DENGAN KATA SANDI -->
 <div class="modal hidden" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="aTitle">
@@ -381,7 +401,7 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
 <section class="adminpage hidden" id="adminPage">
   <div class="shell">
     <div class="adminhead">
-      <div><h2>Admin KIPM-UP SIGMA</h2><p class="hint" style="margin:0">Kelola riset dan lihat aktivitas portal.</p></div>
+      <div><h2>Admin KIPM-UP</h2><p class="hint" style="margin:0">Kelola riset dan lihat aktivitas portal.</p></div>
       <button type="button" id="bAdminKeluar" class="ghost">Keluar admin</button>
     </div>
     <div class="card">
@@ -404,8 +424,9 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
     <div id="viewBeranda">
       <div class="welcome">
         <h2>Halo, <span id="wHi"></span></h2>
-        <p id="wRole">Selamat datang di portal anggota KIPM-UP SIGMA.</p>
+        <p id="wRole">Selamat datang di portal anggota KIPM-UP.</p>
       </div>
+      <div class="disclaimer" data-d="ringkas"></div>
       <div class="stats">
         <div class="stat"><b id="statEdu">-</b><span>Progres Education Anda</span></div>
         <div class="stat"><b id="statRiset">-</b><span>Riset tersedia</span></div>
@@ -430,7 +451,8 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
 
     <div class="card hidden" id="viewRiset">
       <h2>Hasil riset tersedia</h2>
-      <p class="hint">Dokumen riset (PDF) dikelompokkan per bulan. Hanya untuk anggota KIPM-UP SIGMA, dilarang menyebarkan ke pihak luar.</p>
+      <p class="hint">Dokumen riset (PDF) dikelompokkan per bulan dan hanya dapat dibaca di portal, tidak dapat diunduh. Hanya untuk anggota KIPM-UP, dilarang menyebarkan ke pihak luar.</p>
+      <div class="disclaimer" data-d="penuh"></div>
       <div class="rtools"><input id="cariRiset" class="rsearch" type="text" placeholder="Cari kode saham atau nama perusahaan" autocomplete="off"></div>
       <div id="list"></div>
     </div>
@@ -439,6 +461,7 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
     <datalist id="sahamList"></datalist>
     <h2>Kalkulator Saham</h2>
     <p class="hint">Pilih sekuritas atau isi fee sendiri. Fee ini dipakai oleh semua kalkulator. 1 lot = 100 lembar.</p>
+    <div class="disclaimer" data-d="ringkas"></div>
 
     <div class="box">
       <p class="bt">Fee transaksi</p>
@@ -566,7 +589,7 @@ input.rsearch{flex:1;height:44px;padding:0 14px;font:inherit;font-size:.95rem;le
   </div>
 </main>
 
-<footer id="foot" class="hidden">2026 KIPM-UP SIGMA. Portal khusus anggota. Hasil riset dilarang disebarkan ke pihak luar.</footer>
+<footer id="foot" class="hidden"><div><b class="dy">DYOR</b> (Do Your Own Research). Informasi di portal ini hanya untuk edukasi, bukan rekomendasi atau keputusan finansial. Investasi mengandung risiko, keputusan sepenuhnya tanggung jawab Anda.</div><div style="margin-top:6px">2026 KIPM-UP. Portal khusus anggota, hasil riset dilarang disebarkan ke pihak luar.</div></footer>
 
 <script>
 /* =====================================================
@@ -585,7 +608,7 @@ const MEMBERS_ENC = {"221200f283617186":"HWMm13SBE6/p2sFW4gWrrE8bV8hyGR3yO6mwB0D
 // Dipakai untuk riset dari Drive, pengumuman, kalender, Education, pemeringkat, dan log admin.
 // Daftar riset lalu dibaca langsung dari folder Drive, hanya file PDF, dan otomatis ikut berubah
 // saat Anda menambah PDF baru. Selama masih kosong, portal memakai daftar RISET_STATIS di bawah.
-const API_URL = "https://script.google.com/macros/s/AKfycbzpOE5oWYusx5zzKZa2R16wsiVALhhStCaiz8GdErHHm3XyPk7udQ9rKpuVcXfGeRwa/exec";
+const API_URL = "";
 
 // Kalender corporate action (IPO, right issue, dividen, RUPS, stock split). Dipakai selama API_URL kosong.
 // Setelah penghubung Google Sheet dipasang, kalender dibaca dari sheet "Kalender" dan daftar ini tidak dipakai.
@@ -640,18 +663,18 @@ const KALENDER_STATIS = [
 const URUTAN_BULAN = "terbaru";
 
 // Daftar cadangan (hanya PDF). tanggal = tanggal pencatatan di BEI, dipakai untuk pengelompokan bulan.
-// Tautan Drive hanya bisa diunduh jika folder dibagikan dengan "Siapa saja yang memiliki link".
+// Dokumen dibuka di pembaca portal (tidak bisa diunduh). Agar tampil, folder Drive harus dibagikan dengan "Siapa saja yang memiliki link" (Pelihat).
 const RISET_STATIS = [
   { judul: "Saham IPO WBSA", kode: "WBSA", kategori: "IPO", perusahaan: "PT BSA Logistics Indonesia Tbk", tanggal: "2026-04-10", ukuran: 8138246,
-    url: "https://drive.google.com/uc?export=download&id=1EoOnW6KJZ7yL8a9gFOI7K0Csawmw9fwI" },
+    id: "1EoOnW6KJZ7yL8a9gFOI7K0Csawmw9fwI", url: "https://drive.google.com/file/d/1EoOnW6KJZ7yL8a9gFOI7K0Csawmw9fwI/preview" },
   { judul: "Saham IPO JECX", kode: "JECX", kategori: "IPO", perusahaan: "PT Nitrasanata Dharma Tbk", tanggal: "2026-07-07", ukuran: 8375205,
-    url: "https://drive.google.com/uc?export=download&id=1tsrAMIoOk_GJGt5Aeq41ipOKr3MkSb0C" },
+    id: "1tsrAMIoOk_GJGt5Aeq41ipOKr3MkSb0C", url: "https://drive.google.com/file/d/1tsrAMIoOk_GJGt5Aeq41ipOKr3MkSb0C/preview" },
   { judul: "Saham IPO EMMI", kode: "EMMI", kategori: "IPO", perusahaan: "PT Esa Medika Mandiri Tbk", tanggal: "2026-07-08", ukuran: 6052546,
-    url: "https://drive.google.com/uc?export=download&id=1tWRTAr-YoEpNotiIKgHUnmaijiEHhxrU" },
+    id: "1tWRTAr-YoEpNotiIKgHUnmaijiEHhxrU", url: "https://drive.google.com/file/d/1tWRTAr-YoEpNotiIKgHUnmaijiEHhxrU/preview" },
   { judul: "Saham IPO PRDL", kode: "PRDL", kategori: "IPO", perusahaan: "PT Prodia Diagnostic Line Tbk", tanggal: "2026-07-09", ukuran: 8666624,
-    url: "https://drive.google.com/uc?export=download&id=1gt7IC5QxXpwj4-kvixZ6OncRT1X5HHLl" },
+    id: "1gt7IC5QxXpwj4-kvixZ6OncRT1X5HHLl", url: "https://drive.google.com/file/d/1gt7IC5QxXpwj4-kvixZ6OncRT1X5HHLl/preview" },
   { judul: "Saham IPO RANS", kode: "RANS", kategori: "IPO", perusahaan: "PT Rans Entertainmen Indonesia Tbk", tanggal: "2026-07-10", ukuran: 8130752,
-    url: "https://drive.google.com/uc?export=download&id=16FwJOdL0q9xdxa3w6JUmC8Wy7jYGx0RD" }
+    id: "16FwJOdL0q9xdxa3w6JUmC8Wy7jYGx0RD", url: "https://drive.google.com/file/d/16FwJOdL0q9xdxa3w6JUmC8Wy7jYGx0RD/preview" }
 ];
 
 // (Opsional) Alamat server untuk menerima log unduhan, misalnya Google Apps Script.
@@ -828,6 +851,34 @@ function stateBox(teks, ulang){
   return d;
 }
 
+/* Pembaca riset: dokumen dibuka di dalam portal, tanpa tombol unduh, dengan watermark nama anggota. */
+function bacaUrl(it){
+  if(it.id) return "https://drive.google.com/file/d/" + it.id + "/preview";
+  const m = /[?&]id=([A-Za-z0-9_-]+)/.exec(it.url || "");
+  return m ? "https://drive.google.com/file/d/" + m[1] + "/preview" : (it.url || "about:blank");
+}
+function watermarkUri(){
+  const esc = t => t.replace(/[&<>"']/g, c=>({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&apos;" }[c]));
+  const tek = esc(member.nama + " \u00b7 NIA " + member.no + " \u00b7 " + (tglID(hariIni()) || hariIni()));
+  const svg = "<svg xmlns='http://www.w3.org/2000/svg' width='440' height='280'><text x='220' y='140' text-anchor='middle' transform='rotate(-28 220 140)' font-family='Arial,sans-serif' font-size='16' fill='rgba(90,90,90,0.30)'>" + tek + "</text></svg>";
+  return 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")';
+}
+function bukaReader(it){
+  $("rJudul").textContent = it.judul || "Riset";
+  $("rWm").style.backgroundImage = watermarkUri();
+  $("rFrame").src = bacaUrl(it);
+  $("reader").classList.remove("hidden");
+  if(document.body) document.body.style.overflow = "hidden";
+  logDownload(it);
+}
+function tutupReader(){
+  $("rFrame").src = "about:blank";
+  $("reader").classList.add("hidden");
+  if(document.body) document.body.style.overflow = "";
+}
+$("bRClose").onclick = tutupReader;
+document.addEventListener("keydown", e=>{ if(e.key === "Escape" && !$("reader").classList.contains("hidden")) tutupReader(); });
+
 function barisRiset(it){
   const row = document.createElement("div"); row.className = "report";
   const ic = document.createElement("div"); ic.className = "ic"; ic.innerHTML = ICON_FILE;
@@ -838,11 +889,10 @@ function barisRiset(it){
   const tgl = tglID(it.tanggal);
   sm.textContent = [it.perusahaan, tgl ? (it.kategori === "IPO" ? "Listing " + tgl : tgl) : "", ukuranID(it.ukuran)].filter(Boolean).join(" \u00b7 ");
   info.append(h, sm);
-  const a = document.createElement("a");
-  a.className = "btn"; a.textContent = "Unduh";
-  a.href = it.url; a.target = "_blank"; a.rel = "noopener";
-  a.addEventListener("click", ()=>logDownload(it));
-  row.append(ic, info, a);
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "btn"; b.textContent = "Baca";
+  b.onclick = ()=>bukaReader(it);
+  row.append(ic, info, b);
   return row;
 }
 
@@ -887,7 +937,7 @@ async function muatRiset(){
 $("cariRiset").addEventListener("input", ()=>{ if(risetItems.length) gambarRiset(); });
 
 function logDownload(r){
-  if(typeof kirimLog === "function") kirimLog("unduh", r.judul);
+  if(typeof kirimLog === "function") kirimLog("baca", r.judul);
   const entry = { nomor: member.no, nama: member.nama, riset: r.judul, waktu: new Date().toISOString() };
   try{
     const key = "kipm_log", old = JSON.parse(localStorage.getItem(key) || "[]");
@@ -1183,7 +1233,7 @@ function kirimLog(event, detail){
 function dataContoh(){
   const h = hariIni();
   return { ok:true, contoh:true, admin:false,
-    pengumuman:[{ tanggal:h, judul:"Selamat datang di KIPM-UP SIGMA", isi:"Portal riset dan alat investasi anggota KIPM-UP. Pengumuman dari pengurus akan tampil di sini setelah penghubung Google Sheets dipasang.", tautan:"", penting:false }],
+    pengumuman:[{ tanggal:h, judul:"Selamat datang di portal KIPM-UP", isi:"Portal riset dan alat investasi anggota KIPM-UP. Pengumuman dari pengurus akan tampil di sini setelah penghubung Google Sheets dipasang.", tautan:"", penting:false }],
     kalender: KALENDER_STATIS.map(k=>Object.assign({}, k)),
     kelas:[], education:[],
     reksadana:[
@@ -1400,7 +1450,10 @@ async function perbaruiRiset(){
   try{
     const d = await apiAdmin("admin_perbarui");
     renderAdminRiset(d.items || []);
-    say("aInfo", d.baru && d.baru.length ? d.total + " riset di Drive. Riset baru: " + d.baru.join(", ") + "." : d.total + " riset di Drive. Tidak ada riset baru.", "ok");
+    const k = d.kunci || {};
+    const kunci = k.ada === false ? " Kunci unduhan otomatis belum aktif: aktifkan layanan Drive API di Apps Script atau atur manual di Drive (lihat petunjuk)."
+      : (k.dikunci ? " Unduhan dikunci pada " + k.dikunci + " file baru." : "") + (k.gagal ? " " + k.gagal + " file gagal dikunci." : "");
+    say("aInfo", (d.baru && d.baru.length ? d.total + " riset di Drive. Riset baru: " + d.baru.join(", ") + "." : d.total + " riset di Drive. Tidak ada riset baru.") + kunci, "ok");
   }catch(e){ say("aInfo","Gagal memperbarui riset: " + e.message, "err"); }
   finally{ btn.disabled = false; }
 }
@@ -1413,26 +1466,26 @@ async function hapusRiset(it){
     say("aInfo",'Riset "' + it.judul + '" dihapus (ada di tempat sampah Drive).', "ok");
   }catch(e){ say("aInfo","Gagal menghapus: " + e.message, "err"); }
 }
-const NAMA_EVENT = { login:"Login", unduh:"Unduh", admin_perbarui:"Admin: perbarui riset", admin_hapus:"Admin: hapus riset" };
+const NAMA_EVENT = { login:"Login", baca:"Baca", unduh:"Baca", admin_perbarui:"Admin: perbarui riset", admin_hapus:"Admin: hapus riset" };
 function renderAdminRingkasan(box, d){
   box.innerHTML = "";
   const cards = el("div","stats");
-  [["Login 7 hari", d.ringkasan.login7], ["Unduhan 7 hari", d.ringkasan.unduh7], ["Anggota aktif 7 hari", d.ringkasan.aktif7], ["Total catatan", d.ringkasan.total]].forEach(x=>{
+  [["Login 7 hari", d.ringkasan.login7], ["Dibaca 7 hari", d.ringkasan.baca7], ["Anggota aktif 7 hari", d.ringkasan.aktif7], ["Total catatan", d.ringkasan.total]].forEach(x=>{
     const c = el("div","stat"); c.append(el("b",null,String(x[1]))); c.append(el("span",null,x[0])); cards.append(c);
   });
   box.append(cards);
   box.append(el("h4","rt","Aktivitas 14 hari terakhir"));
-  const maks = Math.max(1, ...d.harian.map(x=>x.login + x.unduh));
+  const maks = Math.max(1, ...d.harian.map(x=>x.login + x.baca));
   const bars = el("div","bars");
   if(!d.harian.length) bars.append(el("div","muted","Belum ada aktivitas."));
   d.harian.forEach(x=>{
     const r = el("div","brow"); r.append(el("span",null,tglID(x.tanggal) || x.tanggal));
-    const w = el("div","bwrap"); const b1 = el("i","b1"); b1.style.width = (x.login / maks * 100) + "%"; const b2 = el("i","b2"); b2.style.width = (x.unduh / maks * 100) + "%"; w.append(b1, b2);
-    r.append(w); r.append(el("small",null, x.login + " login, " + x.unduh + " unduhan")); bars.append(r);
+    const w = el("div","bwrap"); const b1 = el("i","b1"); b1.style.width = (x.login / maks * 100) + "%"; const b2 = el("i","b2"); b2.style.width = (x.baca / maks * 100) + "%"; w.append(b1, b2);
+    r.append(w); r.append(el("small",null, x.login + " login, " + x.baca + " dibaca")); bars.append(r);
   });
   box.append(bars);
-  box.append(el("h4","rt","Riset paling banyak diunduh"));
-  box.append(buatTabel(["Riset","Unduhan"], d.topRiset.length ? d.topRiset.map(x=>[x.judul, x.jumlah]) : [["Belum ada unduhan.",""]]));
+  box.append(el("h4","rt","Riset paling banyak dibaca"));
+  box.append(buatTabel(["Riset","Unduhan"], d.topRiset.length ? d.topRiset.map(x=>[x.judul, x.jumlah]) : [["Belum ada yang membaca.",""]]));
   box.append(el("h4","rt","Aktivitas terbaru"));
   box.append(buatTabel(["Waktu","Anggota","Aktivitas","Detail"], d.terbaru.map(x=>[x.waktu, x.nama ? x.nama + " (" + x.nia + ")" : x.nia, NAMA_EVENT[x.event] || x.event, x.detail])));
 }
@@ -1859,6 +1912,16 @@ $("eduCari").addEventListener("input", ()=>{ eduLimit = 40; if(DATA) renderPeser
 $("eduGen").addEventListener("change", ()=>{ eduLimit = 40; if(DATA) renderPeserta(); });
 $("eduUrut").addEventListener("change", ()=>{ if(DATA) renderPeserta(); });
 $("eduLagi").onclick = ()=>{ eduLimit += 40; renderPeserta(); };
+const DISCLAIMER_PENUH = "Seluruh informasi di portal ini, termasuk riset, kalkulator, kalender, pemeringkat, dan materi Education, hanya untuk tujuan edukasi dan informasi. Bukan merupakan rekomendasi, ajakan, atau saran untuk membeli, menjual, atau menahan efek maupun produk investasi apa pun, dan bukan nasihat keuangan, hukum, atau pajak. Lakukan riset Anda sendiri (Do Your Own Research atau DYOR) dan pertimbangkan tujuan, kondisi keuangan, serta profil risiko pribadi sebelum mengambil keputusan. Seluruh keputusan dan risiko investasi sepenuhnya menjadi tanggung jawab Anda. Investasi mengandung risiko, termasuk kehilangan sebagian atau seluruh modal, dan kinerja masa lalu tidak menjamin hasil di masa depan. Pengurus dan penyusun riset KIPM-UP tidak bertanggung jawab atas kerugian yang timbul dari penggunaan informasi ini.";
+const DISCLAIMER_RINGKAS = "DYOR (Do Your Own Research). Informasi di portal ini hanya untuk edukasi, bukan rekomendasi atau keputusan finansial. Investasi mengandung risiko, dan semua keputusan sepenuhnya tanggung jawab Anda.";
+function isiDisclaimer(){
+  $$(".disclaimer").forEach(d=>{
+    d.innerHTML = "";
+    d.append(el("b", null, "DISCLAIMER \u00b7 DYOR"));
+    d.append(el("p", null, d.dataset.d === "penuh" ? DISCLAIMER_PENUH : DISCLAIMER_RINGKAS));
+  });
+}
+isiDisclaimer();
 bangunKalkulator();
 
 </script>
